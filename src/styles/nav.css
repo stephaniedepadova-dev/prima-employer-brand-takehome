@@ -226,14 +226,13 @@
   outline: none !important;
 }
 
-/* Subtle lighter-purple hover for the menu, PRIMA wordmark and other text links, on desktop and mobile. */
+/* Subtle lighter-purple hover only for the top menu and PRIMA wordmark. */
 .wordmark:hover,
-.nav a:hover,
-a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):hover {
+.nav a:hover {
   color: #9a5acd !important;
 }
 
-/* All other text links use Prima purple while they are being clicked/focused. */
+/* Keep other text links unchanged on hover. */
 a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):active,
 a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):focus:not(:focus-visible) {
   color: var(--prima) !important;
