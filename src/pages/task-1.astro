@@ -49,7 +49,7 @@ const problems = [
     <main id="main">
       <section class="task-hero">
         <div class="shell task-head">
-          <div class="task-number"><span class="eyebrow">01 / Diagnose our Employer Brand</span></div>
+          <div class="task-number"><span class="eyebrow task-label-large">01 / Diagnose our Employer Brand</span></div>
           <h1 class="task-title">Diagnose our Employer Brand</h1>
           <p class="lead">A focused diagnosis of where Prima's existing employer-brand proof could work harder for candidates.</p>
         </div>
@@ -162,6 +162,7 @@ const problems = [
     </footer>
 
     <style>
+      .task-label-large { font-size: .95rem; line-height: 1.15; font-weight: 850; letter-spacing: .1em; }
       .task-title { max-width: 18ch; font-size: clamp(2.8rem, 8vw, 6.2rem); }
       .benchmark-learnings { display: grid; gap: 12px; margin-top: 12px; }
       .benchmark-learnings > div { display: grid; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.14); }
@@ -174,6 +175,7 @@ const problems = [
         .task-hero .task-head > * { justify-self: start; }
       }
       @media (max-width: 759px) {
+        .task-label-large { font-size: .88rem; }
         .thread-number { font-size: 2rem; }
       }
     </style>
