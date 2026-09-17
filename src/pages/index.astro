@@ -9,8 +9,34 @@ import { nav, siteTitle } from '../layouts';
     <meta name="theme-color" content="#f7f5f1" />
     <meta name="description" content="Employer Branding Manager take-home assignment for Prima Assicurazioni." />
     <title>{siteTitle}</title>
+    <style>
+      .overview-page .nav { gap:10px; }
+      .overview-page .nav a { padding:10px 14px; font-size:1rem; font-weight:850; }
+      .overview-page .overview-kicker { font-size:1.08rem; letter-spacing:.1em; }
+      .overview-page .overview-thread-label { font-size:1rem; letter-spacing:.13em; }
+      .overview-page .overview-task-label { font-size:1.12rem; line-height:1.1; font-weight:950; letter-spacing:-.02em; color:var(--prima-navy); }
+      .overview-page .overview-thread-grid { margin-top:20px; }
+      .overview-page .overview-thread-item { min-height:194px; padding:24px; border:1px solid var(--line); border-radius:20px; display:flex; flex-direction:column; justify-content:space-between; gap:20px; }
+      .overview-page .overview-thread-item:nth-child(1) { background:var(--prima-soft); border-color:#dac6ee; }
+      .overview-page .overview-thread-item:nth-child(2) { background:var(--violet-soft); border-color:#d7c2e9; }
+      .overview-page .overview-thread-item:nth-child(3) { background:#e7f4f5; border-color:#c9e5e8; }
+      .overview-page .overview-thread-item:nth-child(1) .overview-thread-index { color:var(--prima); }
+      .overview-page .overview-thread-item:nth-child(2) .overview-thread-index { color:#6f2fa7; }
+      .overview-page .overview-thread-item:nth-child(3) .overview-thread-index { color:var(--prima-teal); }
+      .overview-page .overview-thread-index { font-size:1.2rem; line-height:1; font-weight:950; letter-spacing:-.02em; }
+      .overview-page .overview-thread-question { margin:0; font-size:1.08rem; line-height:1.2; font-weight:850; letter-spacing:-.02em; max-width:28ch; }
+      .overview-page .overview-benchmark-note { margin-top:24px; padding:24px 0 0; border-top:1px solid var(--line); }
+      .overview-page .overview-benchmark-quote { margin:0; font-size:clamp(1.35rem,3vw,2rem); line-height:1.08; font-weight:900; letter-spacing:-.035em; max-width:34ch; }
+      .overview-page .overview-benchmark-caption { display:block; margin-top:16px; color:var(--muted); font-size:.88rem; font-weight:750; }
+      @media (max-width:759px) {
+        .overview-page .nav a { padding:9px 12px; font-size:.92rem; }
+        .overview-page .overview-kicker { font-size:.98rem; }
+        .overview-page .overview-task-label { font-size:1rem; }
+        .overview-page .overview-thread-item { min-height:170px; padding:20px; }
+      }
+    </style>
   </head>
-  <body>
+  <body class="overview-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="shell header-inner">
@@ -25,14 +51,9 @@ import { nav, siteTitle } from '../layouts';
       <section class="hero">
         <div class="shell hero-grid">
           <div class="hero-copy">
-            <span class="kicker">Employer Branding Manager</span>
+            <span class="kicker overview-kicker">Employer Branding Manager</span>
             <h1>Take-home Assignment</h1>
             <p class="lead">A candidate-first diagnosis of Prima's talent experience, followed by one focused redesign.</p>
-            <div class="pill-row">
-              <span class="pill">English</span>
-              <span class="pill">Responsive UX/UI</span>
-              <span class="pill">2 tasks</span>
-            </div>
           </div>
           <aside class="surface card card-dark sticky-note">
             <div class="eyebrow" style="color:#aaa">My starting point</div>
@@ -53,13 +74,13 @@ import { nav, siteTitle } from '../layouts';
           </div>
           <div class="grid two">
             <a class="surface card card-prima" style="text-decoration:none" href="/prima-employer-brand-takehome/task-1/">
-              <div class="number">01 / Diagnose</div>
+              <div class="overview-task-label">01 / Diagnose</div>
               <h3 style="margin-top:12px">Where the talent experience could work harder.</h3>
               <p class="small" style="margin-top:12px">Three problems, why they matter, what I would change first, and one benchmark.</p>
               <p style="margin:18px 0 0;font-weight:900">Open Task 1 →</p>
             </a>
             <a class="surface card card-violet" style="text-decoration:none" href="/prima-employer-brand-takehome/task-2/">
-              <div class="number">02 / Make something better</div>
+              <div class="overview-task-label">02 / Make something better</div>
               <h3 style="margin-top:12px">From job description to candidate decision tool.</h3>
               <p class="small" style="margin-top:12px">A desktop redesign of a real Prima Software Engineering vacancy, with a deliberate mobile adaptation.</p>
               <p style="margin:18px 0 0;font-weight:900">Open Task 2 →</p>
@@ -71,15 +92,24 @@ import { nav, siteTitle } from '../layouts';
       <section class="section">
         <div class="shell">
           <div class="surface card">
-            <div class="eyebrow">The thread</div>
-            <div class="grid three" style="margin-top:18px">
-              <div><div class="number">01 / Role</div><p style="margin-top:8px;font-size:1.15rem;font-weight:850;">Would I want to do this specific job at Prima?</p></div>
-              <div><div class="number">02 / Career</div><p style="margin-top:8px;font-size:1.15rem;font-weight:850;">Could I see where this role could take me?</p></div>
-              <div><div class="number">03 / Experience</div><p style="margin-top:8px;font-size:1.15rem;font-weight:850;">Does the hiring experience match the promise?</p></div>
+            <div class="eyebrow overview-thread-label">The thread</div>
+            <div class="grid three overview-thread-grid">
+              <article class="overview-thread-item">
+                <div class="overview-thread-index">01 / Role</div>
+                <p class="overview-thread-question">Would I want to do this specific job at Prima?</p>
+              </article>
+              <article class="overview-thread-item">
+                <div class="overview-thread-index">02 / Career</div>
+                <p class="overview-thread-question">Could I see where this role could take me?</p>
+              </article>
+              <article class="overview-thread-item">
+                <div class="overview-thread-index">03 / Experience</div>
+                <p class="overview-thread-question">Does the hiring experience match the promise?</p>
+              </article>
             </div>
-            <div class="quote" style="margin-top:22px">
-              <p>“Make the right proof tangible at the right candidate decision moment.”</p>
-              <span class="small">The principle I take from the benchmark.</span>
+            <div class="overview-benchmark-note">
+              <p class="overview-benchmark-quote">“Make the right proof tangible at the right candidate decision moment.”</p>
+              <span class="overview-benchmark-caption">The principle I take from the benchmark.</span>
             </div>
           </div>
         </div>
