@@ -16,15 +16,15 @@ import { nav, siteTitle } from '../layouts';
       .overview-page .overview-thread-label { font-size:.84rem; letter-spacing:.13em; }
       .overview-page .overview-task-label { font-size:.96rem; line-height:1.1; font-weight:950; letter-spacing:-.02em; color:var(--prima-navy); }
       .overview-page .overview-thread-grid { margin-top:20px; }
-      .overview-page .overview-thread-item { min-height:194px; padding:24px; border:1px solid var(--line); border-radius:20px; display:flex; flex-direction:column; justify-content:space-between; gap:20px; }
+      .overview-page .overview-thread-item { min-height:158px; padding:22px; border:1px solid var(--line); border-radius:20px; display:flex; flex-direction:column; justify-content:space-between; gap:18px; }
       .overview-page .overview-thread-item:nth-child(1) { background:var(--prima-soft); border-color:#dac6ee; }
-      .overview-page .overview-thread-item:nth-child(2) { background:var(--violet-soft); border-color:#d7c2e9; }
+      .overview-page .overview-thread-item:nth-child(2) { background:#f6eee6; border-color:#e7d7c8; }
       .overview-page .overview-thread-item:nth-child(3) { background:#e7f4f5; border-color:#c9e5e8; }
-      .overview-page .overview-thread-item:nth-child(1) .overview-thread-index { color:var(--prima); }
-      .overview-page .overview-thread-item:nth-child(2) .overview-thread-index { color:#6f2fa7; }
-      .overview-page .overview-thread-item:nth-child(3) .overview-thread-index { color:var(--prima-teal); }
-      .overview-page .overview-thread-index { font-size:1rem; line-height:1; font-weight:950; letter-spacing:-.02em; }
-      .overview-page .overview-thread-question { margin:0; font-size:1.08rem; line-height:1.2; font-weight:850; letter-spacing:-.02em; max-width:28ch; }
+      .overview-page .overview-thread-index { display:flex; align-items:baseline; gap:6px; line-height:1; }
+      .overview-page .overview-thread-num { font-size:.72rem; font-weight:900; letter-spacing:.1em; color:var(--muted); font-variant-numeric:tabular-nums; }
+      .overview-page .overview-thread-slash { font-size:.82rem; color:#aaa5ad; font-weight:700; }
+      .overview-page .overview-thread-name { font-size:1.05rem; font-weight:900; letter-spacing:-.025em; color:var(--prima-navy); }
+      .overview-page .overview-thread-question { margin:0; font-size:1.02rem; line-height:1.2; font-weight:850; letter-spacing:-.02em; max-width:28ch; }
       .overview-page .overview-benchmark-note { margin-top:24px; padding:24px 0 0; border-top:1px solid var(--line); }
       .overview-page .overview-benchmark-quote { margin:0; font-size:clamp(1.35rem,3vw,2rem); line-height:1.08; font-weight:900; letter-spacing:-.035em; max-width:34ch; }
       .overview-page .overview-benchmark-caption { display:block; margin-top:16px; color:var(--muted); font-size:.88rem; font-weight:750; }
@@ -32,8 +32,8 @@ import { nav, siteTitle } from '../layouts';
         .overview-page .nav a { padding:9px 12px; font-size:.92rem; }
         .overview-page .overview-kicker { font-size:.84rem; }
         .overview-page .overview-task-label { font-size:.9rem; }
-        .overview-page .overview-thread-item { min-height:170px; padding:20px; }
-        .overview-page .overview-thread-index { font-size:.94rem; }
+        .overview-page .overview-thread-item { min-height:150px; padding:20px; }
+        .overview-page .overview-thread-name { font-size:1rem; }
       }
     </style>
   </head>
@@ -96,15 +96,15 @@ import { nav, siteTitle } from '../layouts';
             <div class="eyebrow overview-thread-label">The thread</div>
             <div class="grid three overview-thread-grid">
               <article class="overview-thread-item">
-                <div class="overview-thread-index">01 / Role</div>
+                <div class="overview-thread-index"><span class="overview-thread-num">01</span><span class="overview-thread-slash">/</span><span class="overview-thread-name">Role</span></div>
                 <p class="overview-thread-question">Would I want to do this specific job at Prima?</p>
               </article>
               <article class="overview-thread-item">
-                <div class="overview-thread-index">02 / Career</div>
+                <div class="overview-thread-index"><span class="overview-thread-num">02</span><span class="overview-thread-slash">/</span><span class="overview-thread-name">Career</span></div>
                 <p class="overview-thread-question">Could I see where this role could take me?</p>
               </article>
               <article class="overview-thread-item">
-                <div class="overview-thread-index">03 / Experience</div>
+                <div class="overview-thread-index"><span class="overview-thread-num">03</span><span class="overview-thread-slash">/</span><span class="overview-thread-name">Experience</span></div>
                 <p class="overview-thread-question">Does the hiring experience match the promise?</p>
               </article>
             </div>
