@@ -74,7 +74,7 @@
   box-shadow: 0 6px 18px rgba(33, 40, 58, .07);
 }
 
-/* Task 2 requirements: preserve the split structure, but give the answer column room to breathe. */
+/* Task 2 requirements: keep the split heading + readable cards even inside the narrow desktop preview. */
 .task2-page .requirements-block {
   display: grid;
   grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
@@ -92,18 +92,18 @@
 }
 
 .task2-page .requirements-block .need-list {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
 .task2-page .requirements-block .need-list > div {
-  min-height: 132px;
-  padding: 20px 20px;
+  min-height: auto;
+  padding: 15px 16px;
 }
 
 .task2-page .requirements-block .need-list > div > p {
-  font-size: 1rem;
-  line-height: 1.46;
+  font-size: .9rem;
+  line-height: 1.42;
 }
 
 @media (max-width: 900px) {
