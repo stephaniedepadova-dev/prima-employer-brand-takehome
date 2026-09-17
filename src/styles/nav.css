@@ -1,4 +1,4 @@
- .nav a {
+.nav a {
   padding: 10px 14px;
   border-radius: 999px;
   text-decoration: none;
@@ -27,6 +27,12 @@
 /* Task 2: deliberate three-line title */
 .task2-page .task-head > h1 {
   max-width: 12.5ch !important;
+  text-wrap: balance;
+}
+
+/* Task 2: keep the hierarchy statement on two deliberate lines. */
+.task2-page .section.task2-section + .section .stage-heading h2 {
+  max-width: 34ch;
   text-wrap: balance;
 }
 
@@ -68,11 +74,11 @@
   box-shadow: 0 6px 18px rgba(33, 40, 58, .07);
 }
 
-/* Task 2 requirements: use the full content width so all four requirements stay readable. */
+/* Task 2 requirements: preserve the split structure, but give the answer column room to breathe. */
 .task2-page .requirements-block {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+  gap: 24px;
   align-items: start;
 }
 
@@ -86,18 +92,29 @@
 }
 
 .task2-page .requirements-block .need-list {
-  grid-template-columns: 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .task2-page .requirements-block .need-list > div {
-  min-height: auto;
-  padding: 16px 18px;
+  min-height: 132px;
+  padding: 20px 20px;
 }
 
 .task2-page .requirements-block .need-list > div > p {
   font-size: 1rem;
   line-height: 1.46;
+}
+
+@media (max-width: 900px) {
+  .task2-page .requirements-block {
+    grid-template-columns: minmax(0, .62fr) minmax(0, 1.38fr);
+    gap: 18px;
+  }
+
+  .task2-page .requirements-block .need-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 759px) {
@@ -118,6 +135,10 @@
 
   .task2-page .task-head > h1 {
     max-width: 11ch !important;
+  }
+
+  .task2-page .section.task2-section + .section .stage-heading h2 {
+    max-width: 24ch;
   }
 
   .task2-page > #main > .section.after-stage .after-hero h1 {
