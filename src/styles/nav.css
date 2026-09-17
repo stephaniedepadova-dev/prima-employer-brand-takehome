@@ -8,14 +8,29 @@
   white-space: nowrap;
 }
 
-/* Shared polish for Task 2 and the live redesign */
-.task2-page .task2-number-label {
+/* Shared page hierarchy */
+.task-hero .task-number .task-label-large,
+.task-hero .task-number .task2-number-label,
+.sources-page .task-number .eyebrow {
   font-size: 1.15rem;
   line-height: 1.15;
   font-weight: 900;
   letter-spacing: .06em;
 }
 
+/* Task 1: deliberate two-line title */
+.task-hero .task-title {
+  max-width: 14ch !important;
+  text-wrap: balance;
+}
+
+/* Task 2: deliberate three-line title */
+.task2-page .task-head > h1 {
+  max-width: 12.5ch !important;
+  text-wrap: balance;
+}
+
+/* Shared polish for Task 2 and the live redesign */
 .task2-page .after-stage {
   background: #faf7fc;
 }
@@ -33,7 +48,7 @@
 
 /* Keep the embedded AFTER preview aligned with the same typographic system. */
 .task2-page .after-hero h3 {
-  max-width: 24ch;
+  max-width: 20ch;
   font-size: clamp(2.2rem, 3.1vw, 3.8rem);
   line-height: 1.02;
   text-wrap: balance;
@@ -45,8 +60,18 @@
     font-size: .92rem;
   }
 
-  .task2-page .task2-number-label {
+  .task-hero .task-number .task-label-large,
+  .task-hero .task-number .task2-number-label,
+  .sources-page .task-number .eyebrow {
     font-size: 1rem;
+  }
+
+  .task-hero .task-title {
+    max-width: 11ch !important;
+  }
+
+  .task2-page .task-head > h1 {
+    max-width: 11ch !important;
   }
 
   .task2-page > #main > .section.after-stage .after-hero h1 {
@@ -55,7 +80,7 @@
   }
 
   .task2-page .after-hero h3 {
-    max-width: 19ch;
+    max-width: 17ch;
     font-size: clamp(2rem, 9.5vw, 3rem);
   }
 }
