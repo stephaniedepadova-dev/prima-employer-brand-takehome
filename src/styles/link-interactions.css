@@ -1,0 +1,16 @@
+/* Shared link interaction color across every page. */
+a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):hover,
+a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):active,
+a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):focus:not(:focus-visible),
+a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):focus-visible {
+  color: var(--prima);
+}
+
+/* The active top-nav item uses the same Prima violet on desktop and mobile. */
+.nav a[aria-current='page'],
+.nav a[aria-current='page']:hover,
+.nav a[aria-current='page']:active {
+  background: transparent !important;
+  color: var(--prima) !important;
+  box-shadow: none !important;
+}
