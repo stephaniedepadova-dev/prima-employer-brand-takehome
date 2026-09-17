@@ -216,12 +216,12 @@
   }
 }
 
-/* Keep the top navigation neutral when selected or clicked. Keyboard focus remains visible. */
+/* Keep the top navigation neutral when selected or clicked. */
 .nav a[aria-current='page'],
 .nav a:active,
 .nav a:focus:not(:focus-visible) {
   background: transparent !important;
-  color: var(--muted) !important;
+  color: var(--prima) !important;
   box-shadow: none !important;
   outline: none !important;
 }
