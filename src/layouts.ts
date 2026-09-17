@@ -8,7 +8,7 @@ export const nav = [
 
 export const sources = [
   {
-    group: 'Prima',
+    group: 'Prima / Careers',
     items: [
       { label: 'Careers', url: 'https://www.helloprima.com/careers' },
       { label: 'Departments', url: 'https://www.helloprima.com/careers/departments' },
@@ -19,9 +19,19 @@ export const sources = [
     ],
   },
   {
+    group: 'Prima / Social & talent-facing channels',
+    items: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/company/prima-assicurazioni/' },
+      { label: 'LinkedIn / Culture', url: 'https://www.linkedin.com/company/prima-assicurazioni/life/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/prima_assicurazioni/' },
+      { label: 'YouTube', url: 'https://www.youtube.com/@helloprima' },
+    ],
+  },
+  {
     group: 'Benchmark',
     items: [
-      { label: 'Mollie careers / vacancies', url: 'https://jobs.mollie.com/vacancies' },
+      { label: 'Mollie Careers', url: 'https://jobs.mollie.com/' },
+      { label: 'Mollie vacancies', url: 'https://jobs.mollie.com/vacancies' },
       { label: 'Mollie Full Stack Engineer II', url: 'https://jobs.mollie.com/vacancies/2fa761ee-3fe0-423c-aaa2-4e9e31871ef6' },
     ],
   },
