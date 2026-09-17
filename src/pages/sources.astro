@@ -2,6 +2,14 @@
 import '../styles/global.css';
 import { nav } from '../layouts';
 import { sources } from '../layouts';
+
+const channels = [
+  { label: 'Careers', tone: 'prima' },
+  { label: 'LinkedIn', tone: 'violet' },
+  { label: 'Instagram', tone: 'neutral' },
+  { label: 'YouTube', tone: 'neutral' },
+  { label: 'Candidate experience', tone: 'mint' },
+];
 ---
 <html lang="en">
   <head>
@@ -22,27 +30,97 @@ import { sources } from '../layouts';
     </header>
 
     <main id="main">
-      <section class="task-hero">
-        <div class="shell task-head">
-          <div class="task-number"><span class="eyebrow">Sources & method</span></div>
-          <h1>Evidence first.</h1>
-          <p class="lead">I used public sources to test the diagnosis, compare relevant employer-brand examples and build the redesign.</p>
+      <section class="task-hero source-hero">
+        <div class="shell source-hero-grid">
+          <div class="task-head">
+            <div class="task-number"><span class="eyebrow">Sources & method</span></div>
+            <h1>Evidence first.</h1>
+            <p class="lead">The diagnosis and redesign were built from Prima's public candidate-facing ecosystem, with a focused benchmark against Mollie.</p>
+          </div>
+          <aside class="source-scope surface card">
+            <div class="eyebrow">Research scope</div>
+            <div class="source-channel-list">
+              {channels.map((channel) => <span class={`source-channel source-channel-${channel.tone}`}>{channel.label}</span>)}
+            </div>
+            <p class="small">I reviewed Careers content, job and hiring information, LinkedIn, Instagram, YouTube and other public talent-facing touchpoints before narrowing the diagnosis to the most decision-relevant issues.</p>
+          </aside>
         </div>
       </section>
 
-      <section class="section">
-        <div class="shell source-list">
-          {sources.map((group) => (
-            <section class="surface card source-group">
-              <div class="eyebrow">{group.group}</div>
-              {group.items.map((item) => (
-                <a class="source-link" href={item.url} target="_blank" rel="noreferrer">
-                  <strong>{item.label}</strong>
-                  <span>↗</span>
-                </a>
-              ))}
-            </section>
-          ))}
+      <section class="section source-section">
+        <div class="shell">
+          <div class="source-section-heading">
+            <div>
+              <div class="eyebrow">01 / Prima</div>
+              <h2>Primary evidence.</h2>
+            </div>
+            <p class="small">The public sources used to understand the current Employer Brand, role experience and candidate journey.</p>
+          </div>
+
+          <div class="source-list source-list-rich">
+            {sources.filter((group) => group.group === 'Prima').map((group) => (
+              <section class="surface card source-group">
+                <div class="source-group-head">
+                  <div class="eyebrow">{group.group}</div>
+                  <span class="source-count">{group.items.length} sources</span>
+                </div>
+                {group.items.map((item, index) => (
+                  <a class="source-link source-link-rich" href={item.url} target="_blank" rel="noreferrer">
+                    <span class="source-index">{String(index + 1).padStart(2, '0')}</span>
+                    <span class="source-copy"><strong>{item.label}</strong><small>{new URL(item.url).hostname.replace(/^www\./, '')}</small></span>
+                    <span class="source-arrow">↗</span>
+                  </a>
+                ))}
+              </section>
+            ))}
+
+            <div class="source-channel-grid">
+              <a class="surface source-channel-card source-channel-card-violet" href="https://www.linkedin.com/company/prima-assicurazioni/" target="_blank" rel="noreferrer">
+                <span class="eyebrow">LinkedIn</span>
+                <strong>Company page & employee-facing content</strong>
+                <span class="small">Updates, Life content, role storytelling and employer-brand signals.</span>
+                <span class="source-arrow">Explore ↗</span>
+              </a>
+              <a class="surface source-channel-card source-channel-card-neutral" href="https://www.instagram.com/prima_assicurazioni/" target="_blank" rel="noreferrer">
+                <span class="eyebrow">Instagram</span>
+                <strong>Visual brand & community content</strong>
+                <span class="small">A complementary view of how Prima presents people, events and brand culture.</span>
+                <span class="source-arrow">Explore ↗</span>
+              </a>
+              <a class="surface source-channel-card source-channel-card-neutral" href="https://www.youtube.com/watch?v=uNVjNzfpkrU" target="_blank" rel="noreferrer">
+                <span class="eyebrow">YouTube</span>
+                <strong>Video touchpoint reviewed</strong>
+                <span class="small">A public Prima-related video touchpoint considered as part of the wider talent-facing ecosystem.</span>
+                <span class="source-arrow">Watch ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section source-section">
+        <div class="shell">
+          <div class="source-section-heading">
+            <div>
+              <div class="eyebrow">02 / Benchmark</div>
+              <h2>What I compared.</h2>
+            </div>
+            <p class="small">Mollie was used as a focused benchmark for how employer-brand proof can reach candidates closer to decision moments.</p>
+          </div>
+          <div class="source-list source-list-rich">
+            {sources.filter((group) => group.group === 'Benchmark').map((group) => (
+              <section class="surface card source-group">
+                <div class="source-group-head"><div class="eyebrow">{group.group}</div><span class="source-count">Focused benchmark</span></div>
+                {group.items.map((item, index) => (
+                  <a class="source-link source-link-rich" href={item.url} target="_blank" rel="noreferrer">
+                    <span class="source-index">{String(index + 1).padStart(2, '0')}</span>
+                    <span class="source-copy"><strong>{item.label}</strong><small>{new URL(item.url).hostname.replace(/^www\./, '')}</small></span>
+                    <span class="source-arrow">↗</span>
+                  </a>
+                ))}
+              </section>
+            ))}
+          </div>
         </div>
       </section>
 
