@@ -273,7 +273,7 @@ const requirements = [
                         </div>
                       </section>
 
-                      <section id="need" class="redesign-block requirements-block">
+                      <section id="need" class="redesign-block split-block requirements-block">
                         <div>
                           <div class="section-kicker">03 / What you’ll need</div>
                           <h4>Make the fit easy to understand.</h4>
@@ -435,10 +435,10 @@ const requirements = [
       .current-recon-content-block h4 { margin-top:7px; font-size:1.25rem; color:var(--prima-navy); }
       .current-recon-content-block p { margin-top:7px; color:var(--muted); font-size:.83rem; max-width:68ch; }
 
-      /* Requirements: full-width candidate-facing component with a deliberate 2×2 desktop grid. */
-      .requirements-block { display:block; }
-      .requirements-block > div:first-child { max-width:48ch; }
-      .requirements-block > .need-list { width:100%; margin-top:22px; }
+      /* Requirements: preserve the original split editorial structure while giving the answers enough width. */
+      .requirements-block { grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr); }
+      .requirements-block > div:first-child { max-width:28ch; }
+      .requirements-block > .need-list { width:100%; margin-top:0; }
       .need-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; align-content:start; }
       .need-list > div { display:grid; grid-template-columns:40px minmax(0,1fr); gap:14px; align-items:start; min-height:108px; padding:18px 20px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(18,18,18,.05); }
       .need-list > div > span { color:var(--prima); font-size:.74rem; line-height:1; font-weight:950; letter-spacing:.05em; padding-top:3px; }
@@ -455,6 +455,7 @@ const requirements = [
         .current-recon-body { grid-template-columns:1fr; }
         .current-recon-context { border-right:0; border-bottom:1px solid var(--line); }
         .current-recon-content { padding:24px 20px; }
+        .requirements-block { grid-template-columns:1fr; }
         .requirements-block > .need-list { margin-top:18px; }
         .need-list > div { min-height:auto; padding:14px; }
         .need-list > div > p { font-size:.93rem; }
