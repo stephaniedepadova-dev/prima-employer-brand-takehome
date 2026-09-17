@@ -181,3 +181,30 @@
     padding: 14px;
   }
 }
+
+/* Role-section navigation: keep the section menu aligned on desktop and fully visible on narrow screens. */
+.after-nav {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+@media (max-width: 759px) {
+  .after-nav {
+    position: static !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100%;
+    max-width: 100%;
+    gap: 6px;
+    padding: 10px 0 12px;
+    margin: 0;
+    overflow: visible !important;
+  }
+
+  .after-nav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 7px 9px;
+    font-size: .65rem;
+  }
+}
