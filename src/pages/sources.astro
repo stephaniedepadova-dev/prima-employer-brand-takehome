@@ -52,7 +52,6 @@ const sourceGroups = [
     items: [
       { label: 'Joinrs · Prima Assicurazioni / Most Attractive Companies 2026', note: 'Talent perception, employer proposition and Math Fest context.', url: 'https://focus.joinrs.com/most-attractive-companies-2026/prima-assicurazioni-most-attractive-companies-2026' },
       { label: 'Joinrs · Most Attractive Companies 2026', note: 'Broader context for the talent-audience initiative.', url: 'https://focus.joinrs.com/most-attractive-companies-2026' },
-      { label: 'Politecnico di Torino · Prima Open Day', note: 'University engagement, Data/Engineering challenge and candidate experience.', url: 'https://www.polito.it/ateneo/career-hub/eventi/news?idn=23349' },
       { label: 'SISSA · Prima Math Fest 2025', note: 'Independent university source describing the Math Fest experience.', url: 'https://www.sissa.it/it/news/prima-math-fest-2025' },
     ],
   },
@@ -84,14 +83,14 @@ const sourceGroups = [
       <div class="shell header-inner">
         <a class="wordmark" href="/prima-employer-brand-takehome/">PRIMA</a>
         <nav class="nav" aria-label="Primary navigation">
-          {nav.map((item) => <a href={`/prima-employer-brand-takehome${item.href}`}>{item.label}</a>)}
+          {nav.map((item) => <a href={`/prima-employer-brand-takehome${item.href}`} aria-current={item.href === '/sources/' ? 'page' : undefined}>{item.label}</a>)}
         </nav>
       </div>
     </header>
 
     <main id="main">
       <section class="task-hero">
-        <div class="shell task-head">
+        <div class="shell task-head sources-head">
           <div class="task-number"><span class="eyebrow">Sources & method</span></div>
           <h1 class="sources-title">Evidence first.</h1>
           <p class="lead">I used public sources to test the diagnosis, compare relevant employer-brand examples and build the redesign. The list below covers the public source set used across the research, including social channels, external perception and talent-facing initiatives.</p>
@@ -136,5 +135,16 @@ const sourceGroups = [
     <footer class="site-footer">
       <div class="shell"><div class="eyebrow">Take-home</div><p style="margin-top:8px">Employer Branding Manager – Take-home Assignment</p></div>
     </footer>
+
+    <style>
+      @media (min-width: 1100px) {
+        .sources-head { grid-template-columns: 1fr; gap: 18px; align-items: start; }
+        .sources-head > * { justify-self: start; }
+        .sources-title { max-width: 12ch; }
+      }
+      .source-link-detailed { align-items: flex-start; }
+      .source-link-detailed strong { display: block; font-size: .86rem; }
+      .source-link-detailed small { display: block; margin-top: 4px; color: var(--muted); font-size: .72rem; line-height: 1.4; }
+    </style>
   </body>
 </html>
