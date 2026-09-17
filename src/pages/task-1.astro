@@ -1,0 +1,149 @@
+---
+import '../styles/global.css';
+import { nav, siteTitle } from '../layouts';
+const problems = [
+  {
+    id: '01',
+    label: 'Role experience',
+    candidateQuestion: 'Would I want to do this specific job at Prima?',
+    problem: 'The role is clearly explained, but the experience of doing that specific job at Prima is not always tangible enough when candidates are deciding whether to apply.',
+    why: 'Candidates are not only asking whether they can do the job. They are also asking whether they would want to do it at Prima. That second question needs context: the problems they would work on, the people they would work with, how the team operates and the impact they could have.',
+    change: 'Bring more role specific proof closer to the decision to apply. For key vacancies, make the team, the work, the problems being solved, real employee perspectives and potential impact easier to see.',
+  },
+  {
+    id: '02',
+    label: 'Career trajectory',
+    candidateQuestion: 'Could I see where this role could take me?',
+    problem: 'Prima communicates development strongly, but possible career trajectories from a specific role are less tangible.',
+    why: 'Prima already has a substantial development framework. The question is not whether development exists, but whether a candidate can picture where a specific role could take them. There is a difference between offering development opportunities and making possible career paths visible.',
+    change: 'Make career possibilities more tangible through real examples: technical progression, managerial progression, internal moves, cross functional moves, international opportunities and employee career stories. Present them as examples, not promises.',
+  },
+  {
+    id: '03',
+    label: 'Candidate experience consistency',
+    candidateQuestion: 'Does the hiring experience match the promise?',
+    problem: 'Prima clearly aims to create meaningful interactions throughout the hiring process, but public candidate accounts suggest some inconsistency around timing, communication and closure.',
+    why: 'Prima says its interview process was designed to create meaningful connections and interactions, and the process is publicly explained. Public feedback is mixed: some candidates report clear, positive experiences while others mention waiting times, communication or closure. I would therefore describe this as a potential consistency gap, not a universally negative experience.',
+    change: 'Create greater consistency across the candidate journey: set clear expectations, communicate timing and next steps, ensure consistent closure and define a clear approach to feedback where appropriate.',
+  },
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5f1" />
+    <title>Task 1 | Diagnose our Employer Brand</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="wordmark" href="/prima-employer-brand-takehome/">PRIMA</a>
+        <nav class="nav" aria-label="Primary navigation">
+          {nav.map((item) => <a href={`/prima-employer-brand-takehome${item.href}`} aria-current={item.href === '/task-1/' ? 'page' : undefined}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="task-hero">
+        <div class="shell task-head">
+          <div class="task-number"><span class="eyebrow">01 / Diagnose our Employer Brand</span></div>
+          <h1>Make the proof easier to act on.</h1>
+          <p class="lead">Prima already has a strong Employer Brand foundation. My focus is on where the existing proof could work harder for candidates.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell problem-grid">
+          {problems.map((p) => (
+            <article class="surface card problem">
+              <div class="number">{p.id} / {p.label}</div>
+              <div>
+                <div class="eyebrow">Candidate question</div>
+                <p style="margin-top:8px;font-size:1.15rem;font-weight:850;">{p.candidateQuestion}</p>
+              </div>
+              <div>
+                <div class="eyebrow">Problem</div>
+                <h3 style="margin-top:8px">{p.problem}</h3>
+              </div>
+              <div class="problem-body">
+                <div>
+                  <div class="label">Why it matters</div>
+                  <p class="answer" style="margin-top:8px">{p.why}</p>
+                </div>
+                <div>
+                  <div class="label">What I would change first</div>
+                  <p class="answer" style="margin-top:8px">{p.change}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell grid two">
+          <article class="surface card card-soft">
+            <div class="eyebrow">The common thread</div>
+            <h2 style="margin-top:10px">Choice → Possibility → Confidence</h2>
+            <div class="flow" style="margin-top:20px">
+              {problems.map((p) => (
+                <div class="flow-step">
+                  <div class="flow-dot">{p.id}</div>
+                  <div><strong>{p.label}</strong><p class="small" style="margin-top:4px">{p.candidateQuestion}</p></div>
+                </div>
+              ))}
+            </div>
+          </article>
+          <article class="surface card card-dark">
+            <div class="eyebrow" style="color:#aaa">One line</div>
+            <p style="margin-top:14px;font-size:1.55rem;line-height:1.08;font-weight:900;letter-spacing:-.04em;">Prima already has the proof. The opportunity is to make it more visible, more relevant and more useful when candidates are deciding.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <article class="surface card card-dark">
+            <div class="eyebrow" style="color:#aaa">Benchmark / Mollie</div>
+            <div class="benchmark-grid" style="margin-top:18px">
+              <div>
+                <div class="benchmark-mark">Mollie</div>
+                <p style="margin-top:8px;color:#cfcfcf">A relevant example of bringing employer brand proof closer to candidate decision moments.</p>
+              </div>
+              <div>
+                <div class="eyebrow" style="color:#aaa">What I would learn</div>
+                <div class="principle" style="margin-top:10px">Make the right proof tangible at the right candidate decision moment.</div>
+                <p style="margin-top:18px;color:#cfcfcf;max-width:58ch">What I take from Mollie is not its tone, visual identity or exact Careers architecture. It is the principle of connecting credible proof to the questions candidates are actually asking.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell grid two">
+          <article class="surface card">
+            <div class="eyebrow">What I would adapt for Prima</div>
+            <h3 style="margin-top:10px">Connect the assets Prima already has.</h3>
+            <p class="small" style="margin-top:10px">#PrimaLife, employee stories, departments, development opportunities, benefits, hiring information and role specific content.</p>
+          </article>
+          <article class="surface card card-prima">
+            <div class="eyebrow">What I would not copy</div>
+            <h3 style="margin-top:10px">The execution.</h3>
+            <p class="small" style="margin-top:10px">Not Mollie's tone of voice, visual identity, content formats, Careers structure or hiring process.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div><div class="eyebrow">01 / Task 1</div><p style="margin-top:8px">Diagnose our Employer Brand</p></div>
+        <a class="small" href="/prima-employer-brand-takehome/sources/">Sources & method →</a>
+      </div>
+    </footer>
+  </body>
+</html>

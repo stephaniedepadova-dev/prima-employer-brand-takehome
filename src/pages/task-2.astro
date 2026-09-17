@@ -1,0 +1,183 @@
+---
+import '../styles/global.css';
+import { nav } from '../layouts';
+const technologies = ['Python','TDD','BDD','CI/CD','IaC','Kafka','RabbitMQ'];
+const optionalTechnologies = ['AWS','Kubernetes','Terraform','Databricks','Airflow','Kubeflow'];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5f1" />
+    <title>Task 2 | Make something better</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="wordmark" href="/prima-employer-brand-takehome/">PRIMA</a>
+        <nav class="nav" aria-label="Primary navigation">
+          {nav.map((item) => <a href={`/prima-employer-brand-takehome${item.href}`} aria-current={item.href === '/task-2/' ? 'page' : undefined}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="task-hero">
+        <div class="shell task-head">
+          <div class="task-number"><span class="eyebrow">02 / Make something better</span></div>
+          <h1>From job description to candidate decision tool.</h1>
+          <p class="lead">I selected a real Prima vacancy and redesigned the mobile experience around the information a candidate needs first.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell grid two">
+          <article class="surface card">
+            <div class="eyebrow">Asset selected</div>
+            <h2 style="margin-top:10px">Senior Python Software Engineer</h2>
+            <p style="margin-top:8px">Prima Careers · Milan · Engineering</p>
+            <div class="pill-row" style="margin-top:14px">
+              <span class="pill">Permanent</span><span class="pill">Full remote available</span><span class="pill">€40k to €75k</span>
+            </div>
+          </article>
+          <article class="surface card card-violet">
+            <div class="eyebrow">Why this asset</div>
+            <p style="margin-top:12px;font-size:1.15rem;font-weight:850;line-height:1.15;">The vacancy already contains strong role specific information. The opportunity is therefore about hierarchy, not volume.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-head">
+            <div><div class="eyebrow">Before → What's wrong</div><h2>Move the distinctive proof up.</h2></div>
+            <p>The strongest part of the opportunity is the ML Platform work. Today it appears after broader company context. My redesign brings it forward.</p>
+          </div>
+          <div class="before-after">
+            <div class="frame-wrap">
+              <div class="frame-title"><span class="chip chip-before">Before</span><span class="small">Current mobile experience</span></div>
+              <div class="phone-shell">
+                <div class="phone">
+                  <div class="phone-bar"></div>
+                  <div class="phone-hero">
+                    <div class="phone-kicker">Engineering · Milan</div>
+                    <div class="phone-title">Senior Python<br />Software Engineer</div>
+                    <div class="phone-sub">Are you looking for a new challenge? Fancy helping us shape the future of motor insurance?</div>
+                    <div class="phone-meta"><span>Permanent</span><span>Full remote</span><span>€40k–€75k</span></div>
+                    <a class="phone-cta" href="#after">Apply now</a>
+                  </div>
+                  <div class="phone-section"><div class="phone-label">Prima</div><p>Company story and wider Engineering context come before the role's distinctive value proposition.</p></div>
+                  <div class="phone-section"><div class="phone-label">Engineering</div><p>Over 350 engineers across software development, infrastructure, operations and security.</p></div>
+                  <div class="phone-section"><div class="phone-label">Role</div><p>ML Platform Domain and the detailed responsibilities appear further down the page.</p></div>
+                  <div class="phone-section"><div class="phone-label">Why you'll love it here</div><div class="phone-pills"><span>Work Your Way</span><span>Grow with us</span><span>Thrive and perform</span></div></div>
+                  <div class="apply-sticky"><a href="#after">APPLY NOW</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div id="after" class="frame-wrap">
+              <div class="frame-title"><span class="chip chip-after">After</span><span class="small">Redesigned mobile experience</span></div>
+              <div class="phone-shell">
+                <div class="phone">
+                  <div class="phone-bar"></div>
+                  <div class="phone-hero">
+                    <div class="phone-kicker">Engineering · Milan</div>
+                    <div class="phone-title">Senior Python<br />Software Engineer</div>
+                    <div class="phone-sub">Build the platforms that enable Machine Learning at scale at Prima.</div>
+                    <div class="phone-meta"><span>Milan</span><span>Permanent</span><span>Full remote</span><span>€40k–€75k</span></div>
+                    <a class="phone-cta" href="#after-final">Apply now</a>
+                  </div>
+
+                  <div class="phone-section">
+                    <div class="phone-label">Why this role exists</div>
+                    <p>Join the ML Platform Domain and help build foundational platforms that support Machine Learning at scale, from experimentation to production.</p>
+                  </div>
+
+                  <div class="phone-section">
+                    <div class="phone-label">Your impact</div>
+                    <div class="phone-cards">
+                      <div class="phone-card"><b>Scale</b><span>Build shared capabilities for Machine Learning across Prima's markets.</span></div>
+                      <div class="phone-card"><b>Lifecycle</b><span>Support experimentation, training, deployment and monitoring.</span></div>
+                      <div class="phone-card"><b>Collaboration</b><span>Work across Product, Data Science, ML and Engineering.</span></div>
+                    </div>
+                  </div>
+
+                  <div class="phone-section">
+                    <div class="phone-label">What you'll work on</div>
+                    <div class="phone-cards">
+                      <div class="phone-card"><b>Platform capabilities</b><span>Platform tools, shared services and infrastructure.</span></div>
+                      <div class="phone-card"><b>Complex engineering problems</b><span>Reliable, maintainable software and systems.</span></div>
+                      <div class="phone-card"><b>Technical guidance</b><span>Share expertise within the ML Platform Domain.</span></div>
+                    </div>
+                  </div>
+
+                  <div class="phone-section">
+                    <div class="phone-label">Your engineering environment</div>
+                    <div class="phone-pills">{technologies.map(t => <span>{t}</span>)}</div>
+                    <p class="small" style="margin-top:9px">Additional technologies are presented as relevant possibilities, not assumed day-to-day requirements.</p>
+                    <div class="phone-pills" style="margin-top:7px">{optionalTechnologies.map(t => <span>{t}</span>)}</div>
+                  </div>
+
+                  <div class="phone-section">
+                    <div class="phone-label">Who you'll work with</div>
+                    <p><strong>Product Managers</strong><br /><strong>Data Scientists</strong><br /><strong>ML Engineers</strong><br /><strong>Software Engineers</strong></p>
+                  </div>
+
+                  <div class="phone-section">
+                    <div class="phone-label">How Prima supports your growth</div>
+                    <div class="phone-cards">
+                      <div class="phone-card"><b>Learning resources</b></div>
+                      <div class="phone-card"><b>Mentorship</b></div>
+                      <div class="phone-card"><b>A growth plan tailored to you</b></div>
+                    </div>
+                  </div>
+
+                  <div class="phone-section">
+                    <div class="phone-label">What to expect</div>
+                    <p class="small">Bring the relevant hiring information closer to the vacancy through a clear link, without duplicating the full company wide process.</p>
+                    <a class="phone-cta" href="https://www.helloprima.com/careers/jobs" target="_blank" rel="noreferrer">See the hiring process ↗</a>
+                  </div>
+
+                  <div class="phone-section">
+                    <div class="phone-label">Why Prima</div>
+                    <p><strong>Work Your Way</strong><br /><span class="small">Flexible working and up to 30 days working from anywhere.</span></p>
+                    <p><strong>Grow with us</strong><br /><span class="small">Learning, mentorship and a tailored growth plan.</span></p>
+                    <p><strong>Thrive and perform</strong><br /><span class="small">Benefits and wellbeing support.</span></p>
+                  </div>
+
+                  <div id="after-final" class="phone-section" style="background:var(--prima-soft);text-align:center">
+                    <div class="phone-label">Ready to build what's next?</div>
+                    <a class="phone-cta" href="https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4" target="_blank" rel="noreferrer">Apply now ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell grid two">
+          <article class="surface card card-prima">
+            <div class="eyebrow">What's wrong</div>
+            <h3 style="margin-top:10px">The role is highly specific, but the most relevant proof comes too late.</h3>
+            <p class="small" style="margin-top:10px">I would treat this as an information hierarchy problem, not an information volume problem.</p>
+          </article>
+          <article class="surface card">
+            <div class="eyebrow">Design principle</div>
+            <h3 style="margin-top:10px">Put the most decision relevant proof first.</h3>
+            <p class="small" style="margin-top:10px">The first screen should quickly answer: why does this role exist, what would I work on, why does it matter and what does the experience look like?</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div><div class="eyebrow">02 / Task 2</div><p style="margin-top:8px">Make something better</p></div>
+        <a class="small" href="/prima-employer-brand-takehome/sources/">Sources & method →</a>
+      </div>
+    </footer>
+  </body>
+</html>

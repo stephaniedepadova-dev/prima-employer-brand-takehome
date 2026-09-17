@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+import { nav } from '../layouts';
+import { sources } from '../layouts';
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5f1" />
+    <title>Sources & method</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="wordmark" href="/prima-employer-brand-takehome/">PRIMA</a>
+        <nav class="nav" aria-label="Primary navigation">
+          {nav.map((item) => <a href={`/prima-employer-brand-takehome${item.href}`}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="task-hero">
+        <div class="shell task-head">
+          <div class="task-number"><span class="eyebrow">Sources & method</span></div>
+          <h1>Evidence first.</h1>
+          <p class="lead">I used public sources to test the diagnosis, compare relevant employer-brand examples and build the redesign.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell source-list">
+          {sources.map((group) => (
+            <section class="surface card source-group">
+              <div class="eyebrow">{group.group}</div>
+              {group.items.map((item) => (
+                <a class="source-link" href={item.url} target="_blank" rel="noreferrer">
+                  <strong>{item.label}</strong>
+                  <span>↗</span>
+                </a>
+              ))}
+            </section>
+          ))}
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell grid two">
+          <article class="surface card">
+            <div class="eyebrow">How I used AI</div>
+            <h3 style="margin-top:10px">AI supported the process. The judgement stayed mine.</h3>
+            <p class="small" style="margin-top:10px">I used AI to organise research, stress test hypotheses, compare public employer brand examples and iterate on copy and UX ideas. I reviewed the final outputs against the underlying evidence and removed unsupported claims.</p>
+          </article>
+          <article class="surface card card-dark">
+            <div class="eyebrow" style="color:#aaa">Method</div>
+            <p style="margin-top:12px;font-size:1.2rem;font-weight:850;line-height:1.15">I prioritised evidence over completeness, and observations over assumptions.</p>
+            <p style="margin-top:10px;color:#cfcfcf">Where evidence was mixed, especially around candidate experience, the wording reflects that uncertainty.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell"><div class="eyebrow">Take-home</div><p style="margin-top:8px">Employer Branding Manager – Take-home Assignment</p></div>
+    </footer>
+  </body>
+</html>

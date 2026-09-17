@@ -1,0 +1,99 @@
+---
+import '../styles/global.css';
+import { nav, siteTitle } from '../layouts';
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5f1" />
+    <meta name="description" content="Employer Branding Manager take-home assignment for Prima Assicurazioni." />
+    <title>{siteTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="wordmark" href="/prima-employer-brand-takehome/">PRIMA</a>
+        <nav class="nav" aria-label="Primary navigation">
+          {nav.map((item) => <a href={`/prima-employer-brand-takehome${item.href}`} aria-current={item.href === '/' ? 'page' : undefined}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <span class="kicker">Employer Branding Manager</span>
+            <h1>Take-home Assignment</h1>
+            <p class="lead">A candidate-first diagnosis of Prima's talent experience, followed by one focused redesign.</p>
+            <div class="pill-row">
+              <span class="pill">English</span>
+              <span class="pill">Mobile first</span>
+              <span class="pill">2 tasks</span>
+            </div>
+          </div>
+          <aside class="surface card card-dark sticky-note">
+            <div class="eyebrow" style="color:#aaa">My starting point</div>
+            <p style="margin-top:12px;font-size:1.45rem;line-height:1.1;font-weight:900;letter-spacing:-.035em;">Prima already has the proof. The opportunity is to make it work harder when candidates are deciding.</p>
+            <p class="small" style="color:#bdbdbd;margin-top:16px;">I focused on three friction points rather than trying to cover the entire Employer Brand.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">The structure</div>
+              <h2>Two exercises. One point of view.</h2>
+            </div>
+            <p>The submission follows the brief closely: diagnose what is not working, prioritise, then show what “better” could look like.</p>
+          </div>
+          <div class="grid two">
+            <a class="surface card card-prima" style="text-decoration:none" href="/prima-employer-brand-takehome/task-1/">
+              <div class="number">01 / Diagnose</div>
+              <h3 style="margin-top:12px">Where the talent experience could work harder.</h3>
+              <p class="small" style="margin-top:12px">Three problems, why they matter, what I would change first, and one benchmark.</p>
+              <p style="margin:18px 0 0;font-weight:900">Open Task 1 →</p>
+            </a>
+            <a class="surface card card-violet" style="text-decoration:none" href="/prima-employer-brand-takehome/task-2/">
+              <div class="number">02 / Make something better</div>
+              <h3 style="margin-top:12px">From job description to candidate decision tool.</h3>
+              <p class="small" style="margin-top:12px">A mobile-first redesign of a real Prima Software Engineering vacancy.</p>
+              <p style="margin:18px 0 0;font-weight:900">Open Task 2 →</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="surface card">
+            <div class="eyebrow">The thread</div>
+            <div class="grid three" style="margin-top:18px">
+              <div><div class="number">01 / Role</div><p style="margin-top:8px;font-size:1.15rem;font-weight:850;">Would I want to do this specific job at Prima?</p></div>
+              <div><div class="number">02 / Career</div><p style="margin-top:8px;font-size:1.15rem;font-weight:850;">Could I see where this role could take me?</p></div>
+              <div><div class="number">03 / Experience</div><p style="margin-top:8px;font-size:1.15rem;font-weight:850;">Does the hiring experience match the promise?</p></div>
+            </div>
+            <div class="quote" style="margin-top:22px">
+              <p>“Make the right proof tangible at the right candidate decision moment.”</p>
+              <span class="small">The principle I take from the benchmark.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <div class="eyebrow">Prima Assicurazioni</div>
+          <p style="margin-top:8px">Employer Branding Manager – Take-home Assignment</p>
+        </div>
+        <a class="small" href="/prima-employer-brand-takehome/sources/">Sources & method →</a>
+      </div>
+    </footer>
+  </body>
+</html>
