@@ -162,21 +162,22 @@ const problems = [
     </footer>
 
     <style>
-      .task-label-large { font-size: 1.15rem; line-height: 1.15; font-weight: 900; letter-spacing: .06em; }
+      .task-label-large { font-size: .9rem; line-height: 1.15; font-weight: 900; letter-spacing: .06em; }
       .task-title { max-width: 18ch; font-size: clamp(2.8rem, 8vw, 6.2rem); }
       .benchmark-learnings { display: grid; gap: 12px; margin-top: 12px; }
       .benchmark-learnings > div { display: grid; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.14); }
       .benchmark-learnings strong { font-size: .86rem; }
       .benchmark-learnings span { color: #cfcfcf; font-size: .8rem; line-height: 1.4; }
       .thread-number { width: auto; height: auto; display: inline-block; border-radius: 0; background: transparent; color: var(--text); font-size: 2.35rem; line-height: .9; font-weight: 950; letter-spacing: -.065em; }
-      .number { font-size: .72rem; font-weight: 900; letter-spacing: .12em; color: var(--muted); }
+      .number { font-size: 1rem; line-height: 1.2; font-weight: 900; letter-spacing: .02em; color: var(--text); }
       @media (min-width: 1100px) {
         .task-hero .task-head { grid-template-columns: 1fr; gap: 18px; align-items: start; }
         .task-hero .task-head > * { justify-self: start; }
       }
       @media (max-width: 759px) {
-        .task-label-large { font-size: 1rem; }
+        .task-label-large { font-size: .86rem; }
         .thread-number { font-size: 2rem; }
+        .number { font-size: .94rem; }
       }
     </style>
   </body>
