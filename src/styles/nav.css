@@ -226,7 +226,8 @@
   outline: none !important;
 }
 
-/* Subtle lighter-purple hover for the menu and other text links, on desktop and mobile. */
+/* Subtle lighter-purple hover for the menu, PRIMA wordmark and other text links, on desktop and mobile. */
+.wordmark:hover,
 .nav a:hover,
 a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):hover {
   color: #9a5acd !important;
