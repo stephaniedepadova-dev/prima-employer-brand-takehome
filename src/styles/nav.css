@@ -1,0 +1,16 @@
+.nav a {
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+@media (max-width: 759px) {
+  .nav a {
+    padding: 9px 12px;
+    font-size: .92rem;
+  }
+}
