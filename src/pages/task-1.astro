@@ -88,7 +88,7 @@ const problems = [
           <div class="thread-intro">
             <div>
               <div class="eyebrow">The common thread</div>
-              <h2 style="margin-top:10px">Choice → Possibility → Confidence</h2>
+              <h2 style="margin-top:10px">Choice → Possibility → <span class="thread-confidence">Confidence</span></h2>
             </div>
             <p class="small">Three moments in the candidate decision journey. The opportunity is to make each one easier to answer with evidence.</p>
           </div>
@@ -126,7 +126,7 @@ const problems = [
               <div class="benchmark-content-block">
                 <div class="eyebrow" style="color:#aaa">What I would learn</div>
                 <div class="benchmark-learnings">
-                  <div><strong>01 / Role experience</strong><span>Make team context, contribution and expected impact visible close to the role.</span></div>
+                  <div><strong>01 / Role experience</strong><span>Make team context, contribution and expected impact visible close<br />to the role.</span></div>
                   <div><strong>02 / Career trajectory</strong><span>Use real employee stories and progression examples to make possible paths tangible.</span></div>
                   <div><strong>03 / Candidate experience</strong><span>Set clear expectations around the hiring journey and what candidates should expect.</span></div>
                 </div>
@@ -166,7 +166,8 @@ const problems = [
       .task-title { max-width: 18ch; font-size: clamp(2.8rem, 8vw, 6.2rem); }
 
       .thread-intro { grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); align-items: end; gap: 34px; margin-bottom: 24px; }
-      .thread-intro h2 { max-width: none; font-size: clamp(2.7rem, 5vw, 4.2rem); line-height: .98; white-space: nowrap; }
+      .thread-intro h2 { max-width: 18ch; font-size: clamp(2.7rem, 5vw, 4.2rem); line-height: .98; white-space: normal; }
+      .thread-confidence { white-space: nowrap; }
       .thread-intro .small { margin-bottom: 3px; max-width: 48ch; }
       .thread-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
       .thread-card { min-height: 176px; gap: 18px; box-shadow: 0 10px 28px rgba(18,18,18,.06); }
@@ -196,12 +197,12 @@ const problems = [
       }
       @media (max-width: 1099px) {
         .thread-intro { grid-template-columns: 1fr; gap: 14px; }
-        .thread-intro h2 { white-space: normal; }
+        .thread-intro h2 { max-width: 16ch; }
       }
       @media (max-width: 759px) {
         .task-label-large { font-size: .86rem; }
         .thread-grid { grid-template-columns: 1fr; gap: 12px; }
-        .thread-intro h2 { font-size: clamp(2.4rem, 11vw, 3.5rem); }
+        .thread-intro h2 { font-size: clamp(2.4rem, 11vw, 3.5rem); max-width: 15ch; }
         .thread-card { min-height: 164px; }
         .thread-number { font-size: 2rem; }
         .number { font-size: .94rem; }
