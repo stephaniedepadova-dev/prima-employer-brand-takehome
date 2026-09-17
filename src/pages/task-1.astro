@@ -115,15 +115,15 @@ const problems = [
 
       <section class="section">
         <div class="shell">
-          <article class="surface card card-dark">
+          <article class="surface card card-dark benchmark-card">
             <div class="eyebrow" style="color:#aaa">Benchmark / Mollie</div>
             <div class="benchmark-grid" style="margin-top:18px">
-              <div>
+              <div class="benchmark-intro-block">
                 <div class="benchmark-mark">Mollie</div>
-                <p style="margin-top:8px;color:#cfcfcf">A relevant example of bringing employer brand proof closer to candidate decision moments.</p>
+                <p class="benchmark-description">A relevant example of bringing employer brand proof closer to candidate decision moments.</p>
                 <a class="text-link text-link-light" href="https://jobs.mollie.com/" target="_blank" rel="noreferrer">Explore Mollie Careers ↗</a>
               </div>
-              <div>
+              <div class="benchmark-content-block">
                 <div class="eyebrow" style="color:#aaa">What I would learn</div>
                 <div class="benchmark-learnings">
                   <div><strong>01 / Role experience</strong><span>Make team context, contribution and expected impact visible close to the role.</span></div>
@@ -131,7 +131,7 @@ const problems = [
                   <div><strong>03 / Candidate experience</strong><span>Set clear expectations around the hiring journey and what candidates should expect.</span></div>
                 </div>
                 <div class="principle" style="margin-top:20px">Make the right proof tangible at the right candidate decision moment.</div>
-                <p style="margin-top:16px;color:#cfcfcf;max-width:58ch">The lesson is the principle, not Mollie's voice, visual identity, page structure or hiring process.</p>
+                <p class="benchmark-footnote">The lesson is the principle, not Mollie's voice, visual identity, page structure or hiring process.</p>
               </div>
             </div>
           </article>
@@ -164,20 +164,49 @@ const problems = [
     <style>
       .task-label-large { font-size: .9rem; line-height: 1.15; font-weight: 900; letter-spacing: .06em; }
       .task-title { max-width: 18ch; font-size: clamp(2.8rem, 8vw, 6.2rem); }
-      .benchmark-learnings { display: grid; gap: 12px; margin-top: 12px; }
-      .benchmark-learnings > div { display: grid; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.14); }
+
+      .thread-intro { grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); align-items: end; gap: 32px; margin-bottom: 24px; }
+      .thread-intro h2 { max-width: none; font-size: clamp(2.6rem, 5.2vw, 4.5rem); line-height: .95; white-space: nowrap; }
+      .thread-intro .small { margin-bottom: 4px; }
+      .thread-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+      .thread-card { min-height: 176px; gap: 18px; box-shadow: 0 10px 28px rgba(18,18,18,.06); }
+      .thread-card .eyebrow { margin-top: 2px; }
+      .thread-question { margin-top: 6px; font-size: 1.04rem; line-height: 1.2; }
+      .thread-takeaway { margin-top: 18px; padding: 20px 0 0; }
+      .thread-takeaway p { max-width: 78ch; }
+
+      .benchmark-card { overflow: hidden; }
+      .benchmark-grid { grid-template-columns: minmax(220px, .65fr) minmax(0, 1.35fr); gap: 42px; align-items: start; }
+      .benchmark-mark { font-size: 2.8rem; }
+      .benchmark-description { margin-top: 10px; color: #cfcfcf; max-width: 32ch; }
+      .benchmark-content-block { min-width: 0; }
+      .benchmark-learnings { gap: 0; margin-top: 14px; }
+      .benchmark-learnings > div { gap: 5px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+      .benchmark-learnings > div:first-child { padding-top: 0; }
       .benchmark-learnings strong { font-size: .86rem; }
-      .benchmark-learnings span { color: #cfcfcf; font-size: .8rem; line-height: 1.4; }
+      .benchmark-learnings span { color: #cfcfcf; font-size: .82rem; line-height: 1.42; }
+      .benchmark-card .principle { max-width: 22ch; font-size: clamp(2rem, 3.6vw, 3.1rem); line-height: .98; }
+      .benchmark-footnote { margin-top: 14px; color:#cfcfcf; max-width:58ch; }
+
       .thread-number { width: auto; height: auto; display: inline-block; border-radius: 0; background: transparent; color: var(--text); font-size: 2.35rem; line-height: .9; font-weight: 950; letter-spacing: -.065em; }
       .number { font-size: 1rem; line-height: 1.2; font-weight: 900; letter-spacing: .02em; color: var(--text); }
       @media (min-width: 1100px) {
         .task-hero .task-head { grid-template-columns: 1fr; gap: 18px; align-items: start; }
         .task-hero .task-head > * { justify-self: start; }
       }
+      @media (max-width: 1099px) {
+        .thread-intro { grid-template-columns: 1fr; gap: 14px; }
+        .thread-intro h2 { white-space: normal; }
+      }
       @media (max-width: 759px) {
         .task-label-large { font-size: .86rem; }
+        .thread-grid { grid-template-columns: 1fr; gap: 12px; }
+        .thread-intro h2 { font-size: clamp(2.4rem, 11vw, 3.5rem); }
+        .thread-card { min-height: 164px; }
         .thread-number { font-size: 2rem; }
         .number { font-size: .94rem; }
+        .benchmark-grid { grid-template-columns: 1fr; gap: 26px; }
+        .benchmark-card .principle { max-width: 18ch; font-size: 2rem; }
       }
     </style>
   </body>
