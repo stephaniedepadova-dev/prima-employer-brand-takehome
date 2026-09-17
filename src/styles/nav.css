@@ -215,3 +215,9 @@
     padding-right: 6px;
   }
 }
+
+/* Keep the top navigation visually neutral on the current page too; focus remains available for keyboard navigation. */
+.nav a[aria-current='page'] {
+  background: transparent !important;
+  color: var(--muted) !important;
+}
