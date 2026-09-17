@@ -4,6 +4,7 @@ export const nav = [
   { label: 'Overview', href: '/' },
   { label: 'Task 1', href: '/task-1/' },
   { label: 'Task 2', href: '/task-2/' },
+  { label: 'Open redesigned vacancy ↗', href: '/redesigned-vacancy/' },
 ];
 
 export const sources = [
