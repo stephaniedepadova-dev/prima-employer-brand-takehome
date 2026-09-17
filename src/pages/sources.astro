@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
-import { nav } from '../layouts';
-import { sources } from '../layouts';
+import { nav, sources } from '../layouts';
 
 const channels = [
   { label: 'Careers', tone: 'prima' },
@@ -17,6 +16,49 @@ const channels = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f7f5f1" />
     <title>Sources & method</title>
+    <style>
+      .source-hero { padding-bottom: 42px; }
+      .source-hero-grid { display:grid; gap:22px; align-items:end; }
+      .source-scope { padding:22px; background:#fff; }
+      .source-channel-list { display:flex; flex-wrap:wrap; gap:7px; margin-top:15px; }
+      .source-channel { display:inline-flex; align-items:center; min-height:31px; padding:7px 10px; border-radius:999px; border:1px solid var(--line); font-size:.68rem; font-weight:900; }
+      .source-channel-prima { background:var(--prima-soft); border-color:#d9d3ff; }
+      .source-channel-violet { background:var(--violet-soft); border-color:#d6cffc; }
+      .source-channel-neutral { background:#fbfaf7; }
+      .source-channel-mint { background:var(--mint); border-color:#c8e4d0; }
+      .source-section { padding-top:36px; }
+      .source-section-heading { display:grid; gap:13px; margin-bottom:21px; }
+      .source-section-heading .small { max-width:58ch; }
+      .source-list-rich { display:grid; gap:14px; }
+      .source-group { display:grid; gap:7px; padding:20px 22px; }
+      .source-group-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:4px; }
+      .source-count { color:var(--muted); font-size:.66rem; font-weight:850; }
+      .source-link-rich { display:grid; grid-template-columns:32px 1fr auto; align-items:center; gap:13px; padding:13px 0; border-bottom:1px solid var(--line); text-decoration:none; }
+      .source-link-rich:last-child { border-bottom:0; }
+      .source-index { width:28px; height:28px; display:grid; place-items:center; border-radius:50%; background:var(--surface-soft); color:var(--muted); font-size:.62rem; font-weight:900; }
+      .source-copy { display:grid; gap:3px; min-width:0; }
+      .source-copy strong { font-size:.84rem; }
+      .source-copy small { color:var(--muted); font-size:.67rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+      .source-arrow { color:var(--muted); font-size:.72rem; font-weight:900; white-space:nowrap; }
+      .source-link-rich:hover .source-arrow { color:var(--text); }
+      .source-channel-grid { display:grid; gap:14px; }
+      .source-channel-card { min-height:190px; padding:22px; display:flex; flex-direction:column; align-items:flex-start; gap:11px; text-decoration:none; transition:transform .18s ease, box-shadow .18s ease; }
+      .source-channel-card:hover { transform:translateY(-2px); box-shadow:0 18px 46px rgba(18,18,18,.08); }
+      .source-channel-card strong { font-size:1.35rem; line-height:1.03; letter-spacing:-.04em; }
+      .source-channel-card .small { margin:0; }
+      .source-channel-card .source-arrow { margin-top:auto; }
+      .source-channel-card-violet { background:var(--violet-soft); border-color:#d6cffc; }
+      .source-channel-card-neutral { background:#fff; }
+      @media (min-width:760px) {
+        .source-hero-grid { grid-template-columns:1.1fr .9fr; }
+        .source-section-heading { grid-template-columns:1fr .72fr; align-items:end; }
+        .source-channel-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+      }
+      @media (max-width:520px) {
+        .source-link-rich { grid-template-columns:28px 1fr auto; gap:9px; }
+        .source-copy strong { font-size:.77rem; }
+      }
+    </style>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -50,20 +92,14 @@ const channels = [
       <section class="section source-section">
         <div class="shell">
           <div class="source-section-heading">
-            <div>
-              <div class="eyebrow">01 / Prima</div>
-              <h2>Primary evidence.</h2>
-            </div>
+            <div><div class="eyebrow">01 / Prima</div><h2>Primary evidence.</h2></div>
             <p class="small">The public sources used to understand the current Employer Brand, role experience and candidate journey.</p>
           </div>
 
           <div class="source-list source-list-rich">
             {sources.filter((group) => group.group === 'Prima').map((group) => (
               <section class="surface card source-group">
-                <div class="source-group-head">
-                  <div class="eyebrow">{group.group}</div>
-                  <span class="source-count">{group.items.length} sources</span>
-                </div>
+                <div class="source-group-head"><div class="eyebrow">{group.group}</div><span class="source-count">{group.items.length + 3} core sources + social</span></div>
                 {group.items.map((item, index) => (
                   <a class="source-link source-link-rich" href={item.url} target="_blank" rel="noreferrer">
                     <span class="source-index">{String(index + 1).padStart(2, '0')}</span>
@@ -77,21 +113,21 @@ const channels = [
             <div class="source-channel-grid">
               <a class="surface source-channel-card source-channel-card-violet" href="https://www.linkedin.com/company/prima-assicurazioni/" target="_blank" rel="noreferrer">
                 <span class="eyebrow">LinkedIn</span>
-                <strong>Company page & employee-facing content</strong>
-                <span class="small">Updates, Life content, role storytelling and employer-brand signals.</span>
-                <span class="source-arrow">Explore ↗</span>
+                <strong>Company page & talent-facing content</strong>
+                <span class="small">Company updates, Life content, role storytelling and employer-brand signals.</span>
+                <span class="source-arrow">Explore LinkedIn ↗</span>
               </a>
               <a class="surface source-channel-card source-channel-card-neutral" href="https://www.instagram.com/prima_assicurazioni/" target="_blank" rel="noreferrer">
                 <span class="eyebrow">Instagram</span>
                 <strong>Visual brand & community content</strong>
-                <span class="small">A complementary view of how Prima presents people, events and brand culture.</span>
-                <span class="source-arrow">Explore ↗</span>
+                <span class="small">A complementary view of how Prima presents people, events, partnerships and community.</span>
+                <span class="source-arrow">Explore Instagram ↗</span>
               </a>
               <a class="surface source-channel-card source-channel-card-neutral" href="https://www.youtube.com/watch?v=uNVjNzfpkrU" target="_blank" rel="noreferrer">
                 <span class="eyebrow">YouTube</span>
                 <strong>Video touchpoint reviewed</strong>
-                <span class="small">A public Prima-related video touchpoint considered as part of the wider talent-facing ecosystem.</span>
-                <span class="source-arrow">Watch ↗</span>
+                <span class="small">A public video touchpoint considered alongside Prima's wider talent-facing ecosystem.</span>
+                <span class="source-arrow">Watch video ↗</span>
               </a>
             </div>
           </div>
@@ -101,10 +137,7 @@ const channels = [
       <section class="section source-section">
         <div class="shell">
           <div class="source-section-heading">
-            <div>
-              <div class="eyebrow">02 / Benchmark</div>
-              <h2>What I compared.</h2>
-            </div>
+            <div><div class="eyebrow">02 / Benchmark</div><h2>What I compared.</h2></div>
             <p class="small">Mollie was used as a focused benchmark for how employer-brand proof can reach candidates closer to decision moments.</p>
           </div>
           <div class="source-list source-list-rich">
@@ -120,6 +153,11 @@ const channels = [
                 ))}
               </section>
             ))}
+            <a class="surface source-channel-card source-channel-card-violet" href="https://jobs.mollie.com/" target="_blank" rel="noreferrer" style="min-height:150px">
+              <span class="eyebrow">Mollie Careers</span>
+              <strong>Explore the benchmark directly ↗</strong>
+              <span class="small">Official Careers site used for the benchmark observations.</span>
+            </a>
           </div>
         </div>
       </section>
