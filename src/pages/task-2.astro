@@ -9,11 +9,11 @@ const optionalTechnologies = ['AWS', 'Kubernetes', 'Terraform', 'Databricks', 'A
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f6f4ef" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="description" content="Task 2: responsive UX/UI redesign of a Prima Software Engineering vacancy." />
     <title>Task 2 | Make something better</title>
   </head>
-  <body>
+  <body class="task2-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="shell header-inner">
@@ -74,7 +74,7 @@ const optionalTechnologies = ['AWS', 'Kubernetes', 'Terraform', 'Databricks', 'A
                 </div>
                 <div class="current-facts-panel">
                   <div class="job-facts"><span>Milan</span><span>Permanent</span><span>Full remote available</span><span>€40k–€75k</span></div>
-                  <div class="current-apply-note"><span>Primary action</span><b>Apply now</b></div>
+                  <a class="current-apply-note" href="https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4" target="_blank" rel="noreferrer"><b>Apply now ↗</b></a>
                 </div>
               </div>
             </div>
@@ -347,5 +347,72 @@ const optionalTechnologies = ['AWS', 'Kubernetes', 'Terraform', 'Databricks', 'A
         <a class="small" href="/prima-employer-brand-takehome/sources/">Sources & method →</a>
       </div>
     </footer>
+
+    <style is="global">
+      /* Prima Assicurazioni palette observed in the provided brand screenshots */
+      .task2-page {
+        --prima-purple: #8334c2;
+        --prima-purple-dark: #5b2487;
+        --prima-navy: #21283a;
+        --prima-teal: #00839e;
+        --prima-lilac: #efe9ff;
+        --task2-bg: #f8f8fa;
+      }
+
+      @media (min-width: 1100px) {
+        .task2-page .task-hero .task-head { grid-template-columns: 1fr; gap: 18px; align-items: start; }
+        .task2-page .task-hero .task-head > * { justify-self: start; }
+        .task2-page .task-hero h1 { max-width: 11ch; }
+      }
+
+      .task2-page .job-current-hero,
+      .task2-page .after-hero,
+      .task2-page .principle-band { background: var(--prima-navy); }
+
+      .task2-page .current-highlight { background: var(--prima-lilac); border-left-color: var(--prima-purple); }
+      .task2-page .friction-number,
+      .task2-page .task-number::before { background: var(--prima-purple); }
+      .task2-page .asset-meta-card span { border-color: #ddd5ee; background: #faf7ff; }
+      .task2-page .after-apply,
+      .task2-page .current-apply-note,
+      .task2-page .rail-card { border-color: rgba(131,52,194,.24); }
+
+      .task2-page .current-apply-note {
+        width: auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-self: start;
+        padding: 11px 16px;
+        border-radius: 11px;
+        background: var(--prima-purple);
+        color: white;
+        text-decoration: none;
+        box-shadow: none;
+      }
+      .task2-page .current-apply-note b { margin: 0; font-size: .76rem; }
+      .task2-page .current-apply-note:hover,
+      .task2-page .after-apply a:hover,
+      .task2-page .rail-apply:hover,
+      .task2-page .final-apply a:hover { background: var(--prima-purple-dark); }
+
+      .task2-page .after-apply {
+        background: rgba(131,52,194,.08);
+      }
+      .task2-page .after-apply a,
+      .task2-page .rail-apply,
+      .task2-page .final-apply a {
+        background: var(--prima-purple);
+        color: white;
+      }
+      .task2-page .tech-row span { background: var(--prima-navy); }
+      .task2-page .tech-row.optional span { background: white; }
+      .task2-page .mobile-sticky-cta {
+        background: var(--prima-purple);
+        color: white;
+      }
+      .task2-page .mobile-difference > span { background: var(--prima-lilac); }
+      .task2-page .phone-bar { background: var(--prima-navy); }
+    </style>
   </body>
 </html>
