@@ -48,7 +48,7 @@ const requirements = [
             <p class="small">This page is the proposed redesign of the same Senior Python Software Engineer vacancy selected in Task 2. It turns the content and hierarchy recommendations into a complete candidate experience.</p>
           </div>
           <div class="quote" style="margin-top:16px">
-            <p>The goal is not to redesign Prima’s brand.<br />It is to make the role, impact, requirements, team,<br />technology, growth and hiring journey easier to <span class="scan-link-wrap">scan,<a class="mobile-redesign-link" href="/prima-employer-brand-takehome/redesigned-vacancy/">Open redesigned vacancy ↗</a></span><br />understand and act on.</p>
+            <p>The goal is not to redesign Prima’s brand.<br />It is to make the role, impact, requirements, team,<br />technology, growth and hiring journey easier to <span class="scan-line">scan,<br class="quote-break-desktop" /> understand and act on.</span></p>
           </div>
         </div>
       </section>
@@ -168,8 +168,8 @@ const requirements = [
     </main>
 
     <style>
-      .mobile-redesign-link { display: none; }
-      .scan-link-wrap { display: inline; }
+      .scan-line { display: inline; }
+      .quote-break-desktop { display: inline; }
 
       #need.requirements-block {
         grid-template-columns: minmax(245px, .82fr) minmax(0, 1.18fr);
@@ -254,17 +254,7 @@ const requirements = [
       }
 
       @media (max-width: 759px) {
-        .mobile-redesign-link {
-          display: inline-block;
-          margin-left: 7px;
-          color: var(--prima-navy);
-          font-size: .68rem;
-          line-height: 1;
-          font-weight: 900;
-          text-decoration: none;
-          white-space: nowrap;
-          vertical-align: baseline;
-        }
+        .quote-break-desktop { display: none; }
 
         #need.requirements-block { grid-template-columns: 1fr; gap: 18px; }
         #need.requirements-block h4 { max-width: 12ch; font-size: clamp(2.35rem, 11vw, 3.4rem); }
