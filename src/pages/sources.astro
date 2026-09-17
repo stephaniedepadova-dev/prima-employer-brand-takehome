@@ -87,7 +87,7 @@ const sourceGroups = [
         <div class="shell source-list">
           {sourceGroups.map((group) => (
             <section class="surface card source-group">
-              <div class="eyebrow">{group.group}</div>
+              <div class="eyebrow source-group-title">{group.group}</div>
               {group.items.map((item) => (
                 <a class="source-link source-link-detailed" href={item.url} target="_blank" rel="noreferrer">
                   <span>
@@ -124,16 +124,19 @@ const sourceGroups = [
     </footer>
 
     <style>
-      .sources-head { width: 100%; max-width: none; }
+      .sources-head { gap: 20px; }
       .sources-title { margin: 0; justify-self: start; }
-      @media (min-width: 1100px) {
-        .sources-head { grid-template-columns: 1fr; gap: 18px; align-items: start; }
-        .sources-head > * { justify-self: start; }
-        .sources-title { max-width: 12ch; }
+      .source-group-title { font-size: .78rem; letter-spacing: .12em; }
+      .source-link-detailed { align-items: flex-start; padding: 16px 0; }
+      .source-link-detailed strong { display: block; font-size: 1rem; line-height: 1.25; }
+      .source-link-detailed small { display: block; margin-top: 5px; color: var(--muted); font-size: .84rem; line-height: 1.45; }
+      .source-link-detailed > span:last-child { font-size: .9rem; padding-top: 2px; }
+      @media (max-width: 759px) {
+        .source-group-title { font-size: .74rem; }
+        .source-link-detailed { padding: 14px 0; }
+        .source-link-detailed strong { font-size: .94rem; }
+        .source-link-detailed small { font-size: .8rem; }
       }
-      .source-link-detailed { align-items: flex-start; }
-      .source-link-detailed strong { display: block; font-size: .86rem; }
-      .source-link-detailed small { display: block; margin-top: 4px; color: var(--muted); font-size: .72rem; line-height: 1.4; }
     </style>
   </body>
 </html>
