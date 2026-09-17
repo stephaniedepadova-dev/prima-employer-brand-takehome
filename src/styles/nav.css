@@ -216,7 +216,7 @@
   }
 }
 
-/* Keep the top navigation neutral when selected or clicked. */
+/* Keep the top navigation purple when selected or clicked. */
 .nav a[aria-current='page'],
 .nav a:active,
 .nav a:focus:not(:focus-visible) {
@@ -224,4 +224,10 @@
   color: var(--prima) !important;
   box-shadow: none !important;
   outline: none !important;
+}
+
+/* All other text links use Prima purple while they are being clicked/focused. */
+a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):active,
+a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):focus:not(:focus-visible) {
+  color: var(--prima) !important;
 }
