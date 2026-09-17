@@ -431,6 +431,15 @@ const requirements = [
       .current-recon-content-block > span { font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; font-weight:900; color:var(--muted); }
       .current-recon-content-block h4 { margin-top:7px; font-size:1.25rem; color:var(--prima-navy); }
       .current-recon-content-block p { margin-top:7px; color:var(--muted); font-size:.83rem; max-width:68ch; }
+
+      /* Requirements: make the four answers look like a deliberate candidate-facing component. */
+      .need-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-content:start; }
+      .need-list > div { display:grid; grid-template-columns:34px minmax(0,1fr); gap:12px; align-items:start; min-height:88px; padding:15px 16px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(18,18,18,.05); }
+      .need-list > div > span { color:var(--prima); font-size:.72rem; line-height:1; font-weight:950; letter-spacing:.05em; padding-top:3px; }
+      .need-list > div > p { margin:0; color:var(--text); font-size:.93rem; line-height:1.42; font-weight:700; letter-spacing:-.012em; }
+      @media (max-width:900px) {
+        .need-list { grid-template-columns:1fr; }
+      }
       @media (max-width:759px) {
         .task2-number-label { font-size:1rem; }
         .current-recon-hero { grid-template-columns:1fr; gap:22px; padding:25px 20px; }
@@ -440,6 +449,7 @@ const requirements = [
         .current-recon-body { grid-template-columns:1fr; }
         .current-recon-context { border-right:0; border-bottom:1px solid var(--line); }
         .current-recon-content { padding:24px 20px; }
+        .need-list > div { min-height:auto; padding:14px; }
       }
     </style>
   </body>
