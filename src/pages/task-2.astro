@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { nav } from '../layouts';
 
 const technologies = ['Python', 'TDD', 'BDD', 'CI/CD', 'IaC', 'Kafka', 'RabbitMQ'];
 const optionalTechnologies = ['AWS', 'Kubernetes', 'Terraform', 'Databricks', 'Airflow', 'Kubeflow'];
@@ -61,7 +60,7 @@ const requirements = [
           <div class="stage-heading">
             <div>
               <div class="eyebrow">01 / Before</div>
-              <h2>What exists today.</h2>
+              <h2>Reconstruction of the current vacancy.</h2>
             </div>
             <p class="small">A structured reconstruction of the published vacancy hierarchy. It is intentionally shown as a map of the current experience, not as a pixel-perfect screenshot.</p>
           </div>
@@ -286,36 +285,46 @@ const requirements = [
 
                       <section id="tech" class="redesign-block">
                         <div class="section-kicker">05 / Your engineering environment</div>
-                        <div class="tech-row">{technologies.map(t => <span>{t}</span>)}</div>
-                        <p class="small">Additional technologies are shown as relevant possibilities, not assumed day-to-day requirements.</p>
-                        <div class="tech-row optional">{optionalTechnologies.map(t => <span>{t}</span>)}</div>
+                        <h4>Relevant technologies, surfaced without turning the page into a keyword list.</h4>
+                        <div class="tech-row">
+                          {technologies.map((technology) => <span>{technology}</span>)}
+                        </div>
+                        <p class="small">Nice to have: {optionalTechnologies.join(', ')}.</p>
                       </section>
 
                       <section id="growth" class="redesign-block split-block">
-                        <div><div class="section-kicker">06 / Your growth</div><h4>See how Prima supports development once you join.</h4></div>
-                        <div class="growth-list"><span>Learning resources</span><span>Mentorship</span><span>A growth plan tailored to you</span></div>
+                        <div><div class="section-kicker">06 / Your growth</div><h4>See how the role can support your development.</h4></div>
+                        <div class="growth-list"><span>Learning resources</span><span>Mentorship</span><span>Tailored growth plan</span></div>
                       </section>
 
-                      <section id="hiring" class="redesign-block split-block">
-                        <div><div class="section-kicker">07 / What to expect</div><h4>Make the next step visible before you apply.</h4></div>
-                        <div><p>Bring the relevant hiring information closer to the vacancy without duplicating the full company-wide process.</p><a class="text-link" href="https://www.helloprima.com/careers/jobs" target="_blank" rel="noreferrer">See the hiring process ↗</a></div>
+                      <section id="hiring" class="redesign-block">
+                        <div class="section-kicker">07 / What to expect</div>
+                        <h4>Make the next step clear.</h4>
+                        <p>After you apply, use Prima’s company-wide hiring guidance to understand the relevant process and next steps for this role.</p>
+                        <a class="text-link" href="https://www.helloprima.com/careers/jobs" target="_blank" rel="noreferrer">Explore hiring guidance ↗</a>
                       </section>
 
                       <section id="why-prima" class="redesign-block why-prima-block">
                         <div class="section-kicker">08 / Why Prima</div>
+                        <h4>Connect the role back to the wider EVP.</h4>
                         <div class="evp-row"><b>Work Your Way</b><b>Grow with us</b><b>Thrive and perform</b></div>
-                        <div class="final-apply"><div><strong>Ready to build what’s next?</strong><span>See the role in full and apply when you’re ready.</span></div><a href="https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4" target="_blank" rel="noreferrer">Apply now ↗</a></div>
+                        <div class="final-apply">
+                          <div><strong>Ready to explore the role?</strong><span>Senior Python Software Engineer · Milan · €40k – €75k</span></div>
+                          <a href="https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4" target="_blank" rel="noreferrer">Apply now ↗</a>
+                        </div>
                       </section>
                     </div>
 
                     <aside class="desktop-rail">
-                      <div class="rail-card rail-sticky">
-                        <div class="section-kicker">Role at a glance</div>
-                        <div class="rail-fact"><b>Team</b><span>ML Platform Domain</span></div>
-                        <div class="rail-fact"><b>Location</b><span>Milan · Full remote available</span></div>
-                        <div class="rail-fact"><b>Level</b><span>Senior</span></div>
-                        <div class="rail-fact"><b>Salary</b><span>€40k – €75k</span></div>
-                        <a class="rail-apply" href="https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4" target="_blank" rel="noreferrer">Apply now ↗</a>
+                      <div class="rail-sticky">
+                        <div class="rail-card">
+                          <div class="eyebrow">Role at a glance</div>
+                          <div class="rail-fact"><b>Team</b><span>ML Platform Domain</span></div>
+                          <div class="rail-fact"><b>Location</b><span>Milan · Full remote available</span></div>
+                          <div class="rail-fact"><b>Level</b><span>Senior</span></div>
+                          <div class="rail-fact"><b>Salary</b><span>€40k – €75k</span></div>
+                          <a class="rail-apply" href="https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4" target="_blank" rel="noreferrer">Apply now ↗</a>
+                        </div>
                       </div>
                     </aside>
                   </div>
@@ -334,47 +343,53 @@ const requirements = [
                   <div class="phone-bar"></div>
                   <div class="phone-hero">
                     <div class="phone-kicker">Senior Python Software Engineer</div>
-                    <div class="phone-title">Build the platforms that enable Machine Learning at scale.</div>
-                    <div class="phone-sub">Prima · ML Platform Domain · Milan</div>
-                    <div class="phone-meta"><span>Permanent</span><span>Full remote</span><span>€40k – €75k</span></div>
+                    <div class="phone-title">Build the platforms behind Machine Learning at scale.</div>
+                    <p class="phone-sub">Milan · Permanent · Full remote available · €40k – €75k</p>
+                    <div class="phone-meta"><span>ML Platform</span><span>Senior</span><span>Python</span></div>
                   </div>
-                  <nav class="phone-mobile-nav" aria-label="Mobile role sections">
-                    <a href="#impact">Impact</a><a href="#work">Work</a><a href="#need">Need</a><a href="#team">Team</a><a href="#growth">Growth</a>
-                  </nav>
-                  <section class="phone-section">
-                    <div class="phone-label">01 / Your impact</div>
-                    <p><strong>Build the platform behind Machine Learning at scale.</strong> Support experimentation, training, deployment and monitoring while working with Product, Data Science and ML Engineering.</p>
-                  </section>
-                  <section class="phone-section">
-                    <div class="phone-label">02 / What you’ll work on</div>
-                    <div class="phone-cards"><div class="phone-card"><b>Platform capabilities</b><span>Tools, shared services and infrastructure for ML at scale.</span></div><div class="phone-card"><b>Complex engineering</b><span>Reliable, maintainable software with a focus on quality and scalability.</span></div><div class="phone-card"><b>Technical guidance</b><span>Share expertise within the ML Platform Domain.</span></div></div>
-                  </section>
-                  <section class="phone-section">
-                    <div class="phone-label">03 / What you’ll need</div>
-                    <div class="phone-cards">{requirements.slice(0,3).map(item => <div class="phone-card"><b>{item}</b></div>)}</div>
-                  </section>
-                  <section class="phone-section">
-                    <div class="phone-label">04 / Your team</div>
-                    <p>Product Managers · Data Scientists · ML Engineers · Software Engineers.</p>
-                  </section>
-                  <section class="phone-section">
-                    <div class="phone-label">05 / Engineering environment</div>
-                    <div class="phone-pills">{technologies.map(t => <span>{t}</span>)}</div>
-                  </section>
-                  <section class="phone-section">
-                    <div class="phone-label">06 / Your growth</div>
-                    <p>Learning resources, mentorship and a growth plan tailored to you.</p>
-                  </section>
+                  <div class="phone-section">
+                    <div class="phone-label">01 / Impact</div>
+                    <p>Build foundational platforms that support Machine Learning across Prima’s markets.</p>
+                    <div class="phone-cards"><div class="phone-card"><b>Scale</b><span>Shared ML capabilities</span></div><div class="phone-card"><b>Lifecycle</b><span>From experimentation to production</span></div><div class="phone-card"><b>Collaboration</b><span>Product, Data Science and ML Engineering</span></div></div>
+                  </div>
+                  <div class="phone-section">
+                    <div class="phone-label">02 / Work</div>
+                    <p>Platform capabilities, ML lifecycle support and complex engineering problems.</p>
+                  </div>
+                  <div class="phone-section">
+                    <div class="phone-label">03 / What you need</div>
+                    <p>Strong Python engineering, testing practices, CI/CD and scalable systems.</p>
+                  </div>
+                  <div class="phone-section">
+                    <div class="phone-label">04 / Team</div>
+                    <p>Product Managers, Data Scientists and ML Engineers.</p>
+                  </div>
+                  <div class="phone-section">
+                    <div class="phone-label">05 / Tech</div>
+                    <div class="phone-pills"><span>Python</span><span>TDD</span><span>BDD</span><span>CI/CD</span><span>IaC</span><span>Kafka</span><span>RabbitMQ</span></div>
+                  </div>
+                  <div class="phone-section">
+                    <div class="phone-label">06 / Growth</div>
+                    <p>Learning resources, mentorship and a tailored growth plan.</p>
+                  </div>
+                  <div class="phone-section">
+                    <div class="phone-label">07 / Hiring</div>
+                    <p>Clear next-step guidance, linked to Prima’s public hiring information.</p>
+                  </div>
+                  <div class="phone-section">
+                    <div class="phone-label">08 / Why Prima</div>
+                    <p>Work Your Way · Grow with us · Thrive and perform.</p>
+                  </div>
                   <div class="mobile-sticky-cta">Apply now ↗</div>
                 </div>
               </div>
             </article>
           </div>
 
-          <div class="principle-band" style="margin-top:20px">
-            <div class="eyebrow" style="color:var(--prima)">Content rule</div>
+          <div class="principle-band" style="margin-top:18px">
+            <span class="eyebrow">Design rule</span>
             <p>Exact role language + explicit entities + direct answers = stronger discoverability without sacrificing human readability.</p>
-            <span>The content remains candidate-first: SEO, GEO and AEO support the experience rather than dictating the tone.</span>
+            <span>SEO, GEO and AEO stay candidate-first: the goal is not more keywords, but clearer information architecture and better answers at decision moments.</span>
           </div>
         </div>
       </section>
@@ -386,15 +401,5 @@ const requirements = [
         <a class="small" href="/prima-employer-brand-takehome/sources/">Sources & method →</a>
       </div>
     </footer>
-
-    <style>
-      .need-list { display:grid; gap:8px; }
-      .need-list > div { display:grid; grid-template-columns:28px minmax(0,1fr); gap:10px; padding:10px 0; border-bottom:1px solid var(--line); }
-      .need-list span { color:var(--prima); font-size:.68rem; font-weight:950; padding-top:3px; }
-      .need-list p { margin:0; font-size:.78rem; color:var(--muted); line-height:1.42; }
-      @media (max-width:759px) {
-        .after-hero h3 { font-size:2.15rem; }
-      }
-    </style>
   </body>
 </html>
