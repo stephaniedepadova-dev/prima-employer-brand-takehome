@@ -20,6 +20,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Align Task 1 and Task 2 page titles
+        run: |
+          cat >> src/styles/global.css <<'EOF'
+          
+          /* Final title alignment: both task-page titles stay anchored left. */
+          .task-head { text-align: left; justify-items: start; }
+          .task-head h1, .task-head .task-title { margin-left: 0 !important; margin-right: auto !important; text-align: left !important; }
+          EOF
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Setup Node
