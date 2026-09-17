@@ -349,14 +349,13 @@ const optionalTechnologies = ['AWS', 'Kubernetes', 'Terraform', 'Databricks', 'A
     </footer>
 
     <style is="global">
-      /* Prima Assicurazioni palette observed in the provided brand screenshots */
+      /* Brand palette based on the supplied Prima Assicurazioni screenshots */
       .task2-page {
         --prima-purple: #8334c2;
         --prima-purple-dark: #5b2487;
         --prima-navy: #21283a;
         --prima-teal: #00839e;
         --prima-lilac: #efe9ff;
-        --task2-bg: #f8f8fa;
       }
 
       @media (min-width: 1100px) {
@@ -372,7 +371,7 @@ const optionalTechnologies = ['AWS', 'Kubernetes', 'Terraform', 'Databricks', 'A
       .task2-page .current-highlight { background: var(--prima-lilac); border-left-color: var(--prima-purple); }
       .task2-page .friction-number,
       .task2-page .task-number::before { background: var(--prima-purple); }
-      .task2-page .asset-meta-card span { border-color: #ddd5ee; background: #faf7ff; }
+      .task2-page .asset-meta-card span { border-color: #ded4ef; background: #fbf8ff; }
       .task2-page .after-apply,
       .task2-page .current-apply-note,
       .task2-page .rail-card { border-color: rgba(131,52,194,.24); }
@@ -384,8 +383,9 @@ const optionalTechnologies = ['AWS', 'Kubernetes', 'Terraform', 'Databricks', 'A
         justify-content: center;
         align-self: start;
         padding: 11px 16px;
-        border-radius: 11px;
-        background: var(--prima-purple);
+        border: 0;
+        border-radius: 10px;
+        background: var(--prima-teal);
         color: white;
         text-decoration: none;
         box-shadow: none;
@@ -394,7 +394,7 @@ const optionalTechnologies = ['AWS', 'Kubernetes', 'Terraform', 'Databricks', 'A
       .task2-page .current-apply-note:hover,
       .task2-page .after-apply a:hover,
       .task2-page .rail-apply:hover,
-      .task2-page .final-apply a:hover { background: var(--prima-purple-dark); }
+      .task2-page .final-apply a:hover { background: var(--prima-navy); }
 
       .task2-page .after-apply {
         background: rgba(131,52,194,.08);
@@ -402,13 +402,13 @@ const optionalTechnologies = ['AWS', 'Kubernetes', 'Terraform', 'Databricks', 'A
       .task2-page .after-apply a,
       .task2-page .rail-apply,
       .task2-page .final-apply a {
-        background: var(--prima-purple);
+        background: var(--prima-teal);
         color: white;
       }
       .task2-page .tech-row span { background: var(--prima-navy); }
       .task2-page .tech-row.optional span { background: white; }
       .task2-page .mobile-sticky-cta {
-        background: var(--prima-purple);
+        background: var(--prima-teal);
         color: white;
       }
       .task2-page .mobile-difference > span { background: var(--prima-lilac); }
