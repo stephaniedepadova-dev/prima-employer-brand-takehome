@@ -35,7 +35,8 @@ button, a { -webkit-tap-highlight-color:transparent; }
 .nav { display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
 .nav::-webkit-scrollbar { display:none; }
 .nav a { padding:8px 10px; border-radius:999px; text-decoration:none; color:var(--muted); font-size:.8rem; font-weight:800; white-space:nowrap; }
-.nav a:hover, .nav a[aria-current='page'] { background:#fff; color:var(--text); }
+.nav a { background:transparent; color:var(--muted); }
+.nav a[aria-current='page'] { background:#fff; color:var(--text); }
 .nav a:focus-visible, .source-link:focus-visible, .text-link:focus-visible, .after-apply a:focus-visible, .final-apply a:focus-visible, .rail-apply:focus-visible { outline:3px solid var(--prima); outline-offset:3px; }
 .eyebrow { font-size:.7rem; line-height:1.2; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
 .kicker { display:inline-flex; align-items:center; gap:8px; font-size:.76rem; font-weight:850; }
