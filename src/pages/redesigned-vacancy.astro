@@ -104,7 +104,12 @@ const requirements = [
 
                 <section id="tech" class="redesign-block split-block">
                   <div><div class="section-kicker">05 / Your engineering environment</div><h2>The stack that supports the work.</h2></div>
-                  <div class="tech-list"><div>{technologies.map((item) => <span>{item}</span>)}</div><p>Nice to have: {optionalTechnologies.join(' · ')}.</p></div>
+                  <div class="tech-list">
+                    <div class="tech-list-primary">
+                      {technologies.map((item) => <span>{item}</span>)}
+                    </div>
+                    <p>Nice to have: {optionalTechnologies.join(' · ')}.</p>
+                  </div>
                 </section>
 
                 <section id="growth" class="redesign-block split-block">
@@ -146,47 +151,5 @@ const requirements = [
         </div>
       </section>
     </main>
-
-    <style>
-      /* Requirements: turn the plain list into four clear decision cards. */
-      #need .need-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        align-self: start;
-      }
-      #need .need-list > div {
-        min-height: 142px;
-        padding: 17px 18px 16px;
-        border: 1px solid #ddd8cf;
-        border-radius: 16px;
-        background: #fbfaf7;
-        box-shadow: 0 8px 22px rgba(18,18,18,.045);
-      }
-      #need .need-list > div > span {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 28px;
-        height: 28px;
-        border-radius: 9px;
-        background: var(--prima-soft);
-        color: var(--prima);
-        font-size: .68rem;
-        font-weight: 950;
-        letter-spacing: .05em;
-      }
-      #need .need-list > div > p {
-        margin: 15px 0 0;
-        color: var(--prima-navy);
-        font-size: .86rem;
-        line-height: 1.38;
-        font-weight: 800;
-      }
-      @media (max-width: 759px) {
-        #need .need-list { grid-template-columns: 1fr; }
-        #need .need-list > div { min-height: auto; }
-      }
-    </style>
   </body>
 </html>
