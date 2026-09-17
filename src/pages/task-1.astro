@@ -108,7 +108,7 @@ const problems = [
 
           <div class="thread-takeaway">
             <span class="eyebrow">The opportunity</span>
-            <p>Prima already has the proof. The opportunity is to make it more visible, more relevant and more useful when candidates are deciding.</p>
+            <p>Prima already has the proof. The opportunity is to make it more visible,<br class="desktop-opportunity-break" /> more relevant and more useful when<br class="desktop-opportunity-break" /> candidates are deciding.</p>
           </div>
         </div>
       </section>
@@ -175,6 +175,7 @@ const problems = [
       .thread-question { margin-top: 6px; font-size: 1.04rem; line-height: 1.2; }
       .thread-takeaway { margin-top: 18px; padding: 20px 0 0; }
       .thread-takeaway p { max-width: 78ch; }
+      .desktop-opportunity-break { display: inline; }
 
       .benchmark-card { overflow: hidden; }
       .benchmark-grid { grid-template-columns: minmax(220px, .68fr) minmax(0, 1.32fr); gap: 46px; align-items: start; }
@@ -210,6 +211,7 @@ const problems = [
         .benchmark-grid { grid-template-columns: 1fr; gap: 26px; }
         .benchmark-learnings > div { grid-template-columns: 1fr; gap: 5px; padding: 13px 0; }
         .benchmark-card .principle { max-width: 18ch; font-size: 2rem; }
+        .desktop-opportunity-break { display: none; }
       }
     </style>
   </body>
