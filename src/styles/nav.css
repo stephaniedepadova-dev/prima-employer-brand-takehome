@@ -231,9 +231,3 @@
 .nav a:hover {
   color: #9a5acd !important;
 }
-
-/* Keep other text links unchanged on hover. */
-a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):active,
-a[href]:not(.skip-link):not(.after-apply a):not(.final-apply a):not(.rail-apply):not(.text-link-light):focus:not(:focus-visible) {
-  color: var(--prima) !important;
-}
