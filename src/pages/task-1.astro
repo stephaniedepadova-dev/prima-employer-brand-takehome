@@ -50,8 +50,8 @@ const problems = [
       <section class="task-hero">
         <div class="shell task-head">
           <div class="task-number"><span class="eyebrow">01 / Diagnose our Employer Brand</span></div>
-          <h1>Make the proof easier to act on.</h1>
-          <p class="lead">Prima already has a strong Employer Brand foundation. My focus is on where the existing proof could work harder for candidates.</p>
+          <h1 class="task-title">Diagnose our Employer Brand</h1>
+          <p class="lead">A focused diagnosis of where Prima's existing employer-brand proof could work harder for candidates.</p>
         </div>
       </section>
 
@@ -160,5 +160,13 @@ const problems = [
         <a class="small" href="/prima-employer-brand-takehome/sources/">Sources & method →</a>
       </div>
     </footer>
+
+    <style>
+      .task-title { max-width: 18ch; font-size: clamp(2.8rem, 8vw, 6.2rem); }
+      .benchmark-learnings { display: grid; gap: 12px; margin-top: 12px; }
+      .benchmark-learnings > div { display: grid; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.14); }
+      .benchmark-learnings strong { font-size: .86rem; }
+      .benchmark-learnings span { color: #cfcfcf; font-size: .8rem; line-height: 1.4; }
+    </style>
   </body>
 </html>
