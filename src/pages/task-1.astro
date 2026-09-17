@@ -59,7 +59,7 @@ const problems = [
         <div class="shell problem-grid">
           {problems.map((p) => (
             <article class="surface card problem">
-              <div class="number">{p.id} / {p.label}</div>
+              <div class="number" style="display:inline-flex;align-items:center;width:max-content;min-height:34px;padding:7px 11px;border-radius:999px;background:var(--prima);color:#fff;font-size:.72rem;font-weight:900;letter-spacing:.08em;">{p.id} / {p.label}</div>
               <div>
                 <div class="eyebrow">Candidate question</div>
                 <p style="margin-top:8px;font-size:1.15rem;font-weight:850;">{p.candidateQuestion}</p>
