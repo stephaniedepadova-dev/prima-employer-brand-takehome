@@ -15,15 +15,16 @@ import { nav, siteTitle } from '../layouts';
       .overview-page .overview-kicker { font-size:.9rem; letter-spacing:.1em; }
       .overview-page .overview-thread-label { font-size:.84rem; letter-spacing:.13em; }
       .overview-page .overview-task-label { font-size:.96rem; line-height:1.1; font-weight:950; letter-spacing:-.02em; color:var(--prima-navy); }
-      .overview-page .grid.two > .card-violet { background:#e7f3f1; border-color:#c9e4df; }
+      .overview-page .grid.two > .card-prima { background:#fff; border-color:var(--line); }
+      .overview-page .grid.two > .card-violet { background:var(--prima-soft); border-color:#dac6ee; }
       .overview-page .overview-thread-grid { margin-top:20px; }
-      .overview-page .overview-thread-item { min-height:158px; padding:22px; border:1px solid var(--line); border-radius:20px; display:flex; flex-direction:column; justify-content:flex-start; gap:42px; }
-      .overview-page .overview-thread-item:nth-child(1) { background:var(--prima-soft); border-color:#dac6ee; }
-      .overview-page .overview-thread-item:nth-child(2) { background:#f6eee6; border-color:#e7d7c8; }
-      .overview-page .overview-thread-item:nth-child(3) { background:#e7f4f5; border-color:#c9e5e8; }
+      .overview-page .overview-thread-item { min-height:158px; padding:22px; border:1px solid var(--line); border-radius:20px; display:flex; flex-direction:column; justify-content:flex-start; gap:42px; background:#fff; }
+      .overview-page .overview-thread-item:nth-child(1),
+      .overview-page .overview-thread-item:nth-child(2),
+      .overview-page .overview-thread-item:nth-child(3) { background:#fff; border-color:var(--line); }
       .overview-page .overview-thread-index { display:flex; align-items:baseline; gap:6px; line-height:1; }
-      .overview-page .overview-thread-num { font-size:.72rem; font-weight:900; letter-spacing:.1em; color:var(--muted); font-variant-numeric:tabular-nums; }
-      .overview-page .overview-thread-slash { font-size:.82rem; color:#aaa5ad; font-weight:700; }
+      .overview-page .overview-thread-num { font-size:.78rem; font-weight:950; letter-spacing:.1em; color:var(--prima); font-variant-numeric:tabular-nums; }
+      .overview-page .overview-thread-slash { font-size:.82rem; color:var(--muted); font-weight:700; }
       .overview-page .overview-thread-name { font-size:1.05rem; font-weight:900; letter-spacing:-.025em; color:var(--prima-navy); }
       .overview-page .overview-thread-question { margin:0; font-size:1.02rem; line-height:1.2; font-weight:850; letter-spacing:-.02em; max-width:28ch; }
       .overview-page .overview-benchmark-note { margin-top:24px; padding:24px 0 0; border-top:1px solid var(--line); }
