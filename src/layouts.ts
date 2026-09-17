@@ -1,3 +1,5 @@
+import './styles/nav.css';
+
 export const siteTitle = 'Employer Branding Manager – Take-home Assignment';
 
 export const nav = [
