@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
+import { nav } from '../layouts';
 
+const jobUrl = 'https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4';
 const technologies = ['Python', 'TDD', 'BDD', 'CI/CD', 'IaC', 'Kafka', 'RabbitMQ'];
 const optionalTechnologies = ['AWS', 'Kubernetes', 'Terraform', 'Databricks', 'Airflow', 'Kubeflow'];
 const requirements = [
@@ -33,7 +35,7 @@ const requirements = [
     <main id="main">
       <section class="task-hero">
         <div class="shell task-head">
-          <div class="task-number"><span class="eyebrow">02 / Make something better</span></div>
+          <div class="task-number"><span class="eyebrow task2-number-label">02 / Make something better</span></div>
           <h1>Turn a job ad into a decision tool.</h1>
           <p class="lead">I selected a real Prima vacancy and redesigned the desktop experience around the questions a candidate needs to answer before applying. The mobile view then adapts the same content model for smaller screens.</p>
         </div>
@@ -62,65 +64,65 @@ const requirements = [
               <div class="eyebrow">01 / Before</div>
               <h2>Reconstruction of the current vacancy.</h2>
             </div>
-            <p class="small">A structured reconstruction of the published vacancy hierarchy. It is intentionally shown as a map of the current experience, not as a pixel-perfect screenshot.</p>
+            <p class="small">This is a content and hierarchy reconstruction based on the published vacancy. The visual treatment below is a neutral mapping of the information, not a replica of Prima’s live page.</p>
           </div>
 
-          <article class="browser-frame browser-before">
+          <article class="browser-frame browser-before before-reconstruction">
             <div class="browser-chrome">
               <div class="browser-dots"><i></i><i></i><i></i></div>
               <div class="browser-url">helloprima.com / careers / senior-python-software-engineer</div>
-              <div class="browser-label">CURRENT</div>
+              <div class="browser-label">CONTENT RECONSTRUCTION</div>
             </div>
-            <div class="job-current-hero">
-              <div class="current-hero-grid">
-                <div>
-                  <div class="job-label">Senior Python Software Engineer</div>
-                  <h3>Are you looking for a new challenge?</h3>
-                  <p>Fancy helping us shape the future of motor insurance?</p>
+
+            <div class="current-recon-hero">
+              <div class="current-recon-copy">
+                <span class="current-recon-label">Published role</span>
+                <h3>Senior Python Software Engineer</h3>
+                <p>Are you looking for a new challenge?</p>
+                <small>Fancy helping us shape the future of motor insurance?</small>
+              </div>
+              <div class="current-recon-side">
+                <div class="current-recon-facts">
+                  <div><b>Location</b><span>Milan</span></div>
+                  <div><b>Contract</b><span>Permanent</span></div>
+                  <div><b>Working model</b><span>Full remote available</span></div>
+                  <div><b>Salary</b><span>€40k – €75k</span></div>
                 </div>
-                <div class="current-facts-panel">
-                  <div class="job-facts"><span>Milan</span><span>Permanent</span><span>Full remote available</span><span>€40k – €75k</span></div>
-                  <a class="current-apply-note" href="https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4" target="_blank" rel="noreferrer"><b>View live vacancy ↗</b></a>
-                </div>
+                <a class="current-recon-link" href={jobUrl} target="_blank" rel="noreferrer">View the live vacancy ↗</a>
               </div>
             </div>
 
-            <div class="current-desktop-body">
-              <aside class="current-sidebar">
-                <div class="section-kicker">Current hierarchy</div>
-                <div class="current-nav-item">01 <span>Prima</span></div>
-                <div class="current-nav-item">02 <span>Engineering</span></div>
-                <div class="current-nav-item">03 <span>ML Platform Domain</span></div>
-                <div class="current-nav-item">04 <span>Role & requirements</span></div>
-                <div class="current-nav-item">05 <span>Why you’ll love it here</span></div>
-              </aside>
+            <div class="current-recon-body">
+              <div class="current-recon-context">
+                <span class="current-recon-section-label">Published content</span>
+                <div class="current-recon-nav-item"><b>01</b><span>Prima</span></div>
+                <div class="current-recon-nav-item"><b>02</b><span>Engineering</span></div>
+                <div class="current-recon-nav-item current-recon-nav-item-active"><b>03</b><span>ML Platform Domain</span></div>
+                <div class="current-recon-nav-item"><b>04</b><span>Role & requirements</span></div>
+                <div class="current-recon-nav-item"><b>05</b><span>Why you’ll love it here</span></div>
+              </div>
 
-              <div class="current-main">
-                <section>
-                  <div class="section-kicker">01 / Prima</div>
-                  <h4>Company story and broader context</h4>
-                  <p>The candidate gets wider company context before reaching the most distinctive value proposition of the role.</p>
-                </section>
-                <section>
-                  <div class="section-kicker">02 / Engineering</div>
-                  <h4>Wider Engineering context</h4>
-                  <p>Useful context about the function appears before the specific ML Platform opportunity.</p>
-                </section>
-                <section class="current-highlight">
-                  <div class="section-kicker">03 / ML Platform Domain</div>
+              <div class="current-recon-content">
+                <div class="current-recon-content-block">
+                  <span>01 / Company context</span>
+                  <h4>Prima and the wider Engineering story</h4>
+                  <p>Broader company and function context appears before the most role-specific proposition.</p>
+                </div>
+                <div class="current-recon-content-block">
+                  <span>02 / ML Platform Domain</span>
                   <h4>Foundational platforms for Machine Learning at scale</h4>
-                  <p>This is one of the strongest reasons to care about the role, but it arrives after broader context.</p>
-                </section>
-                <section>
-                  <div class="section-kicker">04 / Role & requirements</div>
+                  <p>The distinctive ML Platform context is present, but it arrives after wider context.</p>
+                </div>
+                <div class="current-recon-content-block">
+                  <span>03 / Role & requirements</span>
                   <h4>Responsibilities, requirements and nice-to-haves</h4>
-                  <p>The detailed information is useful and specific, but the decision context could be surfaced earlier.</p>
-                </section>
-                <section>
-                  <div class="section-kicker">05 / Why you’ll love it here</div>
+                  <p>The role detail is useful and specific, but the relationship between work, impact and fit can be harder to scan.</p>
+                </div>
+                <div class="current-recon-content-block">
+                  <span>04 / EVP</span>
                   <h4>Work Your Way · Grow with us · Thrive and perform</h4>
-                  <p>Broader EVP content appears toward the end of the page.</p>
-                </section>
+                  <p>Broader employer-value content appears later in the journey.</p>
+                </div>
               </div>
             </div>
           </article>
@@ -232,7 +234,7 @@ const requirements = [
                     </div>
                     <div class="after-apply">
                       <span>Ready to explore the role?</span>
-                      <a href="https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4" target="_blank" rel="noreferrer">Apply now ↗</a>
+                      <a href={jobUrl} target="_blank" rel="noreferrer">Apply now ↗</a>
                     </div>
                   </div>
                 </div>
@@ -310,7 +312,7 @@ const requirements = [
                         <div class="evp-row"><b>Work Your Way</b><b>Grow with us</b><b>Thrive and perform</b></div>
                         <div class="final-apply">
                           <div><strong>Ready to explore the role?</strong><span>Senior Python Software Engineer · Milan · €40k – €75k</span></div>
-                          <a href="https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4" target="_blank" rel="noreferrer">Apply now ↗</a>
+                          <a href={jobUrl} target="_blank" rel="noreferrer">Apply now ↗</a>
                         </div>
                       </section>
                     </div>
@@ -323,7 +325,7 @@ const requirements = [
                           <div class="rail-fact"><b>Location</b><span>Milan · Full remote available</span></div>
                           <div class="rail-fact"><b>Level</b><span>Senior</span></div>
                           <div class="rail-fact"><b>Salary</b><span>€40k – €75k</span></div>
-                          <a class="rail-apply" href="https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4" target="_blank" rel="noreferrer">Apply now ↗</a>
+                          <a class="rail-apply" href={jobUrl} target="_blank" rel="noreferrer">Apply now ↗</a>
                         </div>
                       </div>
                     </aside>
@@ -401,5 +403,44 @@ const requirements = [
         <a class="small" href="/prima-employer-brand-takehome/sources/">Sources & method →</a>
       </div>
     </footer>
+
+    <style>
+      .task2-number-label { font-size:1.15rem; line-height:1.15; font-weight:900; letter-spacing:.06em; }
+      .before-reconstruction { box-shadow:0 16px 44px rgba(18,18,18,.05); }
+      .current-recon-hero { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr); gap:44px; padding:40px 42px; background:#fbfaf7; border-bottom:1px solid var(--line); }
+      .current-recon-copy { display:grid; align-content:center; gap:10px; }
+      .current-recon-label,.current-recon-section-label { font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; font-weight:900; color:var(--muted); }
+      .current-recon-copy h3 { max-width:16ch; font-size:clamp(2.2rem,3.8vw,4.2rem); color:var(--prima-navy); }
+      .current-recon-copy p { margin:2px 0 0; font-size:1.15rem; font-weight:800; color:var(--text); }
+      .current-recon-copy small { color:var(--muted); font-size:.9rem; }
+      .current-recon-side { display:grid; align-content:center; gap:16px; }
+      .current-recon-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; overflow:hidden; border:1px solid var(--line); border-radius:16px; background:var(--line); }
+      .current-recon-facts > div { display:grid; gap:4px; padding:15px 16px; background:#fff; }
+      .current-recon-facts b { font-size:.61rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
+      .current-recon-facts span { font-size:.84rem; line-height:1.3; font-weight:850; color:var(--prima-navy); }
+      .current-recon-link { display:flex; justify-content:center; align-items:center; padding:12px 15px; border:1px solid #cfc6d7; border-radius:12px; background:#fff; color:var(--prima-navy); text-decoration:none; font-size:.78rem; font-weight:900; }
+      .current-recon-body { display:grid; grid-template-columns:235px minmax(0,1fr); min-height:430px; background:#fff; }
+      .current-recon-context { padding:28px 20px; background:#f2f0eb; border-right:1px solid var(--line); }
+      .current-recon-nav-item { display:flex; align-items:center; gap:10px; padding:13px 0; border-bottom:1px solid #ddd8cf; font-size:.76rem; color:var(--muted); }
+      .current-recon-nav-item b { width:25px; color:#77736d; font-size:.62rem; }
+      .current-recon-nav-item-active { color:var(--prima-navy); font-weight:850; }
+      .current-recon-nav-item-active b { color:var(--prima); }
+      .current-recon-content { padding:30px 36px; }
+      .current-recon-content-block { padding:0 0 22px; margin-bottom:22px; border-bottom:1px solid var(--line); }
+      .current-recon-content-block:last-child { margin-bottom:0; }
+      .current-recon-content-block > span { font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; font-weight:900; color:var(--muted); }
+      .current-recon-content-block h4 { margin-top:7px; font-size:1.25rem; color:var(--prima-navy); }
+      .current-recon-content-block p { margin-top:7px; color:var(--muted); font-size:.83rem; max-width:68ch; }
+      @media (max-width:759px) {
+        .task2-number-label { font-size:1rem; }
+        .current-recon-hero { grid-template-columns:1fr; gap:22px; padding:25px 20px; }
+        .current-recon-copy h3 { max-width:14ch; font-size:2.35rem; }
+        .current-recon-side { gap:12px; }
+        .current-recon-facts { grid-template-columns:1fr 1fr; }
+        .current-recon-body { grid-template-columns:1fr; }
+        .current-recon-context { border-right:0; border-bottom:1px solid var(--line); }
+        .current-recon-content { padding:24px 20px; }
+      }
+    </style>
   </body>
 </html>
