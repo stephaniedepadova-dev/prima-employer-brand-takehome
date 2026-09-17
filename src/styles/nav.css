@@ -226,9 +226,14 @@
   outline: none !important;
 }
 
-/* Subtle lighter-purple hover only for the top menu, PRIMA wordmark and Sources & method. */
+/* Subtle lighter-purple hover for the top menu, PRIMA wordmark and Sources & method. */
 .wordmark:hover,
 .nav a:hover,
 .site-footer a:hover {
+  color: #9a5acd !important;
+}
+
+/* Task 2 live-vacancy link uses the same subtle hover treatment. */
+.task2-page .current-recon-link:hover {
   color: #9a5acd !important;
 }
