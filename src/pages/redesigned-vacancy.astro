@@ -222,7 +222,7 @@ const requirements = [
         line-height: 1.45;
       }
 
-      /* Points 04–06: soft elevation, with the two lower Growth items sharing one row. */
+      /* Points 04–06: soft elevation and a three-item Growth row on desktop. */
       #team .team-tags span,
       #tech .tech-list-primary span,
       #growth .growth-list span {
@@ -231,20 +231,8 @@ const requirements = [
 
       #growth .growth-list {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 10px;
-      }
-
-      #growth .growth-list span:first-child {
-        grid-column: 1 / -1;
-      }
-
-      #growth .growth-list span:nth-child(2) {
-        grid-column: 1;
-      }
-
-      #growth .growth-list span:nth-child(3) {
-        grid-column: 2;
       }
 
       .tech-list { min-width: 0; }
@@ -289,12 +277,6 @@ const requirements = [
 
         #growth .growth-list {
           grid-template-columns: 1fr;
-        }
-
-        #growth .growth-list span:first-child,
-        #growth .growth-list span:nth-child(2),
-        #growth .growth-list span:nth-child(3) {
-          grid-column: 1;
         }
 
         .tech-list-primary { gap: 6px; }
