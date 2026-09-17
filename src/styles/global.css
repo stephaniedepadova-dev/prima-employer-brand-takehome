@@ -31,7 +31,7 @@ button, a { -webkit-tap-highlight-color:transparent; }
 .skip-link:focus { transform:translateY(0); }
 .site-header { position:sticky; top:0; z-index:50; backdrop-filter:blur(14px); background:rgba(247,245,241,.92); border-bottom:1px solid rgba(221,216,207,.92); }
 .header-inner { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
-.wordmark { font-size:1.1rem; font-weight:950; letter-spacing:-.07em; text-decoration:none; }
+.wordmark { font-size:1.1rem; font-weight:950; letter-spacing:-.07em; text-decoration:none; color:var(--prima); }
 .nav { display:flex; gap:8px; overflow-x:auto; scrollbar-width:none; }
 .nav::-webkit-scrollbar { display:none; }
 .nav a { padding:8px 10px; border-radius:999px; text-decoration:none; color:var(--muted); font-size:.8rem; font-weight:800; white-space:nowrap; }
