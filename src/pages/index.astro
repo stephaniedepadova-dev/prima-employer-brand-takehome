@@ -27,15 +27,16 @@ import { nav, siteTitle } from '../layouts';
       .overview-page .overview-thread-slash { font-size:.82rem; color:var(--muted); font-weight:700; }
       .overview-page .overview-thread-name { font-size:1.05rem; font-weight:900; letter-spacing:-.025em; color:var(--prima-navy); }
       .overview-page .overview-thread-question { margin:0; font-size:1.02rem; line-height:1.2; font-weight:850; letter-spacing:-.02em; max-width:28ch; }
-      .overview-page .overview-benchmark-note { margin-top:24px; padding:24px 0 0; border-top:1px solid var(--line); }
-      .overview-page .overview-benchmark-quote { margin:0; font-size:clamp(1.35rem,3vw,2rem); line-height:1.08; font-weight:900; letter-spacing:-.035em; max-width:34ch; }
-      .overview-page .overview-benchmark-caption { display:block; margin-top:16px; color:var(--muted); font-size:.88rem; font-weight:750; }
+      .overview-page .overview-benchmark-note { margin-top:24px; padding:26px 24px 22px; border-top:0; border:1px solid #384155; border-radius:20px; background:var(--prima-navy); color:#fff; }
+      .overview-page .overview-benchmark-quote { margin:0; font-size:clamp(1.35rem,3vw,2rem); line-height:1.08; font-weight:900; letter-spacing:-.035em; max-width:34ch; color:#fff; }
+      .overview-page .overview-benchmark-caption { display:block; margin-top:14px; color:#c7cbd5; font-size:.88rem; font-weight:750; }
       @media (max-width:759px) {
         .overview-page .nav a { padding:9px 12px; font-size:.92rem; }
         .overview-page .overview-kicker { font-size:.84rem; }
         .overview-page .overview-task-label { font-size:.9rem; }
         .overview-page .overview-thread-item { min-height:150px; padding:20px; gap:34px; }
         .overview-page .overview-thread-name { font-size:1rem; }
+        .overview-page .overview-benchmark-note { padding:22px 20px 20px; }
       }
     </style>
   </head>
