@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { nav, siteTitle } from '../layouts';
+import { nav } from '../layouts';
 const problems = [
   {
     id: '01',
@@ -84,23 +84,32 @@ const problems = [
       </section>
 
       <section class="section">
-        <div class="shell grid two">
-          <article class="surface card card-soft">
-            <div class="eyebrow">The common thread</div>
-            <h2 style="margin-top:10px">Choice → Possibility → Confidence</h2>
-            <div class="flow" style="margin-top:20px">
-              {problems.map((p) => (
-                <div class="flow-step">
-                  <div class="flow-dot">{p.id}</div>
-                  <div><strong>{p.label}</strong><p class="small" style="margin-top:4px">{p.candidateQuestion}</p></div>
-                </div>
-              ))}
+        <div class="shell">
+          <div class="thread-intro">
+            <div>
+              <div class="eyebrow">The common thread</div>
+              <h2 style="margin-top:10px">Choice → Possibility → Confidence</h2>
             </div>
-          </article>
-          <article class="surface card card-dark">
-            <div class="eyebrow" style="color:#aaa">One line</div>
-            <p style="margin-top:14px;font-size:1.55rem;line-height:1.08;font-weight:900;letter-spacing:-.04em;">Prima already has the proof. The opportunity is to make it more visible, more relevant and more useful when candidates are deciding.</p>
-          </article>
+            <p class="small">Three moments in the candidate decision journey. The opportunity is to make each one easier to answer with evidence.</p>
+          </div>
+
+          <div class="thread-grid">
+            {problems.map((p, index) => (
+              <article class="surface card thread-card">
+                <div class="thread-top">
+                  <span class="thread-number">{p.id}</span>
+                  {index < problems.length - 1 && <span class="thread-arrow" aria-hidden="true">→</span>}
+                </div>
+                <div class="eyebrow">{p.label}</div>
+                <p class="thread-question">{p.candidateQuestion}</p>
+              </article>
+            ))}
+          </div>
+
+          <div class="thread-takeaway">
+            <span class="eyebrow">The opportunity</span>
+            <p>Prima already has the proof. The opportunity is to make it more visible, more relevant and more useful when candidates are deciding.</p>
+          </div>
         </div>
       </section>
 
@@ -112,6 +121,7 @@ const problems = [
               <div>
                 <div class="benchmark-mark">Mollie</div>
                 <p style="margin-top:8px;color:#cfcfcf">A relevant example of bringing employer brand proof closer to candidate decision moments.</p>
+                <a class="text-link text-link-light" href="https://jobs.mollie.com/" target="_blank" rel="noreferrer">Explore Mollie Careers ↗</a>
               </div>
               <div>
                 <div class="eyebrow" style="color:#aaa">What I would learn</div>
