@@ -1,13 +1,73 @@
 ---
 import '../styles/global.css';
-import { nav, sources } from '../layouts';
+import { nav } from '../layouts';
 
-const channels = [
-  { label: 'Careers', tone: 'prima' },
-  { label: 'LinkedIn', tone: 'violet' },
-  { label: 'Instagram', tone: 'neutral' },
-  { label: 'YouTube', tone: 'neutral' },
-  { label: 'Candidate experience', tone: 'mint' },
+const sourceGroups = [
+  {
+    group: 'Prima / corporate & employer brand',
+    items: [
+      { label: 'Prima · Who we are', note: 'Corporate positioning, business and technology context.', url: 'https://www.prima.it/chi-siamo' },
+      { label: 'Prima Careers', note: 'Main employer-brand ecosystem and candidate entry point.', url: 'https://www.helloprima.com/careers' },
+      { label: 'PrimaLife', note: 'Culture, people, inclusion and employee experience.', url: 'https://www.helloprima.com/careers/primalife' },
+      { label: 'Values', note: 'Five values and the behaviours Prima says guide how it works.', url: 'https://www.helloprima.com/about-us/values' },
+      { label: 'Leadership', note: 'Leadership model, international organisation and collaboration.', url: 'https://www.helloprima.com/it/chi-siamo/leadership' },
+      { label: 'Growth & Development', note: 'Competency framework, learning paths and career development.', url: 'https://www.helloprima.com/careers/growth-and-development' },
+      { label: 'Benefits', note: 'Flexibility, working model, wellbeing and development support.', url: 'https://www.helloprima.com/careers/prima-benefits' },
+      { label: 'Departments', note: 'Function-level propositions and role context.', url: 'https://www.helloprima.com/careers/departments' },
+      { label: 'People', note: 'People function, employee voice and employer-brand proof.', url: 'https://www.helloprima.com/careers/departments/people' },
+      { label: 'Locations', note: 'Italy, UK, Spain and international/remote context.', url: 'https://www.helloprima.com/careers/locations' },
+      { label: 'International / Remote working', note: 'Global talent proposition and full-remote context.', url: 'https://www.helloprima.com/careers/locations/international' },
+      { label: 'Jobs / Hiring process', note: 'Open roles, candidate guidance and public hiring framework.', url: 'https://www.helloprima.com/careers/jobs' },
+      { label: 'Senior Python Software Engineer', note: 'The real vacancy selected for Task 2.', url: 'https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4' },
+      { label: 'Prima News & Events', note: 'Corporate, sponsorship and public event context.', url: 'https://www.helloprima.com/news-and-events' },
+      { label: 'Prima Events', note: 'Talent-facing events and the company’s event proposition.', url: 'https://www.helloprima.com/news-and-events/events' },
+      { label: 'Prima Press releases', note: 'Corporate announcements and sponsorship/business context.', url: 'https://www.helloprima.com/news-and-events/press-releases' },
+    ],
+  },
+  {
+    group: 'Prima / social & talent-facing channels',
+    items: [
+      { label: 'LinkedIn · Prima', note: 'Company page, employer-brand content and recent talent-facing posts.', url: 'https://www.linkedin.com/company/prima-assicurazioni/' },
+      { label: 'LinkedIn · Life / Culture', note: 'Culture, people, EVP and employee-facing content.', url: 'https://www.linkedin.com/company/prima-assicurazioni/life/' },
+      { label: 'LinkedIn · Jobs', note: 'Live job distribution and role visibility.', url: 'https://it.linkedin.com/company/prima-assicurazioni/jobs' },
+      { label: 'LinkedIn · This is us / Riccardo Queri', note: 'Employee-led Product story reviewed in the cross-channel analysis.', url: 'https://www.linkedin.com/posts/prima-assicurazioni_this-is-us-meet-riccardo-queri-our-activity-7483112616693792769-RiFi' },
+      { label: 'LinkedIn · Behind Prima / Raffaele Calandrella', note: 'Engineering leadership and lived-experience proof.', url: 'https://www.linkedin.com/posts/prima-assicurazioni_behind-prima-are-the-people-who-shape-how-activity-7425109642722078720-4UX5' },
+      { label: 'Instagram · this_is_prima', note: 'Global employer-brand Instagram channel, including the screenshots reviewed.', url: 'https://www.instagram.com/this_is_prima/' },
+      { label: 'YouTube · Prima', note: 'Channel, playlists and individual employer-brand videos reviewed.', url: 'https://www.youtube.com/@helloprima' },
+    ],
+  },
+  {
+    group: 'External perception / candidate signals',
+    items: [
+      { label: 'Glassdoor · Reviews', note: 'Employee reviews used as mixed, self-selected external signals.', url: 'https://www.glassdoor.it/Recensioni/Prima-Assicurazioni-Recensioni-E1395225.htm' },
+      { label: 'Glassdoor · Interviews', note: 'Candidate interview experiences and process perceptions.', url: 'https://www.glassdoor.it/Colloquio/Prima-Assicurazioni-Domande-di-colloquio-E1395225.htm' },
+      { label: 'Glassdoor · Example review', note: 'One specific review was inspected as part of the mixed-signal analysis.', url: 'https://www.glassdoor.it/Recensione-dipendente-Prima-Assicurazioni-E1395225-RVW89908160.htm' },
+      { label: 'Indeed · Prima Assicurazioni', note: 'Reviews, Q&A and employee-generated workplace signals.', url: 'https://it.indeed.com/cmp/Prima-Assicurazioni' },
+      { label: 'Indeed · Interview Q&A', note: 'Candidate-facing interview questions and user-generated signals.', url: 'https://it.indeed.com/cmp/Prima-Assicurazioni/faq/interviews' },
+      { label: 'Great Place to Work · Prima Assicurazioni', note: 'External employer-brand recognition and employee voice.', url: 'https://www.greatplacetowork.it/scheda_azienda/prima-assicurazioni/' },
+    ],
+  },
+  {
+    group: 'Talent communities / university engagement / events',
+    items: [
+      { label: 'Joinrs · Prima Assicurazioni / Most Attractive Companies 2026', note: 'Talent perception, employer proposition and Math Fest context.', url: 'https://focus.joinrs.com/most-attractive-companies-2026/prima-assicurazioni-most-attractive-companies-2026' },
+      { label: 'Joinrs · Most Attractive Companies 2026', note: 'Broader context for the talent-audience initiative.', url: 'https://focus.joinrs.com/most-attractive-companies-2026' },
+      { label: 'Politecnico di Torino · Prima Open Day', note: 'University engagement, Data/Engineering challenge and candidate experience.', url: 'https://www.polito.it/ateneo/career-hub/eventi/news?idn=23349' },
+      { label: 'SISSA · Prima Math Fest 2025', note: 'Independent university source describing the Math Fest experience.', url: 'https://www.sissa.it/it/news/prima-math-fest-2025' },
+    ],
+  },
+  {
+    group: 'Exploratory benchmark research',
+    items: [
+      { label: 'Mollie Careers', note: 'Final benchmark: role context, career proof and hiring transparency.', url: 'https://jobs.mollie.com/' },
+      { label: 'Mollie · Vacancies', note: 'Vacancy-level benchmark and public hiring journey.', url: 'https://jobs.mollie.com/vacancies' },
+      { label: 'Mollie · Full Stack Engineer II', note: 'Role-level example used to study proximity of proof.', url: 'https://jobs.mollie.com/vacancies/2fa761ee-3fe0-423c-aaa2-4e9e31871ef6' },
+      { label: 'Mollie · Alicia Zavalis career story', note: 'Internal mobility and non-linear career progression example.', url: 'https://jobs.mollie.com/articles/from-rio-to-lisbon-and-back-to-mollie-alicia-zavalis-journey-of-courage-and-career-growth' },
+      { label: 'Wise · Careers', note: 'Exploratory benchmark reference; not selected as final benchmark.', url: 'https://wise.jobs/' },
+      { label: 'N26 · Careers', note: 'Exploratory benchmark reference; not selected as final benchmark.', url: 'https://n26.com/en-eu/careers' },
+      { label: 'Revolut · Careers', note: 'Exploratory benchmark reference; not selected as final benchmark.', url: 'https://www.revolut.com/careers/' },
+    ],
+  },
 ];
 ---
 <html lang="en">
@@ -15,52 +75,10 @@ const channels = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f7f5f1" />
+    <meta name="description" content="Public sources and research method used for the Prima Employer Branding Manager take-home assignment." />
     <title>Sources & method</title>
-    <style>
-      .source-hero { padding-bottom: 42px; }
-      .source-hero-grid { display:grid; gap:22px; align-items:end; }
-      .source-scope { padding:22px; background:#fff; }
-      .source-channel-list { display:flex; flex-wrap:wrap; gap:7px; margin-top:15px; }
-      .source-channel { display:inline-flex; align-items:center; min-height:31px; padding:7px 10px; border-radius:999px; border:1px solid var(--line); font-size:.68rem; font-weight:900; }
-      .source-channel-prima { background:var(--prima-soft); border-color:#d9d3ff; }
-      .source-channel-violet { background:var(--violet-soft); border-color:#d6cffc; }
-      .source-channel-neutral { background:#fbfaf7; }
-      .source-channel-mint { background:var(--mint); border-color:#c8e4d0; }
-      .source-section { padding-top:36px; }
-      .source-section-heading { display:grid; gap:13px; margin-bottom:21px; }
-      .source-section-heading .small { max-width:58ch; }
-      .source-list-rich { display:grid; gap:14px; }
-      .source-group { display:grid; gap:7px; padding:20px 22px; }
-      .source-group-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:4px; }
-      .source-count { color:var(--muted); font-size:.66rem; font-weight:850; }
-      .source-link-rich { display:grid; grid-template-columns:32px 1fr auto; align-items:center; gap:13px; padding:13px 0; border-bottom:1px solid var(--line); text-decoration:none; }
-      .source-link-rich:last-child { border-bottom:0; }
-      .source-index { width:28px; height:28px; display:grid; place-items:center; border-radius:50%; background:var(--surface-soft); color:var(--muted); font-size:.62rem; font-weight:900; }
-      .source-copy { display:grid; gap:3px; min-width:0; }
-      .source-copy strong { font-size:.84rem; }
-      .source-copy small { color:var(--muted); font-size:.67rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-      .source-arrow { color:var(--muted); font-size:.72rem; font-weight:900; white-space:nowrap; }
-      .source-link-rich:hover .source-arrow { color:var(--text); }
-      .source-channel-grid { display:grid; gap:14px; }
-      .source-channel-card { min-height:190px; padding:22px; display:flex; flex-direction:column; align-items:flex-start; gap:11px; text-decoration:none; transition:transform .18s ease, box-shadow .18s ease; }
-      .source-channel-card:hover { transform:translateY(-2px); box-shadow:0 18px 46px rgba(18,18,18,.08); }
-      .source-channel-card strong { font-size:1.35rem; line-height:1.03; letter-spacing:-.04em; }
-      .source-channel-card .small { margin:0; }
-      .source-channel-card .source-arrow { margin-top:auto; }
-      .source-channel-card-violet { background:var(--violet-soft); border-color:#d6cffc; }
-      .source-channel-card-neutral { background:#fff; }
-      @media (min-width:760px) {
-        .source-hero-grid { grid-template-columns:1.1fr .9fr; }
-        .source-section-heading { grid-template-columns:1fr .72fr; align-items:end; }
-        .source-channel-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
-      }
-      @media (max-width:520px) {
-        .source-link-rich { grid-template-columns:28px 1fr auto; gap:9px; }
-        .source-copy strong { font-size:.77rem; }
-      }
-    </style>
   </head>
-  <body>
+  <body class="sources-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="shell header-inner">
@@ -72,93 +90,30 @@ const channels = [
     </header>
 
     <main id="main">
-      <section class="task-hero source-hero">
-        <div class="shell source-hero-grid">
-          <div class="task-head">
-            <div class="task-number"><span class="eyebrow">Sources & method</span></div>
-            <h1>Evidence first.</h1>
-            <p class="lead">The diagnosis and redesign were built from Prima's public candidate-facing ecosystem, with a focused benchmark against Mollie.</p>
-          </div>
-          <aside class="source-scope surface card">
-            <div class="eyebrow">Research scope</div>
-            <div class="source-channel-list">
-              {channels.map((channel) => <span class={`source-channel source-channel-${channel.tone}`}>{channel.label}</span>)}
-            </div>
-            <p class="small">I reviewed Careers content, job and hiring information, LinkedIn, Instagram, YouTube and other public talent-facing touchpoints before narrowing the diagnosis to the most decision-relevant issues.</p>
-          </aside>
+      <section class="task-hero">
+        <div class="shell task-head">
+          <div class="task-number"><span class="eyebrow">Sources & method</span></div>
+          <h1 class="sources-title">Evidence first.</h1>
+          <p class="lead">I used public sources to test the diagnosis, compare relevant employer-brand examples and build the redesign. The list below covers the public source set used across the research, including social channels, external perception and talent-facing initiatives.</p>
         </div>
       </section>
 
-      <section class="section source-section">
-        <div class="shell">
-          <div class="source-section-heading">
-            <div><div class="eyebrow">01 / Prima</div><h2>Primary evidence.</h2></div>
-            <p class="small">The public sources used to understand the current Employer Brand, role experience and candidate journey.</p>
-          </div>
-
-          <div class="source-list source-list-rich">
-            {sources.filter((group) => group.group === 'Prima').map((group) => (
-              <section class="surface card source-group">
-                <div class="source-group-head"><div class="eyebrow">{group.group}</div><span class="source-count">{group.items.length + 3} core sources + social</span></div>
-                {group.items.map((item, index) => (
-                  <a class="source-link source-link-rich" href={item.url} target="_blank" rel="noreferrer">
-                    <span class="source-index">{String(index + 1).padStart(2, '0')}</span>
-                    <span class="source-copy"><strong>{item.label}</strong><small>{new URL(item.url).hostname.replace(/^www\./, '')}</small></span>
-                    <span class="source-arrow">↗</span>
-                  </a>
-                ))}
-              </section>
-            ))}
-
-            <div class="source-channel-grid">
-              <a class="surface source-channel-card source-channel-card-violet" href="https://www.linkedin.com/company/prima-assicurazioni/" target="_blank" rel="noreferrer">
-                <span class="eyebrow">LinkedIn</span>
-                <strong>Company page & talent-facing content</strong>
-                <span class="small">Company updates, Life content, role storytelling and employer-brand signals.</span>
-                <span class="source-arrow">Explore LinkedIn ↗</span>
-              </a>
-              <a class="surface source-channel-card source-channel-card-neutral" href="https://www.instagram.com/prima_assicurazioni/" target="_blank" rel="noreferrer">
-                <span class="eyebrow">Instagram</span>
-                <strong>Visual brand & community content</strong>
-                <span class="small">A complementary view of how Prima presents people, events, partnerships and community.</span>
-                <span class="source-arrow">Explore Instagram ↗</span>
-              </a>
-              <a class="surface source-channel-card source-channel-card-neutral" href="https://www.youtube.com/watch?v=uNVjNzfpkrU" target="_blank" rel="noreferrer">
-                <span class="eyebrow">YouTube</span>
-                <strong>Video touchpoint reviewed</strong>
-                <span class="small">A public video touchpoint considered alongside Prima's wider talent-facing ecosystem.</span>
-                <span class="source-arrow">Watch video ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section source-section">
-        <div class="shell">
-          <div class="source-section-heading">
-            <div><div class="eyebrow">02 / Benchmark</div><h2>What I compared.</h2></div>
-            <p class="small">Mollie was used as a focused benchmark for how employer-brand proof can reach candidates closer to decision moments.</p>
-          </div>
-          <div class="source-list source-list-rich">
-            {sources.filter((group) => group.group === 'Benchmark').map((group) => (
-              <section class="surface card source-group">
-                <div class="source-group-head"><div class="eyebrow">{group.group}</div><span class="source-count">Focused benchmark</span></div>
-                {group.items.map((item, index) => (
-                  <a class="source-link source-link-rich" href={item.url} target="_blank" rel="noreferrer">
-                    <span class="source-index">{String(index + 1).padStart(2, '0')}</span>
-                    <span class="source-copy"><strong>{item.label}</strong><small>{new URL(item.url).hostname.replace(/^www\./, '')}</small></span>
-                    <span class="source-arrow">↗</span>
-                  </a>
-                ))}
-              </section>
-            ))}
-            <a class="surface source-channel-card source-channel-card-violet" href="https://jobs.mollie.com/" target="_blank" rel="noreferrer" style="min-height:150px">
-              <span class="eyebrow">Mollie Careers</span>
-              <strong>Explore the benchmark directly ↗</strong>
-              <span class="small">Official Careers site used for the benchmark observations.</span>
-            </a>
-          </div>
+      <section class="section">
+        <div class="shell source-list">
+          {sourceGroups.map((group) => (
+            <section class="surface card source-group">
+              <div class="eyebrow">{group.group}</div>
+              {group.items.map((item) => (
+                <a class="source-link source-link-detailed" href={item.url} target="_blank" rel="noreferrer">
+                  <span>
+                    <strong>{item.label}</strong>
+                    <small>{item.note}</small>
+                  </span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </section>
+          ))}
         </div>
       </section>
 
@@ -167,12 +122,12 @@ const channels = [
           <article class="surface card">
             <div class="eyebrow">How I used AI</div>
             <h3 style="margin-top:10px">AI supported the process. The judgement stayed mine.</h3>
-            <p class="small" style="margin-top:10px">I used AI to organise research, stress test hypotheses, compare public employer brand examples and iterate on copy and UX ideas. I reviewed the final outputs against the underlying evidence and removed unsupported claims.</p>
+            <p class="small" style="margin-top:10px">I used AI to organise research, stress-test hypotheses, compare public employer-brand examples and iterate on copy and UX ideas. I reviewed the final outputs against the underlying evidence and removed unsupported claims.</p>
           </article>
           <article class="surface card card-dark">
             <div class="eyebrow" style="color:#aaa">Method</div>
             <p style="margin-top:12px;font-size:1.2rem;font-weight:850;line-height:1.15">I prioritised evidence over completeness, and observations over assumptions.</p>
-            <p style="margin-top:10px;color:#cfcfcf">Where evidence was mixed, especially around candidate experience, the wording reflects that uncertainty.</p>
+            <p style="margin-top:10px;color:#cfcfcf">Public reviews and engagement metrics were treated as signals, not as representative population data or conversion evidence.</p>
           </article>
         </div>
       </section>
