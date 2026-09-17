@@ -226,8 +226,9 @@
   outline: none !important;
 }
 
-/* Subtle lighter-purple hover only for the top menu and PRIMA wordmark. */
+/* Subtle lighter-purple hover only for the top menu, PRIMA wordmark and Sources & method. */
 .wordmark:hover,
-.nav a:hover {
+.nav a:hover,
+.site-footer a:hover {
   color: #9a5acd !important;
 }
