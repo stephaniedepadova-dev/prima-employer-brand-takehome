@@ -168,11 +168,100 @@ const requirements = [
     </main>
 
     <style>
+      /* Point 03: make the requirements section feel intentional and proportional to this full-page redesign. */
+      #need.requirements-block {
+        grid-template-columns: minmax(245px, .82fr) minmax(0, 1.18fr);
+        gap: 36px;
+        align-items: start;
+      }
+
+      #need.requirements-block h4 {
+        margin: 7px 0 0;
+        max-width: 11ch;
+        color: var(--prima-navy);
+        font-size: clamp(2.7rem, 4.5vw, 4.35rem);
+        line-height: .98;
+        letter-spacing: -.052em;
+        text-wrap: balance;
+      }
+
+      #need.requirements-block .need-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
+        margin-top: 0;
+      }
+
+      #need.requirements-block .need-list > div {
+        display: grid;
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 10px;
+        align-items: start;
+        min-height: 132px;
+        padding: 18px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(18,18,18,.05);
+      }
+
+      #need.requirements-block .need-list > div > span {
+        display: block;
+        padding-top: 2px;
+        color: var(--prima);
+        font-size: .68rem;
+        line-height: 1.1;
+        font-weight: 950;
+      }
+
+      #need.requirements-block .need-list > div > p {
+        margin: 0;
+        color: var(--text);
+        font-size: .88rem;
+        line-height: 1.45;
+      }
+
       .tech-list { min-width: 0; }
       .tech-list-primary { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
       .tech-list-primary span { display: inline-flex; align-items: center; min-height: 36px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--prima-navy); font-size: .78rem; line-height: 1; font-weight: 850; }
       .tech-list > p { margin: 14px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.45; }
+
+      @media (max-width: 900px) {
+        #need.requirements-block {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        #need.requirements-block h4 {
+          max-width: 14ch;
+        }
+
+        #need.requirements-block .need-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
       @media (max-width: 759px) {
+        #need.requirements-block {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        #need.requirements-block h4 {
+          max-width: 12ch;
+          font-size: clamp(2.35rem, 11vw, 3.4rem);
+        }
+
+        #need.requirements-block .need-list {
+          grid-template-columns: 1fr;
+        }
+
+        #need.requirements-block .need-list > div {
+          min-height: auto;
+          padding: 14px;
+        }
+
         .tech-list-primary { gap: 6px; }
         .tech-list-primary span { min-height: 34px; padding: 7px 10px; font-size: .74rem; }
         .tech-list > p { font-size: .78rem; }
