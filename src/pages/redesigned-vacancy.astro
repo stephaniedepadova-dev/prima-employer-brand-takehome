@@ -48,7 +48,7 @@ const requirements = [
             <p class="small">This page is the proposed redesign of the same Senior Python Software Engineer vacancy selected in Task 2. It turns the content and hierarchy recommendations into a complete candidate experience.</p>
           </div>
           <div class="quote" style="margin-top:16px">
-            <p>The goal is not to redesign Prima’s brand.<br />It is to make the role, impact, requirements, team,<br />technology, growth and hiring journey easier to scan,<br />understand and act on.</p>
+            <p>The goal is not to redesign Prima’s brand.<br />It is to make the role, impact, requirements, team,<br />technology, growth and hiring journey easier to <span class="scan-link-wrap">scan,<a class="mobile-redesign-link" href="/prima-employer-brand-takehome/redesigned-vacancy/">Open redesigned vacancy ↗</a></span><br />understand and act on.</p>
           </div>
         </div>
       </section>
@@ -168,7 +168,9 @@ const requirements = [
     </main>
 
     <style>
-      /* Point 03: make the requirements section feel intentional and proportional to this full-page redesign. */
+      .mobile-redesign-link { display: none; }
+      .scan-link-wrap { display: inline; }
+
       #need.requirements-block {
         grid-template-columns: minmax(245px, .82fr) minmax(0, 1.18fr);
         gap: 36px;
@@ -222,7 +224,6 @@ const requirements = [
         line-height: 1.45;
       }
 
-      /* Points 04–06: soft elevation and a three-item Growth row on desktop. */
       #team .team-tags span,
       #tech .tech-list-primary span,
       #growth .growth-list span {
@@ -247,44 +248,29 @@ const requirements = [
       .tech-list > p { margin: 14px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.45; }
 
       @media (max-width: 900px) {
-        #need.requirements-block {
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-
-        #need.requirements-block h4 {
-          max-width: 14ch;
-        }
-
-        #need.requirements-block .need-list {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+        #need.requirements-block { grid-template-columns: 1fr; gap: 24px; }
+        #need.requirements-block h4 { max-width: 14ch; }
+        #need.requirements-block .need-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       }
 
       @media (max-width: 759px) {
-        #need.requirements-block {
-          grid-template-columns: 1fr;
-          gap: 18px;
+        .mobile-redesign-link {
+          display: inline-block;
+          margin-left: 7px;
+          color: var(--prima-navy);
+          font-size: .68rem;
+          line-height: 1;
+          font-weight: 900;
+          text-decoration: none;
+          white-space: nowrap;
+          vertical-align: baseline;
         }
 
-        #need.requirements-block h4 {
-          max-width: 12ch;
-          font-size: clamp(2.35rem, 11vw, 3.4rem);
-        }
-
-        #need.requirements-block .need-list {
-          grid-template-columns: 1fr;
-        }
-
-        #need.requirements-block .need-list > div {
-          min-height: auto;
-          padding: 14px;
-        }
-
-        #growth .growth-list {
-          grid-template-columns: 1fr;
-        }
-
+        #need.requirements-block { grid-template-columns: 1fr; gap: 18px; }
+        #need.requirements-block h4 { max-width: 12ch; font-size: clamp(2.35rem, 11vw, 3.4rem); }
+        #need.requirements-block .need-list { grid-template-columns: 1fr; }
+        #need.requirements-block .need-list > div { min-height: auto; padding: 14px; }
+        #growth .growth-list { grid-template-columns: 1fr; }
         .tech-list-primary { gap: 6px; }
         .tech-list-primary span { min-height: 34px; padding: 7px 10px; font-size: .74rem; }
         .tech-list > p { font-size: .78rem; }
