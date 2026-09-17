@@ -151,5 +151,17 @@ const requirements = [
         </div>
       </section>
     </main>
+
+    <style>
+      .tech-list { min-width: 0; }
+      .tech-list-primary { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+      .tech-list-primary span { display: inline-flex; align-items: center; min-height: 36px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--prima-navy); font-size: .78rem; line-height: 1; font-weight: 850; }
+      .tech-list > p { margin: 14px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.45; }
+      @media (max-width: 759px) {
+        .tech-list-primary { gap: 6px; }
+        .tech-list-primary span { min-height: 34px; padding: 7px 10px; font-size: .74rem; }
+        .tech-list > p { font-size: .78rem; }
+      }
+    </style>
   </body>
 </html>
