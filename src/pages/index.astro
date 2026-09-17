@@ -30,6 +30,8 @@ import { nav, siteTitle } from '../layouts';
       .overview-page .overview-benchmark-note { margin-top:24px; padding:26px 24px 22px; border-top:0; border:1px solid #384155; border-radius:20px; background:var(--prima-navy); color:#fff; }
       .overview-page .overview-benchmark-quote { margin:0; font-size:clamp(1.35rem,3vw,2rem); line-height:1.08; font-weight:900; letter-spacing:-.035em; max-width:34ch; color:#fff; }
       .overview-page .overview-benchmark-caption { display:block; margin-top:14px; color:#c7cbd5; font-size:.88rem; font-weight:750; }
+      .overview-page .overview-cta-link:hover,
+      .overview-page .overview-sources-link:hover { color:#9a5acd !important; }
       @media (max-width:759px) {
         .overview-page .nav a { padding:9px 12px; font-size:.92rem; }
         .overview-page .overview-kicker { font-size:.84rem; }
@@ -81,13 +83,13 @@ import { nav, siteTitle } from '../layouts';
               <div class="overview-task-label">01 / Diagnose</div>
               <h3 style="margin-top:12px">Where the talent experience could work harder.</h3>
               <p class="small" style="margin-top:12px">Three problems, why they matter, what I would change first, and one benchmark.</p>
-              <p style="margin:18px 0 0;font-weight:900">Open Task 1 →</p>
+              <p class="overview-cta-link" style="margin:18px 0 0;font-weight:900">Open Task 1 →</p>
             </a>
             <a class="surface card card-violet" style="text-decoration:none" href="/prima-employer-brand-takehome/task-2/">
               <div class="overview-task-label">02 / Make something better</div>
               <h3 style="margin-top:12px">From job description to candidate decision tool.</h3>
               <p class="small" style="margin-top:12px">A desktop redesign of a real Prima Software Engineering vacancy, with a deliberate mobile adaptation.</p>
-              <p style="margin:18px 0 0;font-weight:900">Open Task 2 →</p>
+              <p class="overview-cta-link" style="margin:18px 0 0;font-weight:900">Open Task 2 →</p>
             </a>
           </div>
         </div>
@@ -126,7 +128,7 @@ import { nav, siteTitle } from '../layouts';
           <div class="eyebrow">Prima</div>
           <p style="margin-top:8px">Employer Branding Manager | Take-home Assignment</p>
         </div>
-        <a class="small" href="/prima-employer-brand-takehome/sources/">Sources & method →</a>
+        <a class="small overview-sources-link" href="/prima-employer-brand-takehome/sources/">Sources & method →</a>
       </div>
     </footer>
   </body>
