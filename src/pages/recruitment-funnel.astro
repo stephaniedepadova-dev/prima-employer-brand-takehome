@@ -61,7 +61,7 @@ const stages = [
     conversion: 'Offer acceptance rate',
     time: 'Time from decision to offer',
     tone: 'green-soft',
-    funnelWidth: '60%'
+    funnelWidth: '72%'
   },
   {
     no: '07',
@@ -71,7 +71,7 @@ const stages = [
     conversion: 'Acceptance / hire rate',
     time: 'Time to hire',
     tone: 'green-final',
-    funnelWidth: '52%'
+    funnelWidth: '68%'
   }
 ];
 
@@ -293,9 +293,10 @@ const questions = [
       .funnel-stage-wrap { display: grid; justify-items: center; }
       .funnel-stage {
         width: min(var(--funnel-width, 100%), 100%);
+        min-width: 660px;
         display: grid;
-        grid-template-columns: 48px minmax(210px, 1.1fr) minmax(0, 1.8fr);
-        gap: 16px;
+        grid-template-columns: 48px minmax(205px, 1.05fr) minmax(0, 1.8fr);
+        gap: 14px;
         align-items: center;
         padding: 17px 18px;
         border: 1px solid transparent;
@@ -470,6 +471,7 @@ const questions = [
         .funnel-kicker { grid-template-columns: 1fr; gap: 10px; }
         .funnel-stage {
           width: 100%;
+          min-width: 0;
           grid-template-columns: 42px 1fr;
           gap: 11px;
           padding: 15px 14px;
