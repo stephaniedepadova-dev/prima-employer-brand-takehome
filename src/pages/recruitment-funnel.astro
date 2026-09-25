@@ -11,7 +11,8 @@ const stages = [
     conversion: 'Conversion to screening',
     time: 'Time to first review',
     tone: 'purple',
-    funnelWidth: '100%'
+    funnelWidth: '100%',
+    passWidth: '24%'
   },
   {
     no: '02',
@@ -21,7 +22,8 @@ const stages = [
     conversion: 'Screening pass rate',
     time: 'Time in screening',
     tone: 'violet',
-    funnelWidth: '91%'
+    funnelWidth: '91%',
+    passWidth: '34%'
   },
   {
     no: '03',
@@ -31,7 +33,8 @@ const stages = [
     conversion: 'Progression to assessment',
     time: 'Time to screening call',
     tone: 'blue',
-    funnelWidth: '82%'
+    funnelWidth: '82%',
+    passWidth: '44%'
   },
   {
     no: '04',
@@ -41,7 +44,8 @@ const stages = [
     conversion: 'Pass-through to interview',
     time: 'Time to assessment result',
     tone: 'teal',
-    funnelWidth: '73%'
+    funnelWidth: '73%',
+    passWidth: '54%'
   },
   {
     no: '05',
@@ -51,7 +55,8 @@ const stages = [
     conversion: 'Progression to shortlist',
     time: 'Time across interview stages',
     tone: 'green',
-    funnelWidth: '64%'
+    funnelWidth: '64%',
+    passWidth: '64%'
   },
   {
     no: '06',
@@ -61,7 +66,8 @@ const stages = [
     conversion: 'Progression to offer',
     time: 'Time to final decision',
     tone: 'green-mid',
-    funnelWidth: '55%'
+    funnelWidth: '55%',
+    passWidth: '74%'
   },
   {
     no: '07',
@@ -71,7 +77,8 @@ const stages = [
     conversion: 'Offer acceptance rate',
     time: 'Time from decision to offer',
     tone: 'green-soft',
-    funnelWidth: '46%'
+    funnelWidth: '46%',
+    passWidth: '84%'
   },
   {
     no: '08',
@@ -81,7 +88,8 @@ const stages = [
     conversion: 'Acceptance / hire rate',
     time: 'Time to hire',
     tone: 'green-final',
-    funnelWidth: '38%'
+    funnelWidth: '38%',
+    passWidth: '94%'
   }
 ];
 
@@ -189,6 +197,12 @@ const questions = [
                       <div>
                         <span class="metric-label">Time in stage</span>
                         <strong>{stage.time}</strong>
+                      </div>
+                    </div>
+                    <div class="pass-through-visual" aria-label="Illustrative pass-through progression">
+                      <span class="metric-label">Pass-through progression</span>
+                      <div class="pass-track">
+                        <span class="pass-fill" style={'width: ' + stage.passWidth}></span>
                       </div>
                     </div>
                   </article>
@@ -403,6 +417,34 @@ const questions = [
         font-weight: 950;
       }
 
+      .pass-through-visual {
+        grid-column: 1 / -1;
+        display: grid;
+        gap: 5px;
+        margin-top: 2px;
+      }
+      .pass-track {
+        width: 100%;
+        height: 5px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(255,255,255,.23);
+      }
+      .pass-fill {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: rgba(255,255,255,.9);
+      }
+      .tone-green-soft .pass-track,
+      .tone-green-final .pass-track {
+        background: rgba(33,40,58,.12);
+      }
+      .tone-green-soft .pass-fill,
+      .tone-green-final .pass-fill {
+        background: rgba(33,40,58,.72);
+      }
+
       .funnel-flow::before {
         content: 'Candidate volume narrows ↓  •  Pass-through rate rises ↑';
         display: block;
@@ -523,6 +565,8 @@ const questions = [
         }
         .metric-label { display: block; margin-right: 0; font-size: .6rem; }
         .stage-metrics strong { display: block; margin-top: 4px; font-size: .74rem; }
+        .pass-through-visual { margin-top: 2px; }
+        .pass-track { height: 4px; }
         .funnel-arrow { height: 19px; font-size: 1rem; }
         .funnel-bottom { grid-template-columns: 1fr; gap: 16px; }
       }
