@@ -6,6 +6,7 @@ export const nav = [
   { label: 'Overview', href: '/' },
   { label: 'Task 1', href: '/task-1/' },
   { label: 'Task 2', href: '/task-2/' },
+  { label: 'Recruitment Funnel', href: '/recruitment-funnel/' },
   { label: 'Open redesigned vacancy ↗', href: '/redesigned-vacancy/' },
 ];
 
