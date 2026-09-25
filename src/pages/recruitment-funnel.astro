@@ -51,7 +51,7 @@ const stages = [
     conversion: 'Progression to offer',
     time: 'Time to final decision',
     tone: 'green',
-    funnelWidth: '68%'
+    funnelWidth: '52%'
   },
   {
     no: '06',
@@ -61,7 +61,7 @@ const stages = [
     conversion: 'Offer acceptance rate',
     time: 'Time from decision to offer',
     tone: 'green-soft',
-    funnelWidth: '72%'
+    funnelWidth: '60%'
   },
   {
     no: '07',
@@ -338,6 +338,20 @@ const questions = [
         opacity: .85;
         font-size: .8rem;
         line-height: 1.3;
+      }
+
+      /* Keep the funnel width narrowing while giving the last two stages enough room for metrics. */
+      .funnel-stage-wrap:nth-child(6) .funnel-stage,
+      .funnel-stage-wrap:nth-child(7) .funnel-stage {
+        grid-template-columns: 42px minmax(0, 1fr);
+        align-items: start;
+      }
+      .funnel-stage-wrap:nth-child(6) .stage-metrics,
+      .funnel-stage-wrap:nth-child(7) .stage-metrics {
+        grid-column: 2;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 2px;
       }
       .stage-metrics {
         display: grid;
