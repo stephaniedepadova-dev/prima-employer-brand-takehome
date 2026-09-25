@@ -1,0 +1,459 @@
+---
+import '../styles/global.css';
+import { nav } from '../layouts';
+
+const stages = [
+  {
+    no: '01',
+    title: 'Candidates received',
+    subtitle: 'Applications entering the recruitment process',
+    volume: 'Applications received',
+    conversion: 'Conversion to screening',
+    time: 'Time to first review',
+    tone: 'purple'
+  },
+  {
+    no: '02',
+    title: 'CV screening',
+    subtitle: 'Initial review against role requirements',
+    volume: 'CVs screened',
+    conversion: 'Screening pass rate',
+    time: 'Time in screening',
+    tone: 'violet'
+  },
+  {
+    no: '03',
+    title: 'Initial screening',
+    subtitle: 'Recruiter / HR contact and qualification',
+    volume: 'Candidates contacted',
+    conversion: 'Progression to interview',
+    time: 'Time to screening call',
+    tone: 'blue'
+  },
+  {
+    no: '04',
+    title: 'Interviews',
+    subtitle: 'Recruiter and Hiring Manager interview stages',
+    volume: 'Candidates interviewed',
+    conversion: 'Progression to shortlist',
+    time: 'Time across interview stages',
+    tone: 'teal'
+  },
+  {
+    no: '05',
+    title: 'Shortlist / final decision',
+    subtitle: 'Final candidate evaluation and decision',
+    volume: 'Candidates in shortlist',
+    conversion: 'Progression to offer',
+    time: 'Time to final decision',
+    tone: 'green'
+  },
+  {
+    no: '06',
+    title: 'Offer',
+    subtitle: 'Offer presented to the selected candidate',
+    volume: 'Offers made',
+    conversion: 'Offer acceptance rate',
+    time: 'Time from decision to offer',
+    tone: 'green-soft'
+  },
+  {
+    no: '07',
+    title: 'Acceptance / hire',
+    subtitle: 'Accepted offer and transition to hire',
+    volume: 'Hires',
+    conversion: 'Acceptance / hire rate',
+    time: 'Time to hire',
+    tone: 'green-final'
+  }
+];
+
+const metrics = [
+  {
+    title: 'Volume',
+    text: 'How many candidates are present at each stage.'
+  },
+  {
+    title: 'Conversion / drop-off',
+    text: 'How many candidates move forward — and where candidates are lost.'
+  },
+  {
+    title: 'Time in stage',
+    text: 'How long candidates remain in each step of the process.'
+  }
+];
+
+const questions = [
+  'Where do candidates drop?',
+  'Where does time accumulate?',
+  'Which stage becomes the bottleneck?',
+  'Which source or stage converts best?'
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5f1" />
+    <meta
+      name="description"
+      content="Operational recruitment funnel framework: volume, conversion and time across the candidate selection process."
+    />
+    <title>Recruitment Funnel | Prima Take-home</title>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="wordmark" href="/prima-employer-brand-takehome/">PRIMA</a>
+        <nav class="nav" aria-label="Primary navigation">
+          {nav.map((item) => (
+            <a
+              href={`/prima-employer-brand-takehome${item.href}`}
+              aria-current={item.href === '/recruitment-funnel/' ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="task-hero funnel-hero">
+        <div class="shell funnel-head">
+          <div class="task-number">
+            <span class="eyebrow task-label-large">Recruitment process / operational view</span>
+          </div>
+          <h1 class="task-title">Recruitment funnel</h1>
+          <p class="lead">
+            From candidate application to hire: a structured view of volume, conversion and timing at every stage.
+          </p>
+          <div class="funnel-note">
+            <span class="eyebrow">The purpose</span>
+            <strong>Make the process visible enough to understand where candidates move, where they drop, and where time accumulates.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section funnel-section">
+        <div class="shell funnel-layout">
+          <div class="funnel-main">
+            <div class="funnel-kicker">
+              <div>
+                <div class="eyebrow">Operational funnel</div>
+                <h2>From application to hire</h2>
+              </div>
+              <p class="small">Illustrative framework — actual volumes, conversion rates and timings depend on role, source mix and process.</p>
+            </div>
+
+            <div class="funnel-flow">
+              {stages.map((stage, index) => (
+                <div class="funnel-stage-wrap">
+                  <article class={`funnel-stage tone-${stage.tone}`}>
+                    <div class="stage-index">{stage.no}</div>
+                    <div class="stage-copy">
+                      <h3>{stage.title}</h3>
+                      <p>{stage.subtitle}</p>
+                    </div>
+                    <div class="stage-metrics">
+                      <div>
+                        <span class="metric-label">Volume</span>
+                        <strong>{stage.volume}</strong>
+                      </div>
+                      <div>
+                        <span class="metric-label">Conversion / drop-off</span>
+                        <strong>{stage.conversion}</strong>
+                      </div>
+                      <div>
+                        <span class="metric-label">Time in stage</span>
+                        <strong>{stage.time}</strong>
+                      </div>
+                    </div>
+                  </article>
+
+                  {index < stages.length - 1 && (
+                    <div class="funnel-arrow" aria-hidden="true">↓</div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <aside class="funnel-rail">
+            <article class="surface card rail-card">
+              <div class="eyebrow">Key metrics</div>
+              <h3>What to monitor</h3>
+              <div class="rail-list">
+                {metrics.map((metric) => (
+                  <div class="rail-item">
+                    <span class="rail-icon" aria-hidden="true">↗</span>
+                    <div>
+                      <strong>{metric.title}</strong>
+                      <p>{metric.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </article>
+
+            <article class="surface card rail-card rail-purple">
+              <div class="eyebrow">What the funnel should make visible</div>
+              <h3>Questions worth answering</h3>
+              <div class="question-list">
+                {questions.map((question, index) => (
+                  <div class="question-item">
+                    <span>0{index + 1}</span>
+                    <strong>{question}</strong>
+                  </div>
+                ))}
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <article class="surface card funnel-bottom">
+            <div>
+              <div class="eyebrow">Why it matters</div>
+              <h2>From numbers to action.</h2>
+            </div>
+            <p>
+              The funnel is not only a reporting view. It helps connect candidate flow with process design:
+              identify drop-off points, understand delays, test targeted improvements and keep the candidate experience visible alongside operational efficiency.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <div class="eyebrow">Recruitment funnel</div>
+          <p style="margin-top:8px">Operational recruitment process framework</p>
+        </div>
+        <a class="small" href="/prima-employer-brand-takehome/sources/">Sources & method →</a>
+      </div>
+    </footer>
+
+    <style>
+      .funnel-head { display: grid; gap: 18px; }
+      .funnel-hero { padding-bottom: 34px; }
+      .funnel-note {
+        display: grid;
+        gap: 8px;
+        max-width: 760px;
+        padding: 18px 20px;
+        background: var(--prima-soft);
+        border: 1px solid #dbc7ef;
+        border-radius: var(--radius-sm);
+      }
+      .funnel-note strong { max-width: 70ch; font-size: 1rem; line-height: 1.4; }
+
+      .funnel-layout {
+        display: grid;
+        gap: 22px;
+        align-items: start;
+      }
+      .funnel-main { min-width: 0; }
+      .funnel-kicker {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(220px, .55fr);
+        gap: 20px;
+        align-items: end;
+        margin-bottom: 24px;
+      }
+      .funnel-kicker h2 { margin-top: 8px; max-width: 18ch; }
+
+      .funnel-flow { display: grid; gap: 0; }
+      .funnel-stage-wrap { display: grid; justify-items: center; }
+      .funnel-stage {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 48px minmax(210px, 1.1fr) minmax(0, 1.8fr);
+        gap: 16px;
+        align-items: center;
+        padding: 17px 18px;
+        border: 1px solid transparent;
+        border-radius: 18px;
+        box-shadow: 0 9px 25px rgba(18,18,18,.045);
+      }
+
+      .tone-purple { background: #8334c2; color: #fff; }
+      .tone-violet { background: #9b57d1; color: #fff; }
+      .tone-blue { background: #5f8fcd; color: #fff; }
+      .tone-teal { background: #3d9caa; color: #fff; }
+      .tone-green { background: #65b48b; color: #fff; }
+      .tone-green-soft { background: #b5dca8; color: #17231d; }
+      .tone-green-final { background: #d6edc9; color: #17231d; }
+
+      .stage-index {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(255,255,255,.17);
+        border: 1px solid rgba(255,255,255,.3);
+        font-size: .82rem;
+        font-weight: 950;
+      }
+      .tone-green-soft .stage-index,
+      .tone-green-final .stage-index {
+        background: rgba(255,255,255,.62);
+        border-color: rgba(33,40,58,.1);
+      }
+      .stage-copy h3 {
+        font-size: clamp(1.1rem, 2.4vw, 1.55rem);
+        letter-spacing: -.035em;
+      }
+      .stage-copy p {
+        margin-top: 4px;
+        margin-bottom: 0;
+        opacity: .85;
+        font-size: .8rem;
+        line-height: 1.3;
+      }
+      .stage-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 12px;
+      }
+      .stage-metrics > div {
+        min-width: 0;
+        padding-left: 12px;
+        border-left: 1px solid rgba(255,255,255,.24);
+      }
+      .tone-green-soft .stage-metrics > div,
+      .tone-green-final .stage-metrics > div {
+        border-left-color: rgba(33,40,58,.13);
+      }
+      .metric-label {
+        display: block;
+        font-size: .64rem;
+        line-height: 1.15;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: .09em;
+        opacity: .72;
+      }
+      .stage-metrics strong {
+        display: block;
+        margin-top: 4px;
+        font-size: .78rem;
+        line-height: 1.25;
+      }
+      .funnel-arrow {
+        height: 23px;
+        display: grid;
+        place-items: center;
+        color: var(--prima);
+        font-size: 1.1rem;
+        font-weight: 950;
+      }
+
+      .funnel-rail { display: grid; gap: 14px; position: sticky; top: 90px; }
+      .rail-card { padding: 20px; }
+      .rail-card h3 { margin-top: 8px; font-size: 1.65rem; }
+      .rail-list { display: grid; gap: 0; margin-top: 18px; }
+      .rail-item {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        gap: 10px;
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+      }
+      .rail-item:first-child { border-top: 0; padding-top: 0; }
+      .rail-icon {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--prima-soft);
+        color: var(--prima);
+        font-weight: 950;
+      }
+      .rail-item strong { display: block; font-size: .9rem; }
+      .rail-item p { margin: 4px 0 0; color: var(--muted); font-size: .8rem; line-height: 1.42; }
+
+      .rail-purple { background: var(--prima-navy); color: #fff; border-color: var(--prima-navy); }
+      .rail-purple .eyebrow { color: #bcbfc8; }
+      .question-list { display: grid; gap: 0; margin-top: 18px; }
+      .question-item {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+        align-items: start;
+        padding: 13px 0;
+        border-top: 1px solid rgba(255,255,255,.14);
+      }
+      .question-item span {
+        color: #c59ce5;
+        font-size: .68rem;
+        font-weight: 900;
+        letter-spacing: .08em;
+      }
+      .question-item strong { font-size: .86rem; line-height: 1.32; }
+
+      .funnel-bottom {
+        display: grid;
+        grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr);
+        gap: 34px;
+        align-items: end;
+        background: var(--prima-soft);
+        border-color: #dbc7ef;
+      }
+      .funnel-bottom h2 { margin-top: 10px; }
+      .funnel-bottom p { max-width: 62ch; margin: 0; color: #353137; }
+
+      @media (min-width: 980px) {
+        .funnel-layout { grid-template-columns: minmax(0, 1.55fr) minmax(280px, .45fr); }
+      }
+
+      @media (max-width: 979px) {
+        .funnel-rail { position: static; }
+      }
+
+      @media (max-width: 759px) {
+        .funnel-head .task-title { max-width: 10ch; }
+        .funnel-kicker { grid-template-columns: 1fr; gap: 10px; }
+        .funnel-stage {
+          grid-template-columns: 42px 1fr;
+          gap: 11px;
+          padding: 15px 14px;
+          border-radius: 16px;
+        }
+        .stage-index { width: 36px; height: 36px; font-size: .74rem; }
+        .stage-copy h3 { font-size: 1.08rem; }
+        .stage-copy p { font-size: .73rem; }
+        .stage-metrics {
+          grid-column: 1 / -1;
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding-top: 2px;
+        }
+        .stage-metrics > div {
+          padding: 8px 0 0;
+          border-left: 0;
+          border-top: 1px solid rgba(255,255,255,.2);
+        }
+        .tone-green-soft .stage-metrics > div,
+        .tone-green-final .stage-metrics > div {
+          border-left: 0;
+          border-top-color: rgba(33,40,58,.12);
+        }
+        .metric-label { display: inline; margin-right: 6px; font-size: .6rem; }
+        .stage-metrics strong { display: inline; font-size: .74rem; }
+        .funnel-arrow { height: 19px; font-size: 1rem; }
+        .funnel-bottom { grid-template-columns: 1fr; gap: 16px; }
+      }
+    </style>
+  </body>
+</html>
