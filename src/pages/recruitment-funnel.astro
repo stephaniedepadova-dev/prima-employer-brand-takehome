@@ -10,7 +10,8 @@ const stages = [
     volume: 'Applications received',
     conversion: 'Conversion to screening',
     time: 'Time to first review',
-    tone: 'purple'
+    tone: 'purple',
+    funnelWidth: '100%'
   },
   {
     no: '02',
@@ -19,7 +20,8 @@ const stages = [
     volume: 'CVs screened',
     conversion: 'Screening pass rate',
     time: 'Time in screening',
-    tone: 'violet'
+    tone: 'violet',
+    funnelWidth: '92%'
   },
   {
     no: '03',
@@ -28,7 +30,8 @@ const stages = [
     volume: 'Candidates contacted',
     conversion: 'Progression to interview',
     time: 'Time to screening call',
-    tone: 'blue'
+    tone: 'blue',
+    funnelWidth: '84%'
   },
   {
     no: '04',
@@ -37,7 +40,8 @@ const stages = [
     volume: 'Candidates interviewed',
     conversion: 'Progression to shortlist',
     time: 'Time across interview stages',
-    tone: 'teal'
+    tone: 'teal',
+    funnelWidth: '76%'
   },
   {
     no: '05',
@@ -46,7 +50,8 @@ const stages = [
     volume: 'Candidates in shortlist',
     conversion: 'Progression to offer',
     time: 'Time to final decision',
-    tone: 'green'
+    tone: 'green',
+    funnelWidth: '68%'
   },
   {
     no: '06',
@@ -55,7 +60,8 @@ const stages = [
     volume: 'Offers made',
     conversion: 'Offer acceptance rate',
     time: 'Time from decision to offer',
-    tone: 'green-soft'
+    tone: 'green-soft',
+    funnelWidth: '60%'
   },
   {
     no: '07',
@@ -64,7 +70,8 @@ const stages = [
     volume: 'Hires',
     conversion: 'Acceptance / hire rate',
     time: 'Time to hire',
-    tone: 'green-final'
+    tone: 'green-final',
+    funnelWidth: '52%'
   }
 ];
 
@@ -148,13 +155,13 @@ const questions = [
                 <div class="eyebrow">Operational funnel</div>
                 <h2>From application to hire</h2>
               </div>
-              <p class="small">Illustrative framework. Actual volumes, conversion rates and timings depend on role, source mix and process.</p>
+              <p class="small">Illustrative framework. Candidate volume narrows by stage, while pass-through rate generally increases as the pool becomes more qualified. Actual volumes, conversion rates and timings depend on role, source mix and process.</p>
             </div>
 
             <div class="funnel-flow">
               {stages.map((stage, index) => (
                 <div class="funnel-stage-wrap">
-                  <article class={`funnel-stage tone-${stage.tone}`}>
+                  <article class={`funnel-stage tone-${stage.tone}`} style={`--funnel-width: ${stage.funnelWidth}`}>
                     <div class="stage-index">{stage.no}</div>
                     <div class="stage-copy">
                       <h3>{stage.title}</h3>
@@ -166,7 +173,7 @@ const questions = [
                         <strong>{stage.volume}</strong>
                       </div>
                       <div>
-                        <span class="metric-label">Conversion / drop-off</span>
+                        <span class="metric-label">Pass-through / drop-off</span>
                         <strong>{stage.conversion}</strong>
                       </div>
                       <div>
@@ -285,7 +292,7 @@ const questions = [
       .funnel-flow { display: grid; gap: 0; }
       .funnel-stage-wrap { display: grid; justify-items: center; }
       .funnel-stage {
-        width: 100%;
+        width: min(var(--funnel-width, 100%), 100%);
         display: grid;
         grid-template-columns: 48px minmax(210px, 1.1fr) minmax(0, 1.8fr);
         gap: 16px;
@@ -362,11 +369,23 @@ const questions = [
       }
       .funnel-arrow {
         height: 23px;
+        position: relative;
         display: grid;
         place-items: center;
         color: var(--prima);
         font-size: 1.1rem;
         font-weight: 950;
+      }
+
+      .funnel-flow::before {
+        content: 'Candidate volume narrows ↓  •  Pass-through rate rises ↑';
+        display: block;
+        margin: 0 auto 14px;
+        color: var(--muted);
+        font-size: .72rem;
+        font-weight: 850;
+        letter-spacing: .02em;
+        text-align: center;
       }
 
       .funnel-rail { display: grid; gap: 14px; position: sticky; top: 90px; }
@@ -450,6 +469,7 @@ const questions = [
         .funnel-head .task-title { max-width: 10ch; }
         .funnel-kicker { grid-template-columns: 1fr; gap: 10px; }
         .funnel-stage {
+          width: 100%;
           grid-template-columns: 42px 1fr;
           gap: 11px;
           padding: 15px 14px;
