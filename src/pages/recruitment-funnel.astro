@@ -99,6 +99,13 @@ const stages = [
   }
 ];
 
+const illustrativeCurve = [
+  { label: 'CV screening', rate: '35%' },
+  { label: 'Interviews', rate: '55%' },
+  { label: 'Shortlist', rate: '75%' },
+  { label: 'Offer', rate: '90%' }
+];
+
 const metrics = [
   {
     title: 'Volume',
@@ -219,9 +226,22 @@ const questions = [
                   )}
                 </div>
               ))}
-              <p class="funnel-example-caption">
-                <strong>Example scenario:</strong> a rigorous early screening filters volume efficiently, so conversion rates rise at later stages — protecting interview time for candidates who already meet core requirements.
-              </p>
+              <section class="illustrative-curve" aria-labelledby="illustrative-curve-title">
+                <div class="eyebrow">Illustrative conversion curve</div>
+                <h3 id="illustrative-curve-title">Front-loaded screening, stronger pass-through later</h3>
+                <div class="curve-grid">
+                  {illustrativeCurve.map((point) => (
+                    <div class="curve-point">
+                      <div class="curve-rate">{point.rate}</div>
+                      <div class="curve-bar"><span style={'height: ' + point.rate}></span></div>
+                      <strong>{point.label}</strong>
+                    </div>
+                  ))}
+                </div>
+                <p class="funnel-example-caption">
+                  <strong>Example scenario:</strong> front-loading the screening protects stakeholder time in the later stages by moving forward candidates who already meet core requirements.
+                </p>
+              </section>
             </div>
           </div>
 
@@ -464,6 +484,41 @@ const questions = [
         background: rgba(33,40,58,.72);
       }
 
+      .illustrative-curve {
+        margin: 22px auto 0;
+        max-width: 780px;
+        padding: 18px 20px;
+        background: var(--prima-soft);
+        border: 1px solid #dbc7ef;
+        border-radius: var(--radius-sm);
+      }
+      .illustrative-curve h3 { margin-top: 6px; font-size: 1.05rem; }
+      .curve-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        align-items: end;
+        margin-top: 18px;
+      }
+      .curve-point { display: grid; gap: 7px; text-align: center; align-items: end; }
+      .curve-rate { font-size: .78rem; font-weight: 950; }
+      .curve-bar {
+        height: 74px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        background: rgba(131,52,194,.08);
+        border-radius: 8px 8px 4px 4px;
+        overflow: hidden;
+      }
+      .curve-bar span {
+        display: block;
+        width: 100%;
+        min-height: 4px;
+        background: var(--prima);
+        border-radius: 7px 7px 0 0;
+      }
+      .curve-point strong { font-size: .72rem; line-height: 1.2; }
       .funnel-example-caption {
         max-width: 780px;
         margin: 14px auto 0;
@@ -597,6 +652,10 @@ const questions = [
         .pass-through-visual { margin-top: 2px; }
         .example-rate { font-size: .68rem; }
         .pass-track { height: 4px; }
+        .curve-grid { gap: 8px; }
+        .curve-bar { height: 58px; }
+        .curve-point strong { font-size: .64rem; }
+        .illustrative-curve { padding: 16px 12px; }
         .funnel-example-caption { font-size: .7rem; padding: 0 8px; }
         .funnel-arrow { height: 19px; font-size: 1rem; }
         .funnel-bottom { grid-template-columns: 1fr; gap: 16px; }
