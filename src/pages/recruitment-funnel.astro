@@ -223,10 +223,20 @@ const questions = [
               <div class="eyebrow">Why it matters</div>
               <h2>From numbers to action.</h2>
             </div>
-            <p>
-              The funnel is not only a reporting view. It helps connect candidate flow with process design:
-              identify drop-off points, understand delays, test targeted improvements and keep the candidate experience visible alongside operational efficiency.
-            </p>
+            <div class="bottom-copy">
+              <p>
+                The funnel is not only a reporting view. It helps connect candidate flow with process design:
+                identify drop-off points, understand delays, test targeted improvements and keep the candidate experience visible alongside operational efficiency.
+              </p>
+              <div class="conversion-principle">
+                <span class="eyebrow">Conversion principle</span>
+                <p>
+                  A healthy funnel generally shows a rising pass-through rate stage by stage:
+                  broader, decisive filtering early, with progressively fewer losses as candidates move closer to offer and hire.
+                  Late-stage drop-off is more costly to recover from.
+                </p>
+              </div>
+            </div>
           </article>
         </div>
       </section>
@@ -412,6 +422,20 @@ const questions = [
       }
       .funnel-bottom h2 { margin-top: 10px; }
       .funnel-bottom p { max-width: 62ch; margin: 0; color: #353137; }
+      .bottom-copy { display: grid; gap: 16px; }
+      .conversion-principle {
+        padding: 16px 18px;
+        background: rgba(255,255,255,.72);
+        border: 1px solid #dbc7ef;
+        border-radius: var(--radius-sm);
+      }
+      .conversion-principle .eyebrow { color: var(--prima); }
+      .conversion-principle p {
+        margin-top: 7px;
+        font-size: .9rem;
+        line-height: 1.45;
+        max-width: 68ch;
+      }
 
       @media (min-width: 980px) {
         .funnel-layout { grid-template-columns: minmax(0, 1.55fr) minmax(280px, .45fr); }
