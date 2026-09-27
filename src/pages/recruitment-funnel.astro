@@ -268,7 +268,7 @@ const questions = [
             <div class="funnel-curve-overlay" aria-label="Illustrative conversion curve: 40 percent at CV screening, 48 percent at assessment or tests, 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.">
               <svg class="conversion-curve-svg" viewBox="0 0 600 220" role="img" aria-labelledby="curve-title curve-desc">
                 <title id="curve-title">Illustrative conversion curve</title>
-                <desc id="curve-desc">Pass-through rate rises from 40 percent at CV screening to 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.</desc>
+                <desc id="curve-desc">Pass-through rate rises from 40 percent at CV screening to 48 percent at assessment or tests, 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.</desc>
                 <path class="curve-path" d="M45 172 C82 165 105 154 135 145 S185 127 220 116 S280 96 315 82 S370 66 405 54 S465 38 505 29 S535 24 555 20" />
                 <g class="curve-point">
                   <circle cx="45" cy="172" r="7" />
@@ -278,12 +278,12 @@ const questions = [
                 <g class="curve-point">
                   <circle cx="135" cy="145" r="7" />
                   <text x="135" y="125">48%</text>
-                  <text x="135" y="198">Assessment / tests</text>
+                  <text x="135" y="190"><tspan x="135" dy="0">Assessment /</tspan><tspan x="135" dy="13">tests</tspan></text>
                 </g>
                 <g class="curve-point">
                   <circle cx="220" cy="116" r="7" />
                   <text x="220" y="96">55%</text>
-                  <text x="220" y="198">Initial screening</text>
+                  <text x="220" y="190"><tspan x="220" dy="0">Initial</tspan><tspan x="220" dy="13">screening</tspan></text>
                 </g>
                 <g class="curve-point">
                   <circle cx="315" cy="82" r="7" />
@@ -303,7 +303,7 @@ const questions = [
                 <g class="curve-point">
                   <circle cx="555" cy="20" r="7" />
                   <text x="555" y="8">95%</text>
-                  <text x="555" y="198">Acceptance / hire</text>
+                  <text x="555" y="190"><tspan x="555" dy="0">Acceptance /</tspan><tspan x="555" dy="13">hire</tspan></text>
                 </g>
               </svg>
             </div>
@@ -548,6 +548,7 @@ const questions = [
         fill: var(--ink);
         font-size: 10px;
         font-weight: 850;
+        letter-spacing: -.01em;
         text-anchor: middle;
       }
       .funnel-example-caption {
