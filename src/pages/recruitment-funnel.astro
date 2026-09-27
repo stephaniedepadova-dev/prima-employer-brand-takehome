@@ -46,8 +46,7 @@ const stages = [
     time: 'Time to screening call',
     tone: 'teal',
     funnelWidth: '64%',
-    passWidth: '54%',
-    exampleRate: '55%'
+    passWidth: '54%'
   },
   {
     no: '05',
@@ -99,12 +98,7 @@ const stages = [
   }
 ];
 
-const illustrativeCurve = [
-  { label: 'CV screening', rate: '40%' },
-  { label: 'Interviews', rate: '65%' },
-  { label: 'Shortlist', rate: '80%' },
-  { label: 'Offer', rate: '90%' }
-];
+
 
 const metrics = [
   {
@@ -226,22 +220,16 @@ const questions = [
                   )}
                 </div>
               ))}
-              <section class="illustrative-curve" aria-labelledby="illustrative-curve-title">
-                <div class="eyebrow">Illustrative conversion curve</div>
-                <h3 id="illustrative-curve-title">Front-loaded screening, stronger pass-through later</h3>
-                <div class="curve-chart" role="img" aria-label="Illustrative conversion rate rises from 40 percent at CV screening to 65 percent at interviews, 80 percent at shortlist and 90 percent at offer.">
-                  <span class="curve-segment segment-one"></span>
-                  <span class="curve-segment segment-two"></span>
-                  <span class="curve-segment segment-three"></span>
-                  <span class="curve-point point-one"><strong>40%</strong><span>CV screening</span></span>
-                  <span class="curve-point point-two"><strong>65%</strong><span>Interviews</span></span>
-                  <span class="curve-point point-three"><strong>80%</strong><span>Shortlist</span></span>
-                  <span class="curve-point point-four"><strong>90%</strong><span>Offer</span></span>
-                </div>
-                <p class="funnel-example-caption">
-                  <strong>Example scenario:</strong> front-loading the screening protects stakeholder time in the later stages by moving forward candidates who already meet core requirements.
-                </p>
-              </section>
+
+            </div>
+            <div class="funnel-curve-overlay" aria-label="Illustrative conversion curve: 40 percent at CV screening, 65 percent at interviews, 80 percent at shortlist and 90 percent at offer.">
+              <span class="curve-line curve-line-one"></span>
+              <span class="curve-line curve-line-two"></span>
+              <span class="curve-line curve-line-three"></span>
+              <span class="curve-node node-one"><strong>40%</strong></span>
+              <span class="curve-node node-two"><strong>65%</strong></span>
+              <span class="curve-node node-three"><strong>80%</strong></span>
+              <span class="curve-node node-four"><strong>90%</strong></span>
             </div>
           </div>
 
@@ -484,56 +472,44 @@ const questions = [
         background: rgba(33,40,58,.72);
       }
 
-      .illustrative-curve {
-        margin: 22px auto 0;
-        max-width: 780px;
-        padding: 18px 20px;
-        background: var(--prima-soft);
-        border: 1px solid #dbc7ef;
-        border-radius: var(--radius-sm);
-      }
-      .illustrative-curve h3 { margin-top: 6px; font-size: 1.05rem; }
-      .curve-chart {
-        position: relative;
-        height: 150px;
-        margin: 18px 8px 0;
-        border-bottom: 1px solid rgba(131,52,194,.12);
-      }
-      .curve-point {
+      .funnel-curve-overlay {
         position: absolute;
-        display: grid;
-        gap: 4px;
-        justify-items: center;
-        text-align: center;
-        transform: translateX(-50%);
-        z-index: 2;
+        left: 0;
+        right: 0;
+        height: 0;
+        pointer-events: none;
+        z-index: 4;
       }
-      .curve-point::before {
-        content: '';
-        width: 12px;
-        height: 12px;
-        margin-bottom: 2px;
-        border-radius: 50%;
-        background: var(--prima);
-        box-shadow: 0 0 0 4px var(--prima-soft);
-      }
-      .curve-point strong { font-size: .78rem; line-height: 1; }
-      .curve-point span { color: var(--muted); font-size: .68rem; line-height: 1.2; white-space: nowrap; }
-      .point-one { left: 8%; top: 78px; }
-      .point-two { left: 38%; top: 52px; }
-      .point-three { left: 68%; top: 30px; }
-      .point-four { left: 92%; top: 14px; }
-      .curve-segment {
+      .curve-line {
         position: absolute;
         height: 4px;
         background: var(--prima);
         border-radius: 999px;
         transform-origin: left center;
-        z-index: 1;
       }
-      .segment-one { left: 9%; top: 84px; width: 31%; transform: rotate(-5deg); }
-      .segment-two { left: 39%; top: 58px; width: 31%; transform: rotate(-4deg); }
-      .segment-three { left: 69%; top: 36px; width: 24%; transform: rotate(-4deg); }
+      .curve-node {
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--prima);
+        color: #fff;
+        border: 3px solid var(--prima-soft);
+        box-shadow: 0 3px 10px rgba(18,18,18,.12);
+        font-size: .64rem;
+        font-weight: 950;
+      }
+      .funnel-main { position: relative; }
+      .funnel-curve-overlay { top: 360px; }
+      .node-one { left: 17%; top: 120px; }
+      .node-two { left: 39%; top: 70px; }
+      .node-three { left: 62%; top: 34px; }
+      .node-four { left: 82%; top: 4px; }
+      .curve-line-one { left: 19%; top: 137px; width: 23%; transform: rotate(-12deg); }
+      .curve-line-two { left: 41%; top: 87px; width: 24%; transform: rotate(-10deg); }
+      .curve-line-three { left: 64%; top: 51px; width: 21%; transform: rotate(-8deg); }
       .funnel-example-caption {
         max-width: 780px;
         margin: 14px auto 0;
@@ -635,6 +611,7 @@ const questions = [
       @media (max-width: 759px) {
         .funnel-head .task-title { max-width: 10ch; }
         .funnel-kicker { grid-template-columns: 1fr; gap: 10px; }
+        .funnel-curve-overlay { display: none; }
         .funnel-stage {
           width: 100%;
           min-width: 0;
