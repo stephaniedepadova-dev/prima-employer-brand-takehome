@@ -223,19 +223,7 @@ const questions = [
               ))}
 
             </div>
-            <div class="funnel-curve-overlay" aria-label="Illustrative conversion curve: 40 percent at CV screening, 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.">
-              <span class="curve-line curve-line-one"></span>
-              <span class="curve-line curve-line-two"></span>
-              <span class="curve-line curve-line-three"></span>
-              <span class="curve-line curve-line-four"></span>
-              <span class="curve-line curve-line-five"></span>
-              <span class="curve-node node-one"><strong>40%</strong></span>
-              <span class="curve-node node-two"><strong>55%</strong></span>
-              <span class="curve-node node-three"><strong>65%</strong></span>
-              <span class="curve-node node-four"><strong>80%</strong></span>
-              <span class="curve-node node-five"><strong>90%</strong></span>
-              <span class="curve-node node-six"><strong>95%</strong></span>
-            </div>
+
           </div>
 
           <aside class="funnel-rail">
@@ -268,6 +256,31 @@ const questions = [
               </div>
             </article>
           </aside>
+        </div>
+      </section>
+
+      <section class="section conversion-curve-section">
+        <div class="shell">
+          <article class="illustrative-curve">
+            <div class="eyebrow">Illustrative conversion curve</div>
+            <h3>Front-loaded screening, stronger pass-through later</h3>
+            <div class="funnel-curve-overlay" aria-label="Illustrative conversion curve: 40 percent at CV screening, 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.">
+              <span class="curve-line curve-line-one"></span>
+              <span class="curve-line curve-line-two"></span>
+              <span class="curve-line curve-line-three"></span>
+              <span class="curve-line curve-line-four"></span>
+              <span class="curve-line curve-line-five"></span>
+              <span class="curve-node node-one"><strong>40%</strong></span>
+              <span class="curve-node node-two"><strong>55%</strong></span>
+              <span class="curve-node node-three"><strong>65%</strong></span>
+              <span class="curve-node node-four"><strong>80%</strong></span>
+              <span class="curve-node node-five"><strong>90%</strong></span>
+              <span class="curve-node node-six"><strong>95%</strong></span>
+            </div>
+            <p class="funnel-example-caption">
+              <strong>Example scenario:</strong> front-loading the screening protects stakeholder time in the later stages by moving forward candidates who already meet core requirements.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -478,12 +491,10 @@ const questions = [
       }
 
       .funnel-curve-overlay {
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 0;
+        position: relative;
+        width: 100%;
+        height: 260px;
         pointer-events: none;
-        z-index: 4;
       }
       .curve-line {
         position: absolute;
@@ -624,7 +635,7 @@ const questions = [
       @media (max-width: 759px) {
         .funnel-head .task-title { max-width: 10ch; }
         .funnel-kicker { grid-template-columns: 1fr; gap: 10px; }
-        .funnel-curve-overlay { display: none; }
+        .funnel-curve-overlay { height: 190px; }
         .funnel-stage {
           width: 100%;
           min-width: 0;
