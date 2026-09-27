@@ -46,7 +46,8 @@ const stages = [
     time: 'Time to screening call',
     tone: 'teal',
     funnelWidth: '64%',
-    passWidth: '54%'
+    passWidth: '54%',
+    exampleRate: '55%'
   },
   {
     no: '05',
@@ -94,7 +95,7 @@ const stages = [
     tone: 'green-final',
     funnelWidth: '100%',
     passWidth: '94%',
-    exampleRate: '90%'
+    exampleRate: '95%'
   }
 ];
 
@@ -222,14 +223,18 @@ const questions = [
               ))}
 
             </div>
-            <div class="funnel-curve-overlay" aria-label="Illustrative conversion curve: 40 percent at CV screening, 65 percent at interviews, 80 percent at shortlist and 90 percent at offer.">
+            <div class="funnel-curve-overlay" aria-label="Illustrative conversion curve: 40 percent at CV screening, 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.">
               <span class="curve-line curve-line-one"></span>
               <span class="curve-line curve-line-two"></span>
               <span class="curve-line curve-line-three"></span>
+              <span class="curve-line curve-line-four"></span>
+              <span class="curve-line curve-line-five"></span>
               <span class="curve-node node-one"><strong>40%</strong></span>
-              <span class="curve-node node-two"><strong>65%</strong></span>
-              <span class="curve-node node-three"><strong>80%</strong></span>
-              <span class="curve-node node-four"><strong>90%</strong></span>
+              <span class="curve-node node-two"><strong>55%</strong></span>
+              <span class="curve-node node-three"><strong>65%</strong></span>
+              <span class="curve-node node-four"><strong>80%</strong></span>
+              <span class="curve-node node-five"><strong>90%</strong></span>
+              <span class="curve-node node-six"><strong>95%</strong></span>
             </div>
           </div>
 
@@ -502,14 +507,22 @@ const questions = [
         font-weight: 950;
       }
       .funnel-main { position: relative; }
-      .funnel-curve-overlay { top: 360px; }
-      .node-one { left: 17%; top: 120px; }
-      .node-two { left: 39%; top: 70px; }
-      .node-three { left: 62%; top: 34px; }
-      .node-four { left: 82%; top: 4px; }
-      .curve-line-one { left: 19%; top: 137px; width: 23%; transform: rotate(-12deg); }
-      .curve-line-two { left: 41%; top: 87px; width: 24%; transform: rotate(-10deg); }
-      .curve-line-three { left: 64%; top: 51px; width: 21%; transform: rotate(-8deg); }
+      .funnel-curve-overlay {
+        top: 250px;
+        height: 260px;
+      }
+      .curve-node { z-index: 2; }
+      .node-one { left: 12%; top: 218px; }
+      .node-two { left: 27%; top: 178px; }
+      .node-three { left: 42%; top: 142px; }
+      .node-four { left: 59%; top: 92px; }
+      .node-five { left: 76%; top: 48px; }
+      .node-six { left: 91%; top: 12px; }
+      .curve-line-one { left: 14%; top: 235px; width: 16%; transform: rotate(-15deg); }
+      .curve-line-two { left: 29%; top: 195px; width: 16%; transform: rotate(-14deg); }
+      .curve-line-three { left: 44%; top: 159px; width: 18%; transform: rotate(-16deg); }
+      .curve-line-four { left: 61%; top: 109px; width: 18%; transform: rotate(-14deg); }
+      .curve-line-five { left: 78%; top: 65px; width: 15%; transform: rotate(-14deg); }
       .funnel-example-caption {
         max-width: 780px;
         margin: 14px auto 0;
@@ -644,16 +657,6 @@ const questions = [
         .pass-through-visual { margin-top: 2px; }
         .example-rate { font-size: .68rem; }
         .pass-track { height: 4px; }
-        .curve-chart { height: 125px; margin-left: 2px; margin-right: 2px; }
-        .point-one { left: 8%; top: 66px; }
-        .point-two { left: 38%; top: 43px; }
-        .point-three { left: 68%; top: 24px; }
-        .point-four { left: 92%; top: 10px; }
-        .segment-one { top: 71px; }
-        .segment-two { top: 49px; }
-        .segment-three { top: 30px; }
-        .curve-point span { font-size: .6rem; }
-        .illustrative-curve { padding: 16px 12px; }
         .funnel-example-caption { font-size: .7rem; padding: 0 8px; }
         .funnel-arrow { height: 19px; font-size: 1rem; }
         .funnel-bottom { grid-template-columns: 1fr; gap: 16px; }
