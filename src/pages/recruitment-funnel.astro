@@ -265,17 +265,41 @@ const questions = [
             <div class="eyebrow">Illustrative conversion curve</div>
             <h3>Front-loaded screening, stronger pass-through later</h3>
             <div class="funnel-curve-overlay" aria-label="Illustrative conversion curve: 40 percent at CV screening, 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.">
-              <span class="curve-line curve-line-one"></span>
-              <span class="curve-line curve-line-two"></span>
-              <span class="curve-line curve-line-three"></span>
-              <span class="curve-line curve-line-four"></span>
-              <span class="curve-line curve-line-five"></span>
-              <span class="curve-node node-one"><strong>40%</strong></span>
-              <span class="curve-node node-two"><strong>55%</strong></span>
-              <span class="curve-node node-three"><strong>65%</strong></span>
-              <span class="curve-node node-four"><strong>80%</strong></span>
-              <span class="curve-node node-five"><strong>90%</strong></span>
-              <span class="curve-node node-six"><strong>95%</strong></span>
+              <svg class="conversion-curve-svg" viewBox="0 0 600 220" role="img" aria-labelledby="curve-title curve-desc">
+                <title id="curve-title">Illustrative conversion curve</title>
+                <desc id="curve-desc">Pass-through rate rises from 40 percent at CV screening to 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.</desc>
+                <path class="curve-path" d="M55 165 C105 155 125 145 155 135 S220 115 255 105 S325 78 355 70 S430 48 455 42 S520 28 545 22" />
+                <g class="curve-point">
+                  <circle cx="55" cy="165" r="7" />
+                  <text x="55" y="145">40%</text>
+                  <text x="55" y="198">CV screening</text>
+                </g>
+                <g class="curve-point">
+                  <circle cx="155" cy="135" r="7" />
+                  <text x="155" y="115">55%</text>
+                  <text x="155" y="198">Initial screening</text>
+                </g>
+                <g class="curve-point">
+                  <circle cx="255" cy="105" r="7" />
+                  <text x="255" y="85">65%</text>
+                  <text x="255" y="198">Interviews</text>
+                </g>
+                <g class="curve-point">
+                  <circle cx="355" cy="70" r="7" />
+                  <text x="355" y="50">80%</text>
+                  <text x="355" y="198">Shortlist</text>
+                </g>
+                <g class="curve-point">
+                  <circle cx="455" cy="42" r="7" />
+                  <text x="455" y="22">90%</text>
+                  <text x="455" y="198">Offer</text>
+                </g>
+                <g class="curve-point">
+                  <circle cx="545" cy="22" r="7" />
+                  <text x="545" y="8">95%</text>
+                  <text x="545" y="198">Acceptance / hire</text>
+                </g>
+              </svg>
             </div>
             <p class="funnel-example-caption">
               <strong>Example scenario:</strong> front-loading the screening protects stakeholder time in the later stages by moving forward candidates who already meet core requirements.
@@ -491,49 +515,35 @@ const questions = [
       }
 
       .funnel-curve-overlay {
-        position: relative;
         width: 100%;
-        height: 260px;
+        height: auto;
+        margin: 0;
         pointer-events: none;
       }
-      .curve-line {
-        position: absolute;
-        height: 4px;
-        background: var(--prima);
-        border-radius: 999px;
-        transform-origin: left center;
+      .conversion-curve-svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 600 / 220;
+        overflow: visible;
       }
-      .curve-node {
-        position: absolute;
-        width: 34px;
-        height: 34px;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: var(--prima);
-        color: #fff;
-        border: 3px solid var(--prima-soft);
-        box-shadow: 0 3px 10px rgba(18,18,18,.12);
-        font-size: .64rem;
-        font-weight: 950;
+      .curve-path {
+        fill: none;
+        stroke: var(--prima);
+        stroke-width: 5;
+        stroke-linecap: round;
       }
-      .funnel-main { position: relative; }
-      .funnel-curve-overlay {
-        top: 250px;
-        height: 260px;
+      .curve-point circle {
+        fill: var(--prima);
+        stroke: var(--prima-soft);
+        stroke-width: 4;
       }
-      .curve-node { z-index: 2; }
-      .node-one { left: 12%; top: 218px; }
-      .node-two { left: 27%; top: 178px; }
-      .node-three { left: 42%; top: 142px; }
-      .node-four { left: 59%; top: 92px; }
-      .node-five { left: 76%; top: 48px; }
-      .node-six { left: 91%; top: 12px; }
-      .curve-line-one { left: 14%; top: 235px; width: 16%; transform: rotate(-15deg); }
-      .curve-line-two { left: 29%; top: 195px; width: 16%; transform: rotate(-14deg); }
-      .curve-line-three { left: 44%; top: 159px; width: 18%; transform: rotate(-16deg); }
-      .curve-line-four { left: 61%; top: 109px; width: 18%; transform: rotate(-14deg); }
-      .curve-line-five { left: 78%; top: 65px; width: 15%; transform: rotate(-14deg); }
+      .curve-point text {
+        fill: var(--ink);
+        font-size: 11px;
+        font-weight: 850;
+        text-anchor: middle;
+      }
       .funnel-example-caption {
         max-width: 780px;
         margin: 14px auto 0;
@@ -635,7 +645,6 @@ const questions = [
       @media (max-width: 759px) {
         .funnel-head .task-title { max-width: 10ch; }
         .funnel-kicker { grid-template-columns: 1fr; gap: 10px; }
-        .funnel-curve-overlay { height: 190px; }
         .funnel-stage {
           width: 100%;
           min-width: 0;
