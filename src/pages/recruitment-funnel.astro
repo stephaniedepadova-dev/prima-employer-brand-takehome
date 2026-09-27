@@ -35,7 +35,8 @@ const stages = [
     time: 'Time to assessment result',
     tone: 'blue',
     funnelWidth: '55%',
-    passWidth: '44%'
+    passWidth: '44%',
+    exampleRate: '48%'
   },
   {
     no: '04',
@@ -264,40 +265,45 @@ const questions = [
           <article class="illustrative-curve">
             <div class="eyebrow">Illustrative conversion curve</div>
             <h3>Front-loaded screening, stronger pass-through later</h3>
-            <div class="funnel-curve-overlay" aria-label="Illustrative conversion curve: 40 percent at CV screening, 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.">
+            <div class="funnel-curve-overlay" aria-label="Illustrative conversion curve: 40 percent at CV screening, 48 percent at assessment or tests, 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.">
               <svg class="conversion-curve-svg" viewBox="0 0 600 220" role="img" aria-labelledby="curve-title curve-desc">
                 <title id="curve-title">Illustrative conversion curve</title>
                 <desc id="curve-desc">Pass-through rate rises from 40 percent at CV screening to 55 percent at initial screening, 65 percent at interviews, 80 percent at shortlist, 90 percent at offer and 95 percent at acceptance or hire.</desc>
-                <path class="curve-path" d="M55 165 C105 155 125 145 155 135 S220 115 255 105 S325 78 355 70 S430 48 455 42 S520 28 545 22" />
+                <path class="curve-path" d="M45 172 C82 165 105 154 135 145 S185 127 220 116 S280 96 315 82 S370 66 405 54 S465 38 505 29 S535 24 555 20" />
                 <g class="curve-point">
-                  <circle cx="55" cy="165" r="7" />
-                  <text x="55" y="145">40%</text>
-                  <text x="55" y="198">CV screening</text>
+                  <circle cx="45" cy="172" r="7" />
+                  <text x="45" y="152">40%</text>
+                  <text x="45" y="198">CV screening</text>
                 </g>
                 <g class="curve-point">
-                  <circle cx="155" cy="135" r="7" />
-                  <text x="155" y="115">55%</text>
-                  <text x="155" y="198">Initial screening</text>
+                  <circle cx="135" cy="145" r="7" />
+                  <text x="135" y="125">48%</text>
+                  <text x="135" y="198">Assessment / tests</text>
                 </g>
                 <g class="curve-point">
-                  <circle cx="255" cy="105" r="7" />
-                  <text x="255" y="85">65%</text>
-                  <text x="255" y="198">Interviews</text>
+                  <circle cx="220" cy="116" r="7" />
+                  <text x="220" y="96">55%</text>
+                  <text x="220" y="198">Initial screening</text>
                 </g>
                 <g class="curve-point">
-                  <circle cx="355" cy="70" r="7" />
-                  <text x="355" y="50">80%</text>
-                  <text x="355" y="198">Shortlist</text>
+                  <circle cx="315" cy="82" r="7" />
+                  <text x="315" y="62">65%</text>
+                  <text x="315" y="198">Interviews</text>
                 </g>
                 <g class="curve-point">
-                  <circle cx="455" cy="42" r="7" />
-                  <text x="455" y="22">90%</text>
-                  <text x="455" y="198">Offer</text>
+                  <circle cx="405" cy="54" r="7" />
+                  <text x="405" y="34">80%</text>
+                  <text x="405" y="198">Shortlist</text>
                 </g>
                 <g class="curve-point">
-                  <circle cx="545" cy="22" r="7" />
-                  <text x="545" y="8">95%</text>
-                  <text x="545" y="198">Acceptance / hire</text>
+                  <circle cx="505" cy="29" r="7" />
+                  <text x="505" y="15">90%</text>
+                  <text x="505" y="198">Offer</text>
+                </g>
+                <g class="curve-point">
+                  <circle cx="555" cy="20" r="7" />
+                  <text x="555" y="8">95%</text>
+                  <text x="555" y="198">Acceptance / hire</text>
                 </g>
               </svg>
             </div>
@@ -540,7 +546,7 @@ const questions = [
       }
       .curve-point text {
         fill: var(--ink);
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 850;
         text-anchor: middle;
       }
