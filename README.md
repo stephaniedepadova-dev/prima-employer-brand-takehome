@@ -36,6 +36,6 @@ npm run build
 
 The repository is configured as a project site for:
 
-`https://stephaniedepadova-dev.github.io/prima-employer-brand-takehome/`
+`https://stephaniedepadova-dev.github.io/talent-employer-brand-strategy-prima/`
 
 The included GitHub Actions workflow deploys the static Astro build to GitHub Pages on pushes to `main`.
