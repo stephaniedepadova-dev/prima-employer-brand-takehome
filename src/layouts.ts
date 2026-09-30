@@ -1,11 +1,11 @@
 import './styles/nav.css';
 
-export const siteTitle = 'Employer Branding Manager – Take-home Assignment';
+export const siteTitle = 'Talent & Employer Brand Strategy — Prima Assicurazioni';
 
 export const nav = [
   { label: 'Overview', href: '/' },
-  { label: 'Task 1', href: '/task-1/' },
-  { label: 'Task 2', href: '/task-2/' },
+  { label: 'Diagnosis', href: '/task-1/' },
+  { label: 'Strategic response', href: '/task-2/' },
   { label: 'Open redesigned vacancy ↗', href: '/redesigned-vacancy/' },
 ];
 
