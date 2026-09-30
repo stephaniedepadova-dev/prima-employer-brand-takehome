@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { nav } from '../layouts';
+import SiteHeader from '../components/SiteHeader.astro';
 
 const jobUrl = 'https://www.helloprima.com/careers/jobs/senior-python-software-engineer-77dc9214-4ed8-470e-93b0-4de8bbb1ccc4';
 const technologies = ['Python', 'TDD', 'BDD', 'CI/CD', 'IaC', 'Kafka', 'RabbitMQ'];
@@ -23,14 +23,7 @@ const requirements = [
   </head>
   <body class="task2-page candidate-journey-page">
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="shell header-inner">
-        <a class="wordmark" href="/prima-employer-brand-takehome/">PRIMA</a>
-        <nav class="nav" aria-label="Primary navigation">
-          {nav.map((item) => <a href={`/prima-employer-brand-takehome${item.href}`}>{item.label}</a>)}
-        </nav>
-      </div>
-    </header>
+    <SiteHeader />
 
     <main id="main">
       <section class="task-hero">
