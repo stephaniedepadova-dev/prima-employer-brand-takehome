@@ -7,8 +7,8 @@ Mobile-first strategic Talent & Employer Brand project for Prima Assicurazioni.
 ## Structure
 
 - `/` — Overview
-- `/task-1/` — Diagnosis
-- `/task-2/` — Candidate journey
+- `/diagnosis/` — Diagnosis
+- `/candidate-journey/` — Candidate journey
 - `/redesigned-vacancy/` — Vacancy pilot
 - `/recruitment-funnel/` — Funnel & measurement
 - `/sources/` — Sources, methodology and evidence
