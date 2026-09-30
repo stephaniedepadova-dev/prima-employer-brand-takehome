@@ -6,10 +6,18 @@ Mobile-first strategic Talent & Employer Brand project for Prima Assicurazioni.
 
 ## Structure
 
-- `/` overview
-- `/task-1/` Employer Brand diagnosis, priorities and benchmark
-- `/task-2/` Candidate decision experience redesign
+- `/` executive overview
+- `/task-1/` employer-brand diagnosis, priorities and benchmark
+- `/task-2/` candidate experience redesign and vacancy pilot
+- `/redesigned-vacancy/` candidate-facing vacancy concept
+- `/recruitment-funnel/` recruitment measurement framework
 - `/sources/` public evidence, sources and methodology
+
+## Positioning
+
+This is a strategic project developed around publicly available evidence from Prima Assicurazioni. It is an independent concept and is not affiliated with or presented as an official Prima Assicurazioni careers page.
+
+The work connects employer-brand evidence, candidate decision moments, recruitment experience and measurable talent outcomes.
 
 ## Run locally
 
