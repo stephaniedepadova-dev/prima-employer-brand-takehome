@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { nav } from '../layouts';
+import SiteHeader from '../components/SiteHeader.astro';
 
 const sourceGroups = [
   {
@@ -67,14 +67,7 @@ const sourceGroups = [
   </head>
   <body class="sources-page">
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="shell header-inner">
-        <a class="wordmark" href="/prima-employer-brand-takehome/">PRIMA</a>
-        <nav class="nav" aria-label="Primary navigation">
-          {nav.map((item) => <a href={`/prima-employer-brand-takehome${item.href}`}>{item.label}</a>)}
-        </nav>
-      </div>
-    </header>
+    <SiteHeader />
 
     <main id="main">
       <section class="task-hero">
