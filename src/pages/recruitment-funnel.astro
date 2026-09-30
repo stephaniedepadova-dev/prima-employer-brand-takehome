@@ -145,14 +145,7 @@ const questions = [
       <div class="shell header-inner">
         <a class="wordmark" href="/prima-employer-brand-takehome/">PRIMA</a>
         <nav class="nav" aria-label="Primary navigation">
-          {nav.map((item) => (
-            <a
-              href={`/prima-employer-brand-takehome${item.href}`}
-              aria-current={item.href === '/recruitment-funnel/' ? 'page' : undefined}
-            >
-              {item.label}
-            </a>
-          ))}
+          {nav.map((item) => <a href={`/prima-employer-brand-takehome${item.href}`}>{item.label}</a>)}
         </nav>
       </div>
     </header>
