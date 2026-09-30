@@ -7,6 +7,7 @@ export const nav = [
   { label: 'Diagnosis', href: '/task-1/' },
   { label: 'Candidate journey', href: '/task-2/' },
   { label: 'Vacancy pilot', href: '/redesigned-vacancy/' },
+  { label: 'Funnel & measurement', href: '/recruitment-funnel/' },
   { label: 'Sources', href: '/sources/' },
 ];
 
