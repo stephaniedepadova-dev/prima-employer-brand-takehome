@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import { nav, siteTitle } from '../layouts';
+import { siteTitle } from '../layouts';
+import SiteHeader from '../components/SiteHeader.astro';
 ---
 <html lang="en">
   <head>
@@ -41,6 +42,7 @@ import { nav, siteTitle } from '../layouts';
   </head>
   <body class="overview-page">
     <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader />
     <SiteHeader />
 
     <main id="main">
