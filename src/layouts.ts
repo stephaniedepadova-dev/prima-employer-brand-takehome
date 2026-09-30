@@ -6,7 +6,8 @@ export const nav = [
   { label: 'Overview', href: '/' },
   { label: 'Diagnosis', href: '/task-1/' },
   { label: 'Candidate journey', href: '/task-2/' },
-  { label: 'Vacancy concept', href: '/redesigned-vacancy/' },
+  { label: 'Vacancy pilot', href: '/redesigned-vacancy/' },
+  { label: 'Sources', href: '/sources/' },
 ];
 
 export const sources = [
