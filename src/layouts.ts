@@ -5,8 +5,8 @@ export const siteTitle = 'Talent & Employer Brand Strategy — Prima Assicurazio
 export const nav = [
   { label: 'Overview', href: '/' },
   { label: 'Diagnosis', href: '/task-1/' },
-  { label: 'Strategic response', href: '/task-2/' },
-  { label: 'Open redesigned vacancy ↗', href: '/redesigned-vacancy/' },
+  { label: 'Candidate journey', href: '/task-2/' },
+  { label: 'Vacancy concept', href: '/redesigned-vacancy/' },
 ];
 
 export const sources = [
